@@ -1,0 +1,16 @@
+uuid: 95911833-c4fd-447f-8daa-c25fcde3347a
+langcode: ro
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access user profiles'
+  - 'create reaction on node:definition:field_score'
+  - 'modify reaction on node:definition:field_score'
+  - 'view reactions on node:definition:field_score'

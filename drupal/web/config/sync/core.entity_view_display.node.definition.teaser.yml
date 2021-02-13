@@ -1,0 +1,40 @@
+uuid: 47e1661a-5a23-4dd0-885e-65f9f9d3eb49
+langcode: ro
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.definition.field_definitie
+    - field.field.node.definition.field_eticheta
+    - field.field.node.definition.field_exemplu
+    - field.field.node.definition.field_score
+    - field.field.node.definition.field_temp_vote_down
+    - field.field.node.definition.field_temp_vote_up
+    - node.type.definition
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.definition.teaser
+targetEntityType: node
+bundle: definition
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_definitie: true
+  field_eticheta: true
+  field_exemplu: true
+  field_score: true
+  field_temp_vote_down: true
+  field_temp_vote_up: true
+  langcode: true

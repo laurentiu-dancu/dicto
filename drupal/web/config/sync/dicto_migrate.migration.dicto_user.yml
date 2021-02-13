@@ -1,0 +1,31 @@
+id: dicto_user
+label: 'Migrate users'
+migration_group: dicto
+migration_tags:
+  - dicto
+source:
+  plugin: 'dicto:source:users'
+destination:
+  plugin: 'entity:user'
+process:
+  name:
+    plugin: dedupe_entity
+    source: name
+    entity_type: user
+    field: name
+    postfix: _
+  pass:
+    plugin: callback
+    callable: md5
+    source: password
+  mail: mail
+  init: mail
+  status: status
+  roles:
+    plugin: default_value
+    default_value: 2
+migration_dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - dicto_migrate

@@ -1,0 +1,8 @@
+uuid: 6f1bade9-dee3-4218-8d3f-dbe3669ddffb
+langcode: ro
+status: true
+dependencies: {  }
+name: Etichetă
+vid: eticheta
+description: ''
+weight: 0

@@ -1,0 +1,13 @@
+uuid: b84e05b1-ee03-43c7-afe9-6725aa59ef85
+langcode: ro
+status: true
+dependencies:
+  module:
+    - votingapi_reaction
+third_party_settings:
+  votingapi_reaction:
+    reaction: true
+id: score_up
+label: Upscore
+value_type: points
+description: ''

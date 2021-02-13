@@ -1,0 +1,27 @@
+uuid: 3943c2c2-ae0a-45af-a5c8-f138fbe97327
+langcode: ro
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - dicto
+_core:
+  default_config_hash: yAwOK_gO4aYOaawkesvJPgcWeROKlJ1waycuUmL3UyQ
+id: dicto_account_menu
+theme: dicto
+region: secondary_menu
+weight: -4
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,7 @@
+dict_populate.populate:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\dict_populate\Controller\PopulateController::populate'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

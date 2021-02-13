@@ -1,0 +1,10 @@
+uuid: 402aec8b-a3a5-428e-a78e-d8f8fe49a460
+langcode: ro
+status: true
+dependencies: {  }
+id: dicto
+label: dicto
+description: ''
+source_type: null
+module: null
+shared_configuration: null

@@ -1,0 +1,16 @@
+
+mata.mata_controller_mata:
+  path: '/mata/mata'
+  defaults:
+    _controller: '\Drupal\mata\Controller\MataController::mata'
+    _title: 'mata'
+  requirements:
+    _permission: 'access content'
+
+mata.mata_form_mata:
+  path: '/mata/form'
+  defaults:
+    _form: '\Drupal\mata\Form\MataForm'
+    _title: 'mata'
+  requirements:
+    _permission: 'access content'

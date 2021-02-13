@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains batch_example.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function batch_example_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the batch_example module.
+    case 'help.page.batch_example':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function batch_example_theme() {
+  return [
+    'batch_example' => [
+      'render element' => 'children',
+    ],
+  ];
+}

@@ -1,0 +1,23 @@
+uuid: 6d7f84e2-bac6-4b60-9225-bbba64867019
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_vote_up
+    - node.type.definition
+id: node.definition.field_temp_vote_up
+field_name: field_temp_vote_up
+entity_type: node
+bundle: definition
+label: 'temp vote up'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

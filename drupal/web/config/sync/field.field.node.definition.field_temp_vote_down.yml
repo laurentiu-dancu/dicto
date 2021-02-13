@@ -1,0 +1,23 @@
+uuid: a55f64d6-f722-4bc4-82a9-348fca15572b
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_vote_down
+    - node.type.definition
+id: node.definition.field_temp_vote_down
+field_name: field_temp_vote_down
+entity_type: node
+bundle: definition
+label: 'temp vote down'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

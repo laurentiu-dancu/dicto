@@ -1,0 +1,20 @@
+uuid: d766b883-f34f-43ef-ad3b-8af45cf4ebbe
+langcode: ro
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_temp_vote_up
+field_name: field_temp_vote_up
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

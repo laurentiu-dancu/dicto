@@ -1,0 +1,22 @@
+uuid: d38c0c87-31f1-49f3-aa7f-938a404ab61f
+langcode: ro
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dicto
+_core:
+  default_config_hash: Yo5LkrSJyYb5IW2L6DYKT2EHJ8dXP5FkMQuxph6TfLE
+id: dicto_messages
+theme: dicto
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

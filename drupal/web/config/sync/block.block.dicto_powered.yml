@@ -1,0 +1,22 @@
+uuid: 7ed21c35-5d8d-46cc-b13f-9186e2d3c83c
+langcode: ro
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dicto
+_core:
+  default_config_hash: VgTdySbWoryDNQyBO0GvHl-OdE6I2iDgPyzC9t_uPnw
+id: dicto_powered
+theme: dicto
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

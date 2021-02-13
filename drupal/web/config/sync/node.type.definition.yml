@@ -1,0 +1,17 @@
+uuid: fcef2c09-7fc8-427d-9503-f203678f9038
+langcode: ro
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Definiție
+type: definition
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

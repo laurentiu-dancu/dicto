@@ -1,0 +1,14 @@
+uuid: 0ad575c8-bf4b-4391-aebb-501dce2bcc6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.orfan
+  module:
+    - user
+id: user_add_role_action.orfan
+label: 'Add the Orfan role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: orfan

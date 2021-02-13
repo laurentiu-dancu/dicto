@@ -1,0 +1,37 @@
+id: dicto_definition
+label: 'Migrate Dicto Definitions'
+migration_group: dicto
+migration_tags:
+  - dicto
+source:
+  plugin: 'dicto:source:definitions'
+destination:
+  plugin: 'entity:node'
+process:
+  type:
+    plugin: default_value
+    default_value: definition
+  title: term
+  field_definitie: def
+  field_exemplu: example
+  field_temp_vote_down: score_down
+  field_temp_vote_up: score_up
+  uid:
+    plugin: migration_lookup
+    migration: dicto_user
+    source: id
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_eticheta:
+    plugin: migration_lookup
+    migration: dicto_tag
+    source: id
+migration_dependencies:
+  required:
+    - dicto_tag
+    - dicto_user
+dependencies:
+  enforced:
+    module:
+      - dicto_migrate

@@ -1,0 +1,23 @@
+uuid: 89864e58-3f96-4227-83e5-4df86fa7f00e
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_original_id
+    - taxonomy.vocabulary.eticheta
+id: taxonomy_term.eticheta.field_original_id
+field_name: field_original_id
+entity_type: taxonomy_term
+bundle: eticheta
+label: 'Original ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

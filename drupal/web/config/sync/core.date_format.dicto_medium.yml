@@ -1,0 +1,13 @@
+uuid: 9397183b-293a-45e3-b896-0d1f5649915d
+langcode: ro
+status: true
+dependencies:
+  enforced:
+    theme:
+      - dicto
+_core:
+  default_config_hash: KRdmhnUKvfoe64YWSRNxWCOyaJjKmuozcMhmjVBXlh4
+id: dicto_medium
+label: 'Dicto Medium'
+locked: false
+pattern: 'j  F,  Y'

@@ -1,0 +1,20 @@
+id: dicto_tag
+label: 'Migrate tags'
+migration_group: dicto
+migration_tags:
+  - dicto
+source:
+  plugin: 'dicto:source:tags'
+destination:
+  plugin: 'entity:taxonomy_term'
+process:
+  name: name
+  original_id: original_id
+  vid:
+    plugin: default_value
+    default_value: eticheta
+migration_dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - dicto_migrate

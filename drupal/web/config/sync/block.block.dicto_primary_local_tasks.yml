@@ -1,0 +1,22 @@
+uuid: 03f789ef-63a5-4e85-b71e-7079fa630078
+langcode: ro
+status: true
+dependencies:
+  theme:
+    - dicto
+_core:
+  default_config_hash: 94XpVEYuKOZSG9HWdwDS6d3axY9kqT75hT1j_nCKufg
+id: dicto_primary_local_tasks
+theme: dicto
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,5 @@
+name: 'batch_example'
+type: module
+description: 'My Awesome Module'
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'

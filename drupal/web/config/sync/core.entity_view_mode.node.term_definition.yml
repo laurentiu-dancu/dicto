@@ -1,0 +1,10 @@
+uuid: 47da5690-4f89-4c13-bf74-23953455c950
+langcode: ro
+status: true
+dependencies:
+  module:
+    - node
+id: node.term_definition
+label: 'Term Definition'
+targetEntityType: node
+cache: true

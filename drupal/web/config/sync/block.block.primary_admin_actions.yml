@@ -1,0 +1,20 @@
+uuid: 12dc3dd5-0df6-4c70-93ea-f01a4dea4e11
+langcode: ro
+status: true
+dependencies:
+  theme:
+    - dicto
+_core:
+  default_config_hash: hMC97z7lQuZ3J03h_dIwnUtPgvUH9ATHvKs6nio-W3c
+id: primary_admin_actions
+theme: dicto
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

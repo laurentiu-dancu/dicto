@@ -1,0 +1,81 @@
+uuid: dedc8b3f-68da-425f-887c-336816b185ce
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.field.node.definition.field_definitie
+    - field.field.node.definition.field_eticheta
+    - field.field.node.definition.field_exemplu
+    - field.field.node.definition.field_score
+    - field.field.node.definition.field_temp_vote_down
+    - field.field.node.definition.field_temp_vote_up
+    - node.type.definition
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: Termen
+id: node.definition.default
+targetEntityType: node
+bundle: definition
+mode: default
+content:
+  field_definitie:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_eticheta:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_exemplu:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_temp_vote_down:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_temp_vote_up:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_score: true
+  langcode: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

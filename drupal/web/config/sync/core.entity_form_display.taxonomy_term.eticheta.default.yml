@@ -1,0 +1,39 @@
+uuid: b1b352ae-4591-4b50-8e58-3244c45975ee
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.eticheta.field_original_id
+    - taxonomy.vocabulary.eticheta
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.eticheta.default
+targetEntityType: taxonomy_term
+bundle: eticheta
+mode: default
+content:
+  field_original_id:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  status: true

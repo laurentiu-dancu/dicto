@@ -1,0 +1,19 @@
+uuid: b6056125-700c-4450-bbe1-b8e9865e6570
+langcode: ro
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_exemplu
+field_name: field_exemplu
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

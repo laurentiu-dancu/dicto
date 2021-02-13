@@ -1,0 +1,30 @@
+uuid: 77dc9d68-d9d0-4586-9475-099553132f9c
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_score
+    - node.type.definition
+  module:
+    - votingapi_reaction
+id: node.definition.field_score
+field_name: field_score
+entity_type: node
+bundle: definition
+label: Score
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: '2'
+default_value_callback: ''
+settings:
+  anonymous_detection:
+    1: '1'
+    2: '2'
+  anonymous_rollover: '-1'
+  reactions:
+    score_down: score_down
+    score_up: score_up
+field_type: votingapi_reaction

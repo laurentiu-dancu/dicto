@@ -1,0 +1,18 @@
+uuid: 75ecfcab-eaf6-4411-a422-6909f41731ea
+langcode: ro
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition.title
+field_name: title
+entity_type: node
+bundle: definition
+label: Termen
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

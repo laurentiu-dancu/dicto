@@ -1,0 +1,11 @@
+uuid: f7ccd179-6266-4a45-81c8-b440fbb8cd74
+langcode: ro
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition
+target_entity_type_id: node
+target_bundle: definition
+default_langcode: site_default
+language_alterable: false

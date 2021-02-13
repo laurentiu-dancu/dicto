@@ -1,0 +1,23 @@
+uuid: dd178eb3-3221-44eb-b1a5-0cd8742339cb
+langcode: ro
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - dicto
+_core:
+  default_config_hash: 1aTrZ04ghMVukw7SUnmiU2d3HP1Ph8NLN-RAMCvXIYE
+id: dicto_search_form_wide
+theme: dicto
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }

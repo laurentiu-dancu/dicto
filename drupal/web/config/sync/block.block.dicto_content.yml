@@ -1,0 +1,22 @@
+uuid: a5a3a100-6682-4dc0-9977-720d1445db66
+langcode: ro
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dicto
+_core:
+  default_config_hash: y0s8MyMqY6eCW-miQ7PQGRbhOadcC_Pa5uLYri_4D2M
+id: dicto_content
+theme: dicto
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
