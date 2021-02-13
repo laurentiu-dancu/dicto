@@ -1,7 +1,8 @@
 Dictionar Urban, Second Edition
 -------------------------------
 
-⚠️ WARNING! ⚠️\
+⚠️ WARNING! ⚠️
+
 ☢️ 😱 DO NOT USE THIS PROGRAM. 😱 ☢️\
 This program is not a program of honor.
 
