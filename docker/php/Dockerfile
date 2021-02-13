@@ -13,6 +13,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
+RUN composer global require drush/drush:^10
+ENV PATH "$PATH:/root/.composer/vendor/bin"
+
 ADD ./php.ini /usr/local/etc/php/conf.d/php.ini
 ADD ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
@@ -24,3 +27,5 @@ RUN a2enmod rewrite
 COPY ./drupal.conf /etc/apache2/sites-available/
 RUN a2ensite drupal.conf
 RUN service apache2 restart
+
+WORKDIR /var/www/html/web

@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Provides enhancements for implementing and managing migrations.
+ */
+
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function dicto_views_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'term' && $view->current_display === 'term_page') {
+    foreach ($query->fields as $key => &$field) {
+      if ($key === 'votingapi_result_node_field_data_1_value__coa') {
+        $field['field'] = '(COALESCE(votingapi_result_node_field_data_1.value, 0) - COALESCE(votingapi_result_node_field_data.value, 0))';
+      }
+    }
+  }
+  $a = 1;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function dicto_views_module_implements_alter(&$implementations, $hook) {
+  switch ($hook) {
+    case 'views_query_alter':
+      $group = $implementations['dicto_views'];
+      unset($implementations['dicto_views']);
+      $implementations['dicto_views'] = $group;
+      break;
+  }
+}

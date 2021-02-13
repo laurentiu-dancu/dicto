@@ -7,6 +7,7 @@ dependencies:
     - node.type.definition
   module:
     - node
+    - votingapi
 id: term
 label: Termen
 module: views
@@ -145,23 +146,45 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       sorts:
-        field_score_status_1:
-          id: field_score_status_1
-          table: node__field_score
-          field: field_score_status
-          relationship: none
+        value:
+          id: value
+          table: votingapi_result
+          field: value
+          relationship: node_vote_result_vote_count_score_up
           group_type: group
           admin_label: ''
           order: DESC
           exposed: false
           expose:
             label: ''
+          entity_type: vote_result
+          entity_field: value
           plugin_id: standard
       title: Termen
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        node_vote_result_vote_count_score_down:
+          id: node_vote_result_vote_count_score_down
+          table: node_field_data
+          field: node_vote_result_vote_count_score_down
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Count" for content items: Downscore'
+          required: false
+          entity_type: node
+          plugin_id: standard
+        node_vote_result_vote_count_score_up:
+          id: node_vote_result_vote_count_score_up
+          table: node_field_data
+          field: node_vote_result_vote_count_score_up
+          relationship: none
+          group_type: group
+          admin_label: 'Vote Result "Count" for content items: Upscore'
+          required: false
+          entity_type: node
+          plugin_id: standard
       arguments:
         title:
           id: title
@@ -214,9 +237,9 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags: {  }
-  page_1:
+  term_page:
     display_plugin: page
-    id: page_1
+    id: term_page
     display_title: Page
     position: 1
     display_options:

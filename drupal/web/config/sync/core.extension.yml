@@ -5,6 +5,7 @@ module:
   dblog: 0
   devel: 0
   dicto_migrate: 0
+  dicto_views: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
