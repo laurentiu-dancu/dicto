@@ -1,9 +1,9 @@
-uuid: cf66f307-50ed-4881-bf76-874aaef143ab
+uuid: b4606873-986c-4be6-80c1-7307d0b846ae
 langcode: ro
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.term_definition
+    - core.entity_view_mode.node.undefined_term
     - field.field.node.definition.field_definitie
     - field.field.node.definition.field_eticheta
     - field.field.node.definition.field_exemplu
@@ -15,52 +15,27 @@ dependencies:
     - field_layout
     - layout_discovery
     - user
-    - votingapi_reaction
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
-id: node.definition.term_definition
+id: node.definition.undefined_term
 targetEntityType: node
 bundle: definition
-mode: term_definition
+mode: undefined_term
 content:
   field_definitie:
-    type: basic_string
     weight: 0
-    region: content
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-  field_eticheta:
-    type: entity_reference_label
-    weight: 2
-    region: content
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-  field_exemplu:
     type: basic_string
-    weight: 1
-    region: content
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_score:
-    weight: 3
-    label: visually_hidden
-    settings:
-      show_label: true
-      show_count: true
-      sort_reactions: none
-      show_summary: false
-      show_icon: false
-    third_party_settings: {  }
-    type: votingapi_reaction_default
     region: content
 hidden:
+  field_eticheta: true
+  field_exemplu: true
+  field_score: true
   field_temp_vote_down: true
   field_temp_vote_up: true
   langcode: true

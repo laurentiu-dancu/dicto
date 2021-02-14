@@ -79,3 +79,10 @@ create table unique_definition
     score_down INT(10),
     createdAt  DATE
 );
+
+create table unique_related_term(
+    id int primary key auto_increment not null,
+    term varchar(255),
+    def varbinary(2048),
+    undefined_term_id int not null
+);

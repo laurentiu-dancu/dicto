@@ -1,0 +1,18 @@
+uuid: aff4f033-8c21-4b0e-b48c-998f4184fe1f
+langcode: ro
+status: true
+dependencies:
+  config:
+    - node.type.undefined_term
+id: node.undefined_term.title
+field_name: title
+entity_type: node
+bundle: undefined_term
+label: Termen
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

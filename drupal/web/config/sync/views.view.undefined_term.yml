@@ -1,16 +1,14 @@
-uuid: f35a7871-4694-4eec-991a-e6444e9167bd
+uuid: d8783353-72b2-4891-92eb-b737a3315685
 langcode: ro
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.term_definition
-    - node.type.definition
-    - views.view.undefined_term
+    - core.entity_view_mode.node.undefined_term
+    - node.type.undefined_term
   module:
     - node
-    - votingapi
-id: term
-label: Termen
+id: undefined_term
+label: 'Undefined Term'
 module: views
 description: ''
 tag: ''
@@ -48,23 +46,22 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 1
           offset: 0
       style:
-        type: html_list
+        type: default
         options:
+          grouping: {  }
           row_class: ''
           default_row_class: true
           uses_fields: false
-          type: ol
-          wrapper_class: item-list
-          class: ''
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: term_definition
+          view_mode: undefined_term
       fields:
         title:
           id: title
@@ -132,75 +129,18 @@ display:
           table: node_field_data
           field: type
           value:
-            definition: definition
+            undefined_term: undefined_term
           entity_type: node
           entity_field: type
           plugin_id: bundle
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts:
-        value:
-          id: value
-          table: votingapi_result
-          field: value
-          relationship: node_vote_result_vote_count_score_up
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: vote_result
-          entity_field: value
-          plugin_id: standard
-      title: Termen
+      sorts: {  }
       header: {  }
       footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: true
-          content: '<div class="layout layout--onecol"><span>N-avem nicio definiție pentru <em>{{ raw_arguments[''title''] }}</em>. Demonstrează că știi mai multe ca noi și <a href="/node/add/definition?title={{ raw_arguments[''title''] }}">adaugă tu una.</a></span></div>'
-          plugin_id: text_custom
-        view:
-          id: view
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          view_to_insert: 'undefined_term:default'
-          inherit_arguments: true
-          plugin_id: view
-      relationships:
-        node_vote_result_vote_count_score_down:
-          id: node_vote_result_vote_count_score_down
-          table: node_field_data
-          field: node_vote_result_vote_count_score_down
-          relationship: none
-          group_type: group
-          admin_label: 'Vote Result "Count" for content items: Downscore'
-          required: false
-          entity_type: node
-          plugin_id: standard
-        node_vote_result_vote_count_score_up:
-          id: node_vote_result_vote_count_score_up
-          table: node_field_data
-          field: node_vote_result_vote_count_score_up
-          relationship: none
-          group_type: group
-          admin_label: 'Vote Result "Count" for content items: Upscore'
-          required: false
-          entity_type: node
-          plugin_id: standard
+      empty: {  }
+      relationships: {  }
       arguments:
         title:
           id: title
@@ -209,13 +149,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: empty
+          default_action: 'not found'
           exception:
             value: f7d25e31-a797-4945-8a24-b59a50195936-f7d25e31-a797-4945-8a24-b59a50195936
             title_enable: false
             title: All
-          title_enable: true
-          title: '{{ raw_arguments[''title''] }}'
+          title_enable: false
+          title: ''
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -238,28 +178,12 @@ display:
           limit: 0
           case: none
           path_case: none
-          transform_dash: true
+          transform_dash: false
           break_phrase: false
           entity_type: node
           entity_field: title
           plugin_id: string
       display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-      tags: {  }
-  term_page:
-    display_plugin: page
-    id: term_page
-    display_title: Page
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: termen/%
     cache_metadata:
       max-age: -1
       contexts:

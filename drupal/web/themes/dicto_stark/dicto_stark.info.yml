@@ -1,0 +1,15 @@
+name: Dicto Stark
+type: theme
+package: Custom
+version: VERSION
+base theme: false
+core_version_requirement: ^8.8 || ^9
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  breadcrumb: Breadcrumb
+  content_above: Content Above
+  content: Content
+  sidebar: 'Sidebar'
+  content_below: 'Content Below'
+  footer: 'Footer Top'

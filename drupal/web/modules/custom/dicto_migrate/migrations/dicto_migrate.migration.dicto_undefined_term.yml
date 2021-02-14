@@ -1,0 +1,27 @@
+id: dicto_undefined_term
+label: Migrate Dicto Undefined Terms
+migration_group: dicto
+migration_tags:
+  - dicto
+
+source:
+  plugin: dicto:source:undefined_terms
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: undefined_term
+  title: term
+  field_related_definitions: nodes
+
+migration_dependencies:
+  required:
+    - dicto_definition
+
+dependencies:
+  enforced:
+    module:
+      - dicto_migrate

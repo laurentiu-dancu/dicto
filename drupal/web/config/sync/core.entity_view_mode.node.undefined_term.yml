@@ -1,0 +1,10 @@
+uuid: 6c3524da-9078-46d0-b231-be220a19c3ee
+langcode: ro
+status: true
+dependencies:
+  module:
+    - node
+id: node.undefined_term
+label: 'Undefined Term'
+targetEntityType: node
+cache: true

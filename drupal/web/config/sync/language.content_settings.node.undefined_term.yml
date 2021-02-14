@@ -1,0 +1,11 @@
+uuid: 7b6ef948-d21b-4369-a70a-7b4e80eb02df
+langcode: ro
+status: true
+dependencies:
+  config:
+    - node.type.undefined_term
+id: node.undefined_term
+target_entity_type_id: node
+target_bundle: undefined_term
+default_langcode: site_default
+language_alterable: false

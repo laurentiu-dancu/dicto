@@ -1,0 +1,20 @@
+uuid: b5bb4639-a9d9-46bf-abba-8286f8ae219f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dicto_stark
+_core:
+  default_config_hash: WImvmaBdDpwIqobqbDWebBnyxssRvrNEnZSQbOsvOe4
+id: dicto_stark_page_title
+theme: dicto_stark
+region: content_above
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

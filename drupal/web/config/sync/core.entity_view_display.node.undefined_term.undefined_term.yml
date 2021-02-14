@@ -1,0 +1,34 @@
+uuid: 4b69d5c7-9839-4123-9736-47c1032ce0c3
+langcode: ro
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.undefined_term
+    - field.field.node.undefined_term.field_related_definitions
+    - node.type.undefined_term
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.undefined_term.undefined_term
+targetEntityType: node
+bundle: undefined_term
+mode: undefined_term
+content:
+  field_related_definitions:
+    weight: 0
+    label: above
+    settings:
+      view_mode: undefined_term
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  langcode: true
+  links: true

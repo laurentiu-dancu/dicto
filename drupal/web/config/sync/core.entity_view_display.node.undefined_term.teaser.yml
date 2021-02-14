@@ -1,0 +1,30 @@
+uuid: ecec5a9a-8eb0-44fd-8fb2-a1bb7f70e421
+langcode: ro
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.undefined_term.field_related_definitions
+    - node.type.undefined_term
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.undefined_term.teaser
+targetEntityType: node
+bundle: undefined_term
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_related_definitions: true
+  langcode: true

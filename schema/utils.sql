@@ -19,3 +19,38 @@ from a_tag t
 group by t.name
 order by countName desc
 
+select urt.id, urt.term, ud.term, ud.def, ud.example
+from unique_related_term urt
+         inner join unique_definition ud on urt.def = ud.def and ud.def != ''
+where urt.term = ''
+order by urt.term;
+
+update unique_related_term, (
+    select ud.term, urt.id
+    from unique_related_term urt
+             inner join unique_definition ud on urt.def = ud.def and ud.def != ''
+    where urt.term = ''
+    order by urt.term
+) as uui
+set unique_related_term.term = uui.term where unique_related_term.id = uui.id
+
+select distinct any_value(urt.id), urt.term, urt1.def from unique_related_term urt
+inner join unique_related_term urt1 on urt.term = urt1.term and urt1.def != ''
+where urt.def = '' and urt.term != ''
+group by urt.term, urt1.def
+
+update unique_related_term, (
+    select distinct any_value(urt.id) as id, urt.term, urt1.def
+    from unique_related_term urt
+             inner join unique_related_term urt1 on urt.term = urt1.term and urt1.def != ''
+    where urt.def = ''
+      and urt.term != ''
+    group by urt.term, urt1.def
+) as uui
+set unique_related_term.def = uui.def
+where unique_related_term.id = uui.id
+
+select urt.id, urt.term, any_value(ad.def) from unique_related_term urt
+inner join a_definition ad on ad.term = urt.term
+where urt.def = '' and urt.term != ''
+group by urt.id, urt.term;

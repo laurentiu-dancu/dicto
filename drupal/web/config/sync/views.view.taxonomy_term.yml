@@ -3,7 +3,7 @@ langcode: ro
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.term_definition
   module:
     - node
     - taxonomy
@@ -226,7 +226,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: term_definition
       header:
         entity_taxonomy_term:
           id: entity_taxonomy_term

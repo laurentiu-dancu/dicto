@@ -1,0 +1,29 @@
+uuid: 41a1df18-e1db-4104-b325-3a386954ec16
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_definitions
+    - node.type.definition
+    - node.type.undefined_term
+id: node.undefined_term.field_related_definitions
+field_name: field_related_definitions
+entity_type: node
+bundle: undefined_term
+label: 'Definiții cu legătură'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      definition: definition
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

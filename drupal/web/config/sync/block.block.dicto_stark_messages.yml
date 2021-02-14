@@ -1,0 +1,22 @@
+uuid: fcf74cba-9f08-4704-9b6a-5a5a3492f0fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dicto_stark
+_core:
+  default_config_hash: KfyaTPRJEcAyy2e5AxEfWQnuHcn4WrfvcWek7lSmHZQ
+id: dicto_stark_messages
+theme: dicto_stark
+region: header
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
