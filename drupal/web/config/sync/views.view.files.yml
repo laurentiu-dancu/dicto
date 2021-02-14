@@ -1,5 +1,5 @@
-uuid: 4703545f-58e3-4897-9df8-a6d14e41ff05
-langcode: ro
+uuid: e54ce52d-e76e-43ef-ac94-852dda4139ae
+langcode: en
 status: true
 dependencies:
   module:
@@ -39,7 +39,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filtru
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -186,7 +186,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nume
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -353,7 +353,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Stare
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -669,7 +669,7 @@ display:
           exposed: true
           expose:
             operator_id: status_op
-            label: Stare
+            label: Status
             description: ''
             use_operator: false
             operator: status_op

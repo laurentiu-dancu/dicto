@@ -8,7 +8,6 @@
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
-
 /**
  * Implements hook_views_query_alter().
  */
@@ -20,7 +19,6 @@ function dicto_views_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
       }
     }
   }
-  $a = 1;
 }
 
 /**
@@ -33,5 +31,20 @@ function dicto_views_module_implements_alter(&$implementations, $hook) {
       unset($implementations['dicto_views']);
       $implementations['dicto_views'] = $group;
       break;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function dicto_views_views_pre_render(ViewExecutable $view) {
+  if ($view->id() === 'term' && $view->current_display === 'term_page') {
+    if (!isset($view->result[0])) {
+      return;
+    }
+    $title = $view->result[0]->_entity?->label();
+    if ($title) {
+      $view->setTitle($title);
+    }
   }
 }

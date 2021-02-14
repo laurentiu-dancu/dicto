@@ -7,7 +7,6 @@ module:
   dicto_migrate: 0
   dicto_views: 0
   dynamic_page_cache: 0
-  editor: 0
   field: 0
   field_layout: 0
   field_ui: 0
