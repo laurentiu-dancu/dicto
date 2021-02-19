@@ -229,24 +229,78 @@ ol.ordered-list {
 ol.ordered-list > li {
   counter-increment: counter;
   position: relative;
-  padding: 0 0 0.6em;
+  padding: 0 0 0.8em;
 }
 
 ol.ordered-list > li:before {
-  content: counter(counter);
+  content: counter(counter) ".";
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 0.5rem;
   line-height: 1;
   background-color: yellow;
   position: absolute;
-  left: 1em;
+  left: 1.4em;
   top: 0.8em;
   z-index: 1;
+  pointer-events: none
 }
 
 .ordered-row > article {
-  border: 1px solid var(--theme-color);
-  padding: 1.2em 1em;
+  border: 1px solid var(--border);
+  padding: 1.2em 1.6em;
   background-color: white;
+  border-radius: 3px;
+}
+
+.views-col > article {
+  border: 1px solid var(--border);
+  padding: 0.8em 1.6em 1.2em;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 0.8em;
+}
+
+ol.ordered-list > li.ordered-row:first-child > article {
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.site-name > a {
+  color: var(--light);
+  font-size: 2.2rem;
+  line-height: 2;
+}
+
+.site-name > a:after {
+  content: " - Alpha";
+  color: var(--light);
+  font-size: 2.2rem;
+}
+
+.field-item-example > em {
+  font-style: italic;
+}
+
+.votingapi-reaction-form .form-radios input[type="radio"]:checked + label {
+  color: var(--theme-color);
+}
+
+.votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
+  border-color: var(--theme-color);
+}
+
+.field--name-field-score .form-item {
+  margin: 0;
+}
+
+#block-thex-powered {
+  border: 1px solid var(--border);
+  background-color: white;
+  border-radius: 3px;
+}
+
+#block-thex-page-title {
+  padding: 1em 0;
 }

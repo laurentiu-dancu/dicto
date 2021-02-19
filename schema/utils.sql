@@ -54,3 +54,5 @@ select urt.id, urt.term, any_value(ad.def) from unique_related_term urt
 inner join a_definition ad on ad.term = urt.term
 where urt.def = '' and urt.term != ''
 group by urt.id, urt.term;
+
+update node__field_exemplu set field_exemplu_value = replace(field_exemplu_value, ' 2.', '\r\n2.')

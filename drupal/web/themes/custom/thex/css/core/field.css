@@ -2,10 +2,6 @@
  * @file
  * Visual styles for fields.
  */
- [dir] .field:not(:last-child){
-   margin-bottom:4px;
- }
-
 .field__label {
   font-weight: bold;
 }
@@ -25,4 +21,9 @@
 }
 .field--label-inline .field__label::after {
   content: ":";
+}
+
+.field {
+  margin-bottom: 1em;
+  margin-top: 0.6em;
 }

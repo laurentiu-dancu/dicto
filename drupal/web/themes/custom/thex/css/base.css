@@ -1,11 +1,27 @@
 /* Variables
 ---------------------------------------- */
+/*:root {*/
+/*  --theme-color: #F5BC32;*/
+/*  --theme-color-two: #50C9C0;*/
+/*  --dark: #4B0E3A;*/
+/*  --light: #FDF5DA;*/
+/*  --border:  #F58432;*/
+/*}*/
+
 :root {
-  --theme-color: #f0932b;
-  --theme-color-two: #ac2fd6;
-  --dark: #2f3542;
-  --light: #d1d8e0;
-  --border: #747d8c;
+  --theme-color: #4759F3;
+  --theme-color-two: #0BB3A8;
+  --dark: #EE635B;
+  --light: #F3F2EC;
+  --border: #FFC55F;
+}
+
+:root {
+  --theme-color: #4759F3;
+  --theme-color-two: #43BAAA;
+  --dark:  #265481;
+  --light:  #F3F2EC;
+  --border: #F3F2EC;
 }
 /* HTML and Body
 ---------------------------------------- */
@@ -26,7 +42,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #111111;
-  background-color: lightgrey;
+  background-color: var(--light);
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
