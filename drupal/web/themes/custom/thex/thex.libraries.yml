@@ -1,0 +1,22 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base.css: {}
+    layout:
+      css/layout.css: {}
+    component:
+      css/core/field.css: {}
+      css/block.css: {}
+      css/header.css: {}
+      css/highlighted.css: {}
+      css/node.css: {}
+      css/search.css: {}
+      css/comments.css: {}
+      css/sidebar.css: {}
+      css/footer.css: {}
+      css/components.css: {}
+      css/elements.css: {}
+      css/shortcodes.css: {}
+      css/clear.css: {}
+      css/responsive.css: {}

@@ -27,14 +27,14 @@ mode: default
 content:
   field_definitie:
     weight: 0
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_eticheta:
     weight: 2
-    label: above
+    label: visually_hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -42,41 +42,25 @@ content:
     region: content
   field_exemplu:
     weight: 1
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_score:
     weight: 3
-    label: above
+    label: visually_hidden
     settings:
-      show_summary: true
-      show_icon: true
       show_label: true
       show_count: true
       sort_reactions: none
+      show_summary: false
+      show_icon: false
     third_party_settings: {  }
     type: votingapi_reaction_default
     region: content
-  field_temp_vote_down:
-    weight: 5
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_temp_vote_up:
-    weight: 4
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
 hidden:
+  field_temp_vote_down: true
+  field_temp_vote_up: true
   langcode: true
   links: true

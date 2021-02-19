@@ -1,0 +1,26 @@
+uuid: 321507ba-8602-4128-b8c2-e6caabd0381b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - thex
+_core:
+  default_config_hash: exERv6Z996Hgjku_mgxPoq-dz4_02VEY3UeYf3hQJpI
+id: thex_page_title
+theme: thex
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/termen/*'
+    negate: true

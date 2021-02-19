@@ -1,0 +1,30 @@
+/*
+ * Form styling
+ */
+/* Form -> Radio buttons*/
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: text-bottom;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type="radio"] {
+  border-radius: 50%;
+}
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  outline: 0;
+}
+
+/* Elements -> Box */
+.box,
+.icon-box {
+  position: relative;
+  display: block;
+  padding: 1.1rem;
+  margin-bottom: 1rem;
+}

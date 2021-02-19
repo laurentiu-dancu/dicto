@@ -8,6 +8,6 @@ third_party_settings:
   votingapi_reaction:
     reaction: true
 id: score_up
-label: Upscore
+label: 👍
 value_type: points
 description: ''

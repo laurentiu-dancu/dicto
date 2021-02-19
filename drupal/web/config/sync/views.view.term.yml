@@ -54,12 +54,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: ''
+          row_class: ordered-row
           default_row_class: true
           uses_fields: false
           type: ol
           wrapper_class: item-list
-          class: ''
+          class: ordered-list
       row:
         type: 'entity:node'
         options:

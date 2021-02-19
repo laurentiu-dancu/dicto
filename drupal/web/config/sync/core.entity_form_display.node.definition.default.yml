@@ -50,19 +50,12 @@ content:
     type: string_textarea
     region: content
   field_temp_vote_down:
-    weight: 27
+    type: number
+    weight: 4
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
-  field_temp_vote_up:
-    weight: 26
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
   title:
     type: string_textfield
     weight: 0
@@ -74,6 +67,7 @@ content:
 hidden:
   created: true
   field_score: true
+  field_temp_vote_up: true
   langcode: true
   promote: true
   status: true

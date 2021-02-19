@@ -4,6 +4,7 @@ module:
   breakpoint: 0
   dblog: 0
   devel: 0
+  devel_kint_extras: 0
   dicto_migrate: 0
   dicto_views: 0
   dynamic_page_cache: 0
@@ -30,6 +31,8 @@ module:
   taxonomy: 0
   text: 0
   toolbar: 0
+  twig_extensions: 0
+  twig_xdebug: 0
   user: 0
   views_ui: 0
   votingapi: 0
@@ -38,7 +41,9 @@ module:
   minimal: 1000
 theme:
   claro: 0
-  dicto_stark: 0
+  stable: 0
+  stark: 0
+  thex: 0
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
