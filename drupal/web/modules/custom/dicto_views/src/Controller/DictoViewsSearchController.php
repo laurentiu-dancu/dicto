@@ -67,8 +67,8 @@ class DictoViewsSearchController extends ControllerBase {
       $termLen = strlen($node->name);
 
       $description = $node->description;
-      if (strlen($description) + $termLen > 60) {
-        $description = substr($description, 0, 58 - $termLen) . '...';
+      if (strlen($description) + $termLen > 100) {
+        $description = substr($description, 0, 98 - $termLen) . '...';
       }
 
       $results[] = [

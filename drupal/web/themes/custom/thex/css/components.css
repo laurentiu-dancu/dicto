@@ -248,7 +248,7 @@ ol.ordered-list > li:before {
 
 .ordered-row > article {
   border: 1px solid var(--border);
-  padding: 1.6em 1.6em 1.2em;
+  padding: 2em 1.6em 1.2em;
   background-color: white;
   border-radius: 3px;
 }
@@ -371,4 +371,43 @@ input.form-search::placeholder {
 
 .pager__item.is-active a:hover {
   border: 1px solid var(--dark);
+}
+
+.ui-widget-content .ui-state-active {
+  color: var(--light);
+  background: var(--dark);
+  border: 1px solid var(--dark);
+}
+
+.ui-menu .ui-menu-item {
+  display: flex;
+  padding: 3px 0;
+}
+
+.ui-menu .ui-menu-item a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+  width: min(100%, calc(100vw - 38px));
+}
+
+@media (max-width: 768px) {
+  .ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front {
+    width: min(100%, calc(100vw - 38px)) !important;
+  }
+}
+
+article > h2 {
+  line-height: 1.3;
+}
+
+ul.taxonomy-terms {
+  margin: 0.6em 0  0.6em;
+}
+
+li.taxonomy-term {
+  padding: 0;
 }

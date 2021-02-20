@@ -122,7 +122,7 @@
       if ($autocomplete.length) {
         var blacklist = $autocomplete.attr('data-autocomplete-first-character-blacklist');
         $.extend(autocomplete.options, {
-          firstCharacterBlacklist: blacklist || ''
+          firstCharacterBlacklist: blacklist || '',
         });
         $autocomplete.autocomplete(autocomplete.options).each(function () {
           $(this).data('ui-autocomplete')._renderItem = autocomplete.options.renderItem;
