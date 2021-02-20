@@ -7,6 +7,12 @@ package: Core
 core_version_requirement: ^8 || ^9
 libraries:
   - thex/global-styling
+  - thex/autocomplete
+libraries-override:
+  core/drupal.autocomplete:
+    js:
+      misc/autocomplete.js: js/autocomplete.js
+
 regions:
   header_top_left: 'Header Top Left'
   header_top_right: 'Header Top Right'

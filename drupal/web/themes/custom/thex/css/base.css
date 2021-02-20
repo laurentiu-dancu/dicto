@@ -20,7 +20,9 @@
   --theme-color: #4759F3;
   --theme-color-two: #43BAAA;
   --dark:  #265481;
-  --light:  #F3F2EC;
+  --light:  #FDF5DA;
+  --lightest:  #F3F2EC;
+  --white:  #FFFFFF;
   --border: #F3F2EC;
 }
 /* HTML and Body
@@ -42,7 +44,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #111111;
-  background-color: var(--light);
+  background-color: var(--lightest);
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: subpixel-antialiased;

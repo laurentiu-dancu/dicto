@@ -1,0 +1,7 @@
+dicto_views.autocomplete.definitions:
+  path: 'term-autocomplete'
+  defaults:
+    _controller: '\Drupal\dicto_views\Controller\DictoViewsSearchController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'

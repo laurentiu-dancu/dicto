@@ -5,6 +5,7 @@
  * Provides enhancements for implementing and managing migrations.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -80,7 +81,7 @@ function dicto_views_preprocess_node(&$variables) {
  * Implements hook_entity_presave().
  */
 function dicto_views_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->bundle() !== 'definition' || !isset($entity->field_slug)) {
+  if (!isset($entity->field_slug)) {
     return;
   }
 

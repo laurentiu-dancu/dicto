@@ -38,6 +38,7 @@
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_tools": "^5.0",
         "drupal/pathauto": "^1.8",
+        "drupal/search_api": "^1.19",
         "drupal/twig_extensions": "^2.0",
         "drupal/twig_xdebug": "^1.2",
         "drupal/votingapi": "^3.0@beta",
