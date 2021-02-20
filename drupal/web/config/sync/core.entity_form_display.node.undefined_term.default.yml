@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.undefined_term.field_related_definitions
+    - field.field.node.undefined_term.field_slug
     - node.type.undefined_term
   module:
     - field_layout
@@ -33,6 +34,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_slug:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

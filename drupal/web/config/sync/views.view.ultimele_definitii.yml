@@ -69,16 +69,11 @@ display:
             offset_label: Offset
           quantity: 5
       style:
-        type: grid
+        type: default
         options:
+          row_class: unformatted-row
+          default_row_class: false
           uses_fields: false
-          columns: 1
-          automatic_width: true
-          alignment: horizontal
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
-          row_class_custom: ''
       row:
         type: 'entity:node'
         options:

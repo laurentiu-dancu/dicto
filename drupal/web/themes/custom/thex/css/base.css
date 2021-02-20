@@ -8,13 +8,13 @@
 /*  --border:  #F58432;*/
 /*}*/
 
-:root {
-  --theme-color: #4759F3;
-  --theme-color-two: #0BB3A8;
-  --dark: #EE635B;
-  --light: #F3F2EC;
-  --border: #FFC55F;
-}
+/*:root {*/
+/*  --theme-color: #4759F3;*/
+/*  --theme-color-two: #0BB3A8;*/
+/*  --dark: #EE635B;*/
+/*  --light: #F3F2EC;*/
+/*  --border: #FFC55F;*/
+/*}*/
 
 :root {
   --theme-color: #4759F3;
@@ -113,6 +113,8 @@ b,
 strong {
   font-weight: bolder;
 }
+i,
+em,
 dfn,
 cite {
   font-style: italic;
@@ -125,9 +127,6 @@ small {
 }
 big {
   font-size: 125%;
-}
-em {
-  font-style: normal;
 }
 a {
   background-color: transparent;

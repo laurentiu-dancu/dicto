@@ -1,0 +1,19 @@
+uuid: f2c2f1f2-5188-4b98-babf-380c02b2327c
+langcode: ro
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slug
+    - node.type.definition
+id: node.definition.field_slug
+field_name: field_slug
+entity_type: node
+bundle: definition
+label: Slug
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

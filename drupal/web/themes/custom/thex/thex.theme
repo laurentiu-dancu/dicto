@@ -33,3 +33,7 @@ function thex_preprocess_breadcrumb(&$variables) {
 function thex_preprocess_html(&$variables) {
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 }
+
+function thex_preprocess_node(&$variables) {
+  $a = 1;
+}

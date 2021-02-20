@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.definition.field_eticheta
     - field.field.node.definition.field_exemplu
     - field.field.node.definition.field_score
+    - field.field.node.definition.field_slug
     - field.field.node.definition.field_temp_vote_down
     - field.field.node.definition.field_temp_vote_up
     - node.type.definition
@@ -35,6 +36,7 @@ hidden:
   field_eticheta: true
   field_exemplu: true
   field_score: true
+  field_slug: true
   field_temp_vote_down: true
   field_temp_vote_up: true
   langcode: true

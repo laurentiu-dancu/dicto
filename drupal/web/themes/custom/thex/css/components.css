@@ -248,17 +248,23 @@ ol.ordered-list > li:before {
 
 .ordered-row > article {
   border: 1px solid var(--border);
-  padding: 1.2em 1.6em;
+  padding: 1.6em 1.6em 1.2em;
   background-color: white;
   border-radius: 3px;
 }
 
-.views-col > article {
+.unformatted-row > article {
   border: 1px solid var(--border);
   padding: 0.8em 1.6em 1.2em;
   background-color: white;
   border-radius: 3px;
   margin-bottom: 0.8em;
+}
+
+.views-element-container .unformatted-row:first-of-type {
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 ol.ordered-list > li.ordered-row:first-child > article {
@@ -299,8 +305,4 @@ ol.ordered-list > li.ordered-row:first-child > article {
   border: 1px solid var(--border);
   background-color: white;
   border-radius: 3px;
-}
-
-#block-thex-page-title {
-  padding: 1em 0;
 }

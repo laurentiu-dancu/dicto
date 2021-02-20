@@ -167,7 +167,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: true
-          content: '<div class="layout layout--onecol"><span>N-avem nicio definiție pentru <em>{{ raw_arguments[''title''] }}</em>. Demonstrează că știi mai multe ca noi și <a href="/node/add/definition?title={{ raw_arguments[''title''] }}">adaugă tu una.</a></span></div>'
+          content: '<div class="layout layout--onecol"><span>N-avem nicio definiție pentru <em>{{ raw_arguments.field_slug_value|replace({''-'': '' ''}) }}</em>. <a href="/node/add/definition?title={{ raw_arguments.field_slug_value|replace({''-'': '' ''}) }}">Adaugă tu una.</a></span></div>'
           plugin_id: text_custom
         view:
           id: view
@@ -202,20 +202,20 @@ display:
           entity_type: node
           plugin_id: standard
       arguments:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_slug_value:
+          id: field_slug_value
+          table: node__field_slug
+          field: field_slug_value
           relationship: none
           group_type: group
           admin_label: ''
           default_action: empty
           exception:
-            value: f7d25e31-a797-4945-8a24-b59a50195936-f7d25e31-a797-4945-8a24-b59a50195936
+            value: 'ghfdmjndfghmfdgh dfghj fdgh fdgh dfgh dfgh fdghd fg'
             title_enable: false
             title: All
           title_enable: true
-          title: '{{ raw_arguments[''title''] }}'
+          title: '{{ raw_arguments.field_slug_value }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -238,12 +238,11 @@ display:
           limit: 0
           case: none
           path_case: none
-          transform_dash: true
+          transform_dash: false
           break_phrase: false
-          entity_type: node
-          entity_field: title
           plugin_id: string
       display_extenders: {  }
+      show_admin_links: false
     cache_metadata:
       max-age: -1
       contexts:

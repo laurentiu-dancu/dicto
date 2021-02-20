@@ -5,6 +5,7 @@
  * Provides enhancements for implementing and managing migrations.
  */
 
+use Drupal\node\Entity\Node;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -40,11 +41,64 @@ function dicto_views_module_implements_alter(&$implementations, $hook) {
 function dicto_views_views_pre_render(ViewExecutable $view) {
   if ($view->id() === 'term' && $view->current_display === 'term_page') {
     if (!isset($view->result[0])) {
+      if (isset($view->args[0])) {
+        $view->setTitle(str_replace('-', ' ', $view->args[0]));
+      }
       return;
     }
     $title = $view->result[0]->_entity?->label();
     if ($title) {
       $view->setTitle($title);
+    }
+  }
+
+  if ($view->id() === 'undefined_term') {
+    if (!isset($view->result[0])) {
+      $view->setTitle('mata');
+      return;
+    }
+    $title = $view->result[0]->_entity?->label();
+    if ($title) {
+      $view->setTitle($title);
+    }
+  }
+}
+
+/**
+ * A theme preprocess function to automatically allow view-based node
+ * templates if called from a view.
+ *
+ * The 'modules/node.views.inc' file is a better place for this, but
+ * we haven't got a chance to load that file before Drupal builds the
+ * node portion of the theme registry.
+ */
+function dicto_views_preprocess_node(&$variables) {
+  $a = 1;
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function dicto_views_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() !== 'definition' || !isset($entity->field_slug)) {
+    return;
+  }
+
+  $slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~"]);
+  $entity->field_slug->value = $slugify->slugify($entity->label());
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function dicto_views_update_9101(&$sandbox) {
+  $slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~"]);
+  $nodeIdList = \Drupal::entityQuery('node')->execute();
+  $nodes = Node::loadMultiple($nodeIdList);
+  foreach ($nodes as $node) {
+    if (isset($node->field_slug)) {
+      $node->field_slug->value = $slugify->slugify($node->label());
+      $node->save();
     }
   }
 }

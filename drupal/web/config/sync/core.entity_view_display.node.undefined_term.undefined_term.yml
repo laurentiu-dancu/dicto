@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.undefined_term
     - field.field.node.undefined_term.field_related_definitions
+    - field.field.node.undefined_term.field_slug
     - node.type.undefined_term
   module:
     - field_layout
@@ -30,5 +31,6 @@ content:
     type: entity_reference_entity_view
     region: content
 hidden:
+  field_slug: true
   langcode: true
   links: true

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.definition.field_eticheta
     - field.field.node.definition.field_exemplu
     - field.field.node.definition.field_score
+    - field.field.node.definition.field_slug
     - field.field.node.definition.field_temp_vote_down
     - field.field.node.definition.field_temp_vote_up
     - node.type.definition
@@ -34,8 +35,8 @@ content:
   field_eticheta:
     weight: 3
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
+      match_operator: STARTS_WITH
+      match_limit: 6
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -49,13 +50,6 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_temp_vote_down:
-    type: number
-    weight: 4
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -67,6 +61,8 @@ content:
 hidden:
   created: true
   field_score: true
+  field_slug: true
+  field_temp_vote_down: true
   field_temp_vote_up: true
   langcode: true
   promote: true

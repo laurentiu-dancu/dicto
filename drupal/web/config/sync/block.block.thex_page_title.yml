@@ -2,8 +2,6 @@ uuid: 321507ba-8602-4128-b8c2-e6caabd0381b
 langcode: en
 status: true
 dependencies:
-  module:
-    - system
   theme:
     - thex
 _core:
@@ -19,8 +17,4 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '/termen/*'
-    negate: true
+visibility: {  }
