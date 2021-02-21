@@ -2,8 +2,8 @@
 # from a_definition
 # group by def, term, example order by id
 
-insert into unique_definition (original_id, term, example, def, author_id, score_up, score_down, createdAt)
-select any_value(id), term,  example, def, any_value(author_id), max(score_up) as score_up, max(score_down) as score_down, any_value(createdAt)
+insert into unique_definition (original_id, term, slug, example, def, author_id, score_up, score_down, createdAt)
+select any_value(id), term, any_value(slug), example, def, any_value(author_id), max(score_up) as score_up, max(score_down) as score_down, any_value(createdAt)
 from a_definition
 group by def, term, example order by score_up
 
@@ -54,5 +54,3 @@ select urt.id, urt.term, any_value(ad.def) from unique_related_term urt
 inner join a_definition ad on ad.term = urt.term
 where urt.def = '' and urt.term != ''
 group by urt.id, urt.term;
-
-update node__field_exemplu set field_exemplu_value = replace(field_exemplu_value, ' 2.', '\r\n2.')

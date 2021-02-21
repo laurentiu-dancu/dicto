@@ -6,7 +6,7 @@ require_once 'Repository.php';
 use Symfony\Component\DomCrawler\Crawler;
 
 $repository = new Repository();
-$slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~'"]);
+$slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`\';?:@&=+$,]+~"]);
 
 // Construct the iterator
 $it = new RecursiveDirectoryIterator('/var/www/html/sample');
@@ -82,13 +82,13 @@ function processDefined(Crawler $node): array {
           $tagArray2 = explode('.', $tagItem);
           foreach ($tagArray2 as $tagItemSecond) {
             if ($tagItemSecond !== '') {
-              $values['tags'][] = trim($tagItemSecond);
               $tagArray3 = explode(' ', $tagItem);
               foreach ($tagArray3 as $tagItemTheThird) {
                 if (strlen($tagItemTheThird) > 2) {
                   $values['tags'][] = trim($tagItemTheThird);
                 }
               }
+              $values['tags'][] = trim($tagItemSecond);
             }
           }
         }
@@ -109,7 +109,7 @@ function processDefined(Crawler $node): array {
 
   $filterResults = [];
   foreach ($results as $result) {
-    if ($result['definition'] === '') {
+    if ($result['definition'] !== '') {
       $filterResults[] = $result;
     }
   }

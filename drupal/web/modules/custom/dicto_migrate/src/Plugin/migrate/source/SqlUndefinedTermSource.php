@@ -80,6 +80,7 @@ class SqlUndefinedTermSource extends SqlBase implements MigrateSourceInterface {
         'title' => $item['term'],
         'field_definitie' => $item['def'],
         'field_exemplu' => '',
+        'created' => random_int(1203590099, 1329820499)
       ]);
       $nodes[] = $node->save();
     }

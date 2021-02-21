@@ -73,6 +73,7 @@ create table unique_definition
         primary key auto_increment,
     original_id         INT(10) not null,
     term       VARCHAR(512),
+    slug       VARCHAR(512),
     example    VARCHAR(2048),
     def        VARCHAR(2048),
     author_id  INT(10)
@@ -83,8 +84,8 @@ create table unique_definition
 );
 
 create table unique_related_term(
-    id int primary key auto_increment not null,
-    term varchar(255),
-    def varbinary(2048),
-    undefined_term_id int not null
+                                    id int primary key auto_increment not null,
+                                    term varchar(255),
+                                    def varbinary(2048),
+                                    undefined_term_id int not null
 );

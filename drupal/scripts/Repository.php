@@ -8,7 +8,7 @@ class Repository {
 
   const PASSWORD = 'root';
 
-  const DATABASE = 'drupal';
+  const DATABASE = 'drupal2';
 
   protected PDO $connection;
 
@@ -22,11 +22,11 @@ class Repository {
     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 
-  public function createTag(string $tagName): ?int {
+  public function createTag(string $tagName, string $slug): ?int {
     try {
-      $stmt = $this->connection->prepare('insert into a_tag set name = ?');
+      $stmt = $this->connection->prepare('insert into a_tag set name = ?, slug = ?');
       $this->connection->beginTransaction();
-      $stmt->execute([$tagName]);
+      $stmt->execute([$tagName, $slug]);
       $id = (int)$this->connection->lastInsertId();
       $this->connection->commit();
       return $id;
@@ -109,9 +109,9 @@ class Repository {
     foreach ($definition['tags'] as $tag) {
       $slug = $slugify->slugify($tag);
       if (isset($this->tagMap[$slug])) {
-        $tagIdList[] =  $this->tagMap[$tag];
+        $tagIdList[] = $this->tagMap[$slug];
       } else {
-        $tagId = $this->createTag($tag);
+        $tagId = $this->createTag($tag, $slug);
         $tagIdList[] = $tagId;
         $this->tagMap[$slug] = $tagId;
       }

@@ -17,6 +17,7 @@ process:
   title: term
   field_definitie: def
   field_exemplu: example
+  field_slug: slug
   field_temp_vote_down: score_down
   field_temp_vote_up: score_up
   created:
