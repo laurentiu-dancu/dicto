@@ -57,11 +57,13 @@ class Repository {
   }
 
   public function createDefinition(string $term, array $definition, int $authorId): ?int {
+    global $slugify;
     try {
-      $stmt = $this->connection->prepare('insert into a_definition set term = ?, example = ?, def = ?, author_id = ?, score_up = ?, score_down = ?, createdAt = ?');
+      $stmt = $this->connection->prepare('insert into a_definition set term = ?, example = ?, def = ?, author_id = ?, score_up = ?, score_down = ?, createdAt = ?, slug = ?');
       $this->connection->beginTransaction();
+      $slug = $slugify->slugify($term);
       $date = DateTime::createFromFormat('d M Y', $definition['createdAt'])->format('Y-m-d');
-      $stmt->execute([$term, $definition['example'], $definition['definition'], $authorId, $definition['scoreUp'], $definition['scoreDown'], $date]);
+      $stmt->execute([$term, $definition['example'], $definition['definition'], $authorId, $definition['scoreUp'], $definition['scoreDown'], $date, $slug]);
       $id = (int)$this->connection->lastInsertId();
       $this->connection->commit();
       return $id;
@@ -86,14 +88,16 @@ class Repository {
   }
 
   public function addDefinition(string $termName, array $definition): void {
+    global $slugify;
     if (!$definition['author']) {
       $definition['author'] = 'Orfan';
     }
-    if (isset($this->authorMap[$definition['author']])) {
-      $authorId = $this->authorMap[$definition['author']];
+    $authorSlug = $slugify->slugify($definition['author']);
+    if (isset($this->authorMap[$authorSlug])) {
+      $authorId = $this->authorMap[$authorSlug];
     } else {
       $authorId = $this->createAuthor($definition['author']);
-      $this->authorMap[$definition['author']] = $authorId;
+      $this->authorMap[$authorSlug] = $authorId;
     }
 
     $id = $this->createDefinition($termName, $definition, $authorId);
@@ -103,12 +107,13 @@ class Repository {
 
     $tagIdList = [];
     foreach ($definition['tags'] as $tag) {
-      if (isset($this->tagMap[$tag])) {
+      $slug = $slugify->slugify($tag);
+      if (isset($this->tagMap[$slug])) {
         $tagIdList[] =  $this->tagMap[$tag];
       } else {
         $tagId = $this->createTag($tag);
         $tagIdList[] = $tagId;
-        $this->tagMap[$tag] = $tagId;
+        $this->tagMap[$slug] = $tagId;
       }
     }
 

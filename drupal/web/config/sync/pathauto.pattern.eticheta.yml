@@ -1,0 +1,23 @@
+uuid: c7472c62-cdf5-4264-af98-116ce76bc891
+langcode: ro
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: eticheta
+label: Etichetă
+type: 'canonical_entities:taxonomy_term'
+pattern: '/eticheta/[term:name]'
+selection_criteria:
+  bc82e134-7fc9-4694-adef-36e5ced9c55a:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      eticheta: eticheta
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: bc82e134-7fc9-4694-adef-36e5ced9c55a
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,14 @@
+uuid: bb32785b-8902-4677-b029-9da31abd1272
+langcode: ro
+status: true
+dependencies:
+  module:
+    - user
+id: user
+label: User
+type: 'canonical_entities:user'
+pattern: '/autor/[user:account-name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

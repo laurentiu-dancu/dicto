@@ -2,6 +2,7 @@ module:
   big_pipe: 0
   block: 0
   breakpoint: 0
+  ctools: 0
   dblog: 0
   devel: 0
   devel_kint_extras: 0
@@ -24,12 +25,17 @@ module:
   migrate_tools: 0
   node: 0
   page_cache: 0
+  path: 0
   path_alias: 0
+  rest: 0
   search: 0
+  search_api: 0
+  serialization: 0
   statistics: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   twig_extensions: 0
   twig_xdebug: 0
@@ -37,12 +43,12 @@ module:
   views_ui: 0
   votingapi: 0
   votingapi_reaction: 0
+  pathauto: 1
   views: 10
   minimal: 1000
 theme:
   claro: 0
   stable: 0
-  stark: 0
   thex: 0
 profile: minimal
 _core:

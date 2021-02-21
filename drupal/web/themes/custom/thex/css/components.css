@@ -247,21 +247,21 @@ ol.ordered-list > li:before {
 }
 
 .ordered-row > article {
-  border: 1px solid var(--border);
+  border: none;
   padding: 2em 1.6em 1.2em;
   background-color: white;
   border-radius: 3px;
 }
 
 .unformatted-row > article {
-  border: 1px solid var(--border);
+  border: none;
   padding: 0.8em 1.6em 1.2em;
   background-color: white;
   border-radius: 3px;
   margin-bottom: 0.8em;
 }
 
-.views-element-container .unformatted-row:first-of-type {
+.views-element-container .unformatted-row:first-of-type > article {
   border-top: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

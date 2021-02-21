@@ -1,0 +1,20 @@
+uuid: 909c16d3-58b7-48bd-bf02-344e43edb811
+langcode: ro
+status: true
+dependencies:
+  module:
+    - dicto_views
+  theme:
+    - thex
+id: searchblock
+theme: thex
+region: header
+weight: -5
+provider: null
+plugin: dicto_views_search_block
+settings:
+  id: dicto_views_search_block
+  label: 'Search Block'
+  provider: dicto_views
+  label_display: '0'
+visibility: {  }

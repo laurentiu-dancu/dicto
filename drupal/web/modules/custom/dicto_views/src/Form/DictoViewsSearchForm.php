@@ -4,6 +4,7 @@ namespace Drupal\dicto_views\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\dicto_views\Constants;
 
 class DictoViewsSearchForm extends FormBase {
 
@@ -41,7 +42,7 @@ class DictoViewsSearchForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~"]);
+    $slugify = new \Cocur\Slugify\Slugify(['regexp' => Constants::SLUG_REGEX]);
     $slug = $slugify->slugify($form_state->getValue('term'));
     if ($slug) {
       $form_state->setRedirect('view.term.term_page', ['arg_0' => $slug]);

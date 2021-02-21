@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\dicto_views\Constants;
 use Drupal\node\Entity\Node;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -53,14 +54,11 @@ function dicto_views_views_pre_render(ViewExecutable $view) {
     }
   }
 
-  if ($view->id() === 'undefined_term') {
-    if (!isset($view->result[0])) {
-      $view->setTitle('mata');
-      return;
-    }
-    $title = $view->result[0]->_entity?->label();
-    if ($title) {
-      $view->setTitle($title);
+  if ($view->id() === 'user_definitions') {
+    $view->setTitle('$title');
+    $user = \Drupal\user\Entity\User::load($view->args[0]);
+    if ($user) {
+      $view->setTitle($user->label() . ' - Definiții');
     }
   }
 }
@@ -85,7 +83,7 @@ function dicto_views_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
     return;
   }
 
-  $slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~"]);
+  $slugify = new \Cocur\Slugify\Slugify(['regexp' => Constants::SLUG_REGEX]);
   $entity->field_slug->value = $slugify->slugify($entity->label());
 }
 
@@ -93,7 +91,7 @@ function dicto_views_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
  * Implements hook_update_N().
  */
 function dicto_views_update_9101(&$sandbox) {
-  $slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~"]);
+  $slugify = new \Cocur\Slugify\Slugify(['regexp' => Constants::SLUG_REGEX]);
   $nodeIdList = \Drupal::entityQuery('node')->execute();
   $nodes = Node::loadMultiple($nodeIdList);
   foreach ($nodes as $node) {

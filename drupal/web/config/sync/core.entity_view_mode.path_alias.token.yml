@@ -1,0 +1,10 @@
+uuid: cca62784-adb7-4472-aa66-82c156aa4252
+langcode: ro
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.token
+label: Token
+targetEntityType: path_alias
+cache: true

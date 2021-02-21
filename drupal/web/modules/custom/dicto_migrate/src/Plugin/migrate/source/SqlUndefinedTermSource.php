@@ -79,7 +79,7 @@ class SqlUndefinedTermSource extends SqlBase implements MigrateSourceInterface {
         'type' => 'definition',
         'title' => $item['term'],
         'field_definitie' => $item['def'],
-        'field_exemplu' => 'lol',
+        'field_exemplu' => '',
       ]);
       $nodes[] = $node->save();
     }

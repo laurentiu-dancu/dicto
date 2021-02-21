@@ -22,7 +22,8 @@ create table a_tag
 (
     id   INT(10) not null
         primary key auto_increment,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    slug VARCHAR(255)
 );
 
 -- auto-generated definition
@@ -42,6 +43,7 @@ create table a_definition
     id         INT(10) not null
         primary key auto_increment,
     term       VARCHAR(512),
+    slug       VARCHAR(512),
     example    VARCHAR(2048),
     def        VARCHAR(2048),
     author_id  INT(10)

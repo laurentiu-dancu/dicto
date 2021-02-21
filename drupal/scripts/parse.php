@@ -6,6 +6,7 @@ require_once 'Repository.php';
 use Symfony\Component\DomCrawler\Crawler;
 
 $repository = new Repository();
+$slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`;?:@&=+$,]+~'"]);
 
 // Construct the iterator
 $it = new RecursiveDirectoryIterator('/var/www/html/sample');
@@ -66,8 +67,9 @@ function processUndefined(Crawler $node): array {
 function processDefined(Crawler $node): array {
   $results = $node->each(function (Crawler $definition, $i) {
     $values['definition'] = trim($definition->filterXPath('//li/div[1]/text()')->extract(['_text'])[1] ?? '');
-    $values['example'] = $definition->filter('.detailExample')->text('');
-    $values['example'] = str_replace('Exemple: ', '', $values['example']);
+    $values['example'] = $definition->filter('.detailExample')->text('', false);
+    $values['example'] = trim(str_replace("\r\n", '', $values['example']));
+    $values['example'] = trim(str_replace('Exemple:', '', $values['example']));
     $tags = $definition->filter('.detailTagsContainer a')->each(function (Crawler $tag, $i) {
       return $tag->text('');
     });
@@ -98,13 +100,19 @@ function processDefined(Crawler $node): array {
     $values['scoreUp'] = $definition->filter('.detailThumbs > span')->eq(0)->text('');
     $values['scoreDown'] = $definition->filter('.detailThumbs > span')->eq(1)->text('');
 
+    if (str_contains($values['definition'], 'http') || str_contains($values['example'], 'http')) {
+      $values['definition'] = '';
+    }
+
     return $values;
   });
 
-  $last = end($results);
-  if ($last['definition'] === '') {
-    array_pop($results);
+  $filterResults = [];
+  foreach ($results as $result) {
+    if ($result['definition'] === '') {
+      $filterResults[] = $result;
+    }
   }
 
-  return $results;
+  return $filterResults;
 }

@@ -12,6 +12,8 @@ permissions:
   - 'access content'
   - 'access user profiles'
   - 'cancel account'
+  - 'create definition content'
   - 'create reaction on node:definition:field_score'
   - 'modify reaction on node:definition:field_score'
+  - 'view own unpublished content'
   - 'view reactions on node:definition:field_score'
