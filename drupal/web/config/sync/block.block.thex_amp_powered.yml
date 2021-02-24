@@ -1,0 +1,22 @@
+uuid: fff2ee1a-4d21-4a83-8809-12a48540f559
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - thex_amp
+_core:
+  default_config_hash: JY-3me4et0DBXrxeputUTEBQH1vG_7IwBrvHB29D_F8
+id: thex_amp_powered
+theme: thex_amp
+region: sidebar_second
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

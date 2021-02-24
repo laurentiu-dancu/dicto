@@ -83,7 +83,7 @@ class DictoViewsSearchController extends ControllerBase {
       $cache->addCacheTags(['node_list']);
     }
     $cache->setCacheMaxAge(3600);
-    $response = new CacheableJsonResponse(mb_convert_encoding($results, 'UTF-8', 'UTF-8'));
+    $response = new CacheableJsonResponse(mb_convert_encoding(['items' => $results], 'UTF-8', 'UTF-8'));
     $response->addCacheableDependency($cache);
 
     return $response;

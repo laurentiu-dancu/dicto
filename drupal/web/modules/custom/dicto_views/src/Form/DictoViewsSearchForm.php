@@ -23,7 +23,7 @@ class DictoViewsSearchForm extends FormBase {
       '#type' => 'search',
       '#title' => $this->t('Search'),
       '#title_display' => 'invisible',
-      '#autocomplete_route_name' => 'dicto_views.autocomplete.definitions',
+//      '#autocomplete_route_name' => 'dicto_views.autocomplete.definitions',
       '#attributes' => [
         'title' => $this->t('Caută un cuvânt...'),
         'placeholder' => 'Caută un cuvânt...',

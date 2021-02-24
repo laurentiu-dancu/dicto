@@ -30,6 +30,7 @@ function dicto_views_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
 function dicto_views_module_implements_alter(&$implementations, $hook) {
   switch ($hook) {
     case 'views_query_alter':
+    case 'entity_type_build':
       $group = $implementations['dicto_views'];
       unset($implementations['dicto_views']);
       $implementations['dicto_views'] = $group;
@@ -100,4 +101,31 @@ function dicto_views_update_9101(&$sandbox) {
       $node->save();
     }
   }
+}
+
+/**
+ * Implements hook_ajax_render_alter().
+ */
+function dicto_views_ajax_render_alter(array &$data) {
+  if (\Drupal::request()->query->has('__amp_source_origin')) {
+    $values = $data;
+    $data = [];
+    $string = $values[3]['data']->__toString();
+    if (preg_match('/reaction-count\">(.*?)<\/div>/', $string, $match) == 1) {
+      $up = $match[1];
+    }
+    if (preg_match("/\['down'\]\" class=\"votingapi-reaction-count\">(.*?)<\/div>/", $string, $match) == 1) {
+      $down = $match[1];
+    }
+    $data['new'] = $values[2]['new'];
+    $data['up'] = $up;
+    $data['down'] = $down;
+  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function dicto_views_entity_type_build(array &$entity_types) {
+  $entity_types['vote']->setFormClass('votingapi_reaction', 'Drupal\dicto_views\Form\DictoVotingApiReactionForm');
 }

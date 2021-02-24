@@ -1,0 +1,22 @@
+uuid: 84e3776e-a65d-4d72-b8da-f4a16246856a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - thex_amp
+_core:
+  default_config_hash: 1_htSHUpXas0KNjjireEQ9rPZfl8AE3XquS0qLuEsTo
+id: thex_amp_messages
+theme: thex_amp
+region: header
+weight: -4
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

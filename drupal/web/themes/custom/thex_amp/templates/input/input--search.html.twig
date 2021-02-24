@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+<amp-autocomplete on="select:dicto-views-search-form.submit" filter="none" filter-value="value" min-characters="1" src="/term-autocomplete" query="q">
+  <input{{ attributes }} />{{ children }}
+{% verbatim %}<template type="amp-mustache" id="amp-template-search">
+    <div class="result-item" data-value="{{value}}">
+      {{{label}}}
+    </div>
+  </template>{% endverbatim %}
+</amp-autocomplete>

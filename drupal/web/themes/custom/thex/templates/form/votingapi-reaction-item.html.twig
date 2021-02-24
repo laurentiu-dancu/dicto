@@ -1,6 +1,10 @@
 <div class="votingapi-reaction-item-wrapper">
   <div class="votingapi-reaction-item">
     <span class="votingapi-reaction-label">{{ label }}</span>
-    <div class="votingapi-reaction-count">{{ count }}</div>
+    {% if label == "👍" %}
+      <div [text]="{{ icon }}['up']" class="votingapi-reaction-count">{{ count }}</div>
+    {% else %}
+      <div [text]="{{ icon }}['down']" class="votingapi-reaction-count">{{ count }}</div>
+    {% endif %}
   </div>
 </div>

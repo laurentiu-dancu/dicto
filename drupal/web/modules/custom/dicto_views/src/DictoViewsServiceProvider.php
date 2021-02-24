@@ -16,5 +16,13 @@ class DictoViewsServiceProvider extends ServiceProviderBase {
       $definition = $container->getDefinition('votingapi_reaction.manager');
       $definition->setClass('Drupal\dicto_views\ReactionManager');
     }
+    if ($container->hasDefinition('amp_event_subscriber')) {
+      $definition = $container->getDefinition('amp_event_subscriber');
+      $definition->setTags([]);
+    }
+    if ($container->hasDefinition('form_builder')) {
+      $definition = $container->getDefinition('form_builder');
+      $definition->setClass('Drupal\dicto_views\Form\DictoFormBuilder');
+    }
   }
 }

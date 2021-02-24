@@ -29,14 +29,14 @@ class ReactionManager extends VotingApiReactionManager {
    * @return array
    *   Rendered reactions.
    */
-  public function getReactions(array $settings, array $results) {
+  public function getReactions(array $settings, array $results, string $formId) {
     // Get only enabled reactions.
     $entities = array_filter($this->allReactions(), function (VoteType $entity) use ($settings) {
       return in_array($entity->id(), array_filter($settings['reactions']));
     });
 
     // Configure the object.
-    $reactions = array_map(function (VoteType $entity) use ($settings, $results) {
+    $reactions = array_map(function (VoteType $entity) use ($formId, $settings, $results) {
       $reaction = [
         '#theme' => 'votingapi_reaction_item',
         '#reaction' => $entity->id(),
@@ -51,6 +51,7 @@ class ReactionManager extends VotingApiReactionManager {
           ? $results[$entity->id()]['vote_sum']
           : 0;
       }
+      $reaction['#icon'] = str_replace('-', '_',$formId);
 
       return $reaction;
     }, $entities);

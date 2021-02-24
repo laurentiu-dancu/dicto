@@ -23,6 +23,13 @@ ADD ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 RUN a2dissite 000-default.conf
 RUN a2enmod rewrite
 
+# Prepare fake SSL certificate
+RUN apt-get update
+RUN apt-get install -y ssl-cert
+
+# Setup Apache2 mod_ssl
+RUN a2enmod ssl
+
 # Copy and enable the VH
 COPY ./drupal.conf /etc/apache2/sites-available/
 RUN a2ensite drupal.conf

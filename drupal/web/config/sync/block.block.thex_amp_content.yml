@@ -1,0 +1,22 @@
+uuid: 4bd77044-87e9-4c09-82eb-690c7502f8df
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - thex_amp
+_core:
+  default_config_hash: 0UgBAjq27b8xOmZW6czlpTO2T1Zd3nmTg0UrR-Qfjdc
+id: thex_amp_content
+theme: thex_amp
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

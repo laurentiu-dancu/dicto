@@ -1,0 +1,5 @@
+services:
+  dicto_views.response_event_subscriber:
+    class: 'Drupal\dicto_views\EventSubscriber\ResponseEventSubscriber'
+    tags:
+      - { name: event_subscriber }

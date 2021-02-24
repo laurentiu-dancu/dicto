@@ -1,5 +1,9 @@
 module:
-  big_pipe: 0
+  adsense: 0
+  amp: 0
+  amp_adsense: 0
+  amp_rdf: 0
+  amp_toolbar: 0
   block: 0
   breakpoint: 0
   ctools: 0
@@ -14,12 +18,14 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  image: 0
   inline_form_errors: 0
   language: 0
   layout_discovery: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
   migrate: 0
   migrate_plus: 0
   migrate_tools: 0
@@ -27,11 +33,9 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  rest: 0
-  search: 0
-  search_api: 0
+  rdf: 0
+  schema_metatag: 0
   serialization: 0
-  statistics: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -50,6 +54,7 @@ theme:
   claro: 0
   stable: 0
   thex: 0
+  thex_amp: 0
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
