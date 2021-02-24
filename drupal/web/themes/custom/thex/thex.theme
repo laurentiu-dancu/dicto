@@ -8,8 +8,6 @@ function thex_preprocess_page(array &$variables) {
   $variables['site_name'] = $config->get('name');
   $variables['site_slogan'] = $config->get('slogan');
   $variables['base_path'] = base_path();
-  $variables['scrolltotop_on'] = 1;
-  $variables['scrolltotop_icon_style'] = '<img src="/' . drupal_get_path('theme', 'thex') . '/images/icons/totop.svg" />';
 }
 /**
  * Add current page to breadcrumb.
