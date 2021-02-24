@@ -29,7 +29,7 @@ class ReactionManager extends VotingApiReactionManager {
    * @return array
    *   Rendered reactions.
    */
-  public function getReactions(array $settings, array $results, string $formId) {
+  public function getReactionsPoly(array $settings, array $results, string $formId) {
     // Get only enabled reactions.
     $entities = array_filter($this->allReactions(), function (VoteType $entity) use ($settings) {
       return in_array($entity->id(), array_filter($settings['reactions']));

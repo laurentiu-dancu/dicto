@@ -73,7 +73,7 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     // Display reactions.
     $form['type'] = [
       '#type' => 'radios',
-      '#options' => $this->reactionManager->getReactions($settings, $results, $form['#id']),
+      '#options' => $this->reactionManager->getReactionsPoly($settings, $results, $form['#id']),
       '#default_value' => $this->entity->bundle(),
       '#id' => $form['#id'] . '-vote',
       '#ajax' => [
@@ -191,7 +191,7 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     }
 
     // Update reactions.
-    $form['type']['#options'] = $this->reactionManager->getReactions($settings, $results, $form['#id']);
+    $form['type']['#options'] = $this->reactionManager->getReactionsPoly($settings, $results, $form['#id']);
     foreach ($form['reactions']['#value'] as $weight => $id) {
       $form['type'][$id]['#title'] = $form['type']['#options'][$id];
       $form['type'][$id]['#value'] = $reaction;
