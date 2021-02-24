@@ -24,8 +24,8 @@ class DictoViewsServiceProvider extends ServiceProviderBase {
       $definition = $container->getDefinition('form_builder');
       $definition->setClass('Drupal\dicto_views\Form\DictoFormBuilder');
     }
-    if ($container->hasDefinition('http_middleware.cors:')) {
-      $definition = $container->getDefinition('http_middleware.cors:');
+    if ($container->hasDefinition('http_middleware.cors')) {
+      $definition = $container->getDefinition('http_middleware.cors');
       $definition->setClass('Drupal\dicto_views\Cors\Cors');
     }
   }
