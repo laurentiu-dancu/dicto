@@ -191,7 +191,12 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            schema_web_page_type: CollectionPage
+            schema_web_page_id: ultimele-definitii
+            schema_web_page_description: 'Ultimele definiții adăugate pe site'
       path: ultimele-definitii
     cache_metadata:
       max-age: -1

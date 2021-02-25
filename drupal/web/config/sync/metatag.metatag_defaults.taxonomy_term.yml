@@ -7,6 +7,6 @@ _core:
 id: taxonomy_term
 label: 'Taxonomy term'
 tags:
+  description: 'Definiții etichetate cu [term:name]'
   canonical_url: '[term:url]'
-  description: '[term:description]'
-  title: '[term:name] | [site:name]'
+  title: '#[term:name] | [site:name]'
