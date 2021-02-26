@@ -1,6 +1,6 @@
 <?php
 
-class Repository {
+class RepositoryB {
 
   const SERVER_NAME = 'mysql';
 
@@ -59,10 +59,10 @@ class Repository {
   public function createDefinition(string $term, array $definition, int $authorId): ?int {
     global $slugify;
     try {
-      $stmt = $this->connection->prepare('insert into a_definition set term = ?, example = ?, def = ?, author_id = ?, score_up = ?, score_down = ?, createdAt = ?, slug = ?');
+      $stmt = $this->connection->prepare('insert into b_definition set term = ?, example = ?, def = ?, author_id = ?, score_up = ?, score_down = ?, createdAt = ?, slug = ?');
       $this->connection->beginTransaction();
       $slug = $slugify->slugify($term);
-      $date = DateTime::createFromFormat('d M Y', $definition['createdAt'])->format('Y-m-d');
+      $date = DateTime::createFromFormat('d M Y H:i', $definition['createdAt'])->format('Y-m-d');
       $stmt->execute([$term, $definition['example'], $definition['definition'], $authorId, $definition['scoreUp'], $definition['scoreDown'], $date, $slug]);
       $id = (int)$this->connection->lastInsertId();
       $this->connection->commit();
@@ -76,7 +76,7 @@ class Repository {
 
   public function linkTagsToDefinition(int $definitionId, array $tagList): void {
     try {
-      $stmt = $this->connection->prepare('insert into a_tag_definition set tag_id = ?, definition_id = ?');
+      $stmt = $this->connection->prepare('insert into b_tag_definition set tag_id = ?, definition_id = ?');
       $this->connection->beginTransaction();
       foreach ($tagList as $tagId) {
         $stmt->execute([$tagId, $definitionId]);

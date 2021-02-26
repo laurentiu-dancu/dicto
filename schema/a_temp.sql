@@ -23,7 +23,7 @@ create table a_tag
     id   INT(10) not null
         primary key auto_increment,
     name VARCHAR(255),
-    slug VARCHAR(255)
+    slug VARCHAR(255) unique
 );
 
 -- auto-generated definition
@@ -88,4 +88,32 @@ create table unique_related_term(
                                     term varchar(255),
                                     def varbinary(2048),
                                     undefined_term_id int not null
+);
+
+-- auto-generated definition
+create table b_definition
+(
+    id         INT(10) not null
+        primary key auto_increment,
+    term       VARCHAR(512),
+    slug       VARCHAR(512),
+    example    VARCHAR(2048),
+    def        VARCHAR(2048),
+    author_id  INT(10)
+        references a_author,
+    score_up   INT(10),
+    score_down INT(10),
+    createdAt  DATE
+);
+
+
+-- auto-generated definition
+create table b_tag_definition
+(
+    id      INT(10) not null
+        primary key auto_increment,
+    tag_id  INT(10) not null
+        references a_tag,
+    definition_id INT(10) not null
+        references b_definition
 );

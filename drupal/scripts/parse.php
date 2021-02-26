@@ -6,7 +6,7 @@ require_once 'Repository.php';
 use Symfony\Component\DomCrawler\Crawler;
 
 $repository = new Repository();
-$slugify = new \Cocur\Slugify\Slugify(['regexp' => "~[ <>#%{}|\\\/\^`\';?:@&=+$,]+~"]);
+$slugify = new \Cocur\Slugify\Slugify();
 
 // Construct the iterator
 $it = new RecursiveDirectoryIterator('/var/www/html/sample');
@@ -41,12 +41,12 @@ function parseFile(string $filename, $repository) {
   if ($termName === '') {
     $termName = $crawler->filter('#MiddleCol > a')->first()->text('');
     $relatedTerms = processUndefined($crawler->filter('#MiddleCol li'));
-    $repository->addUndefined($termName, $relatedTerms);
+//    $repository->addUndefined($termName, $relatedTerms);
     return;
   }
   $definitions = processDefined($term->filter('li.dictando'));
   foreach ($definitions as $definition) {
-    $repository->addDefinition($termName, $definition);
+//    $repository->addDefinition($termName, $definition);
   }
 }
 
@@ -67,9 +67,16 @@ function processUndefined(Crawler $node): array {
 function processDefined(Crawler $node): array {
   $results = $node->each(function (Crawler $definition, $i) {
     $values['definition'] = trim($definition->filterXPath('//li/div[1]/text()')->extract(['_text'])[1] ?? '');
-    $values['example'] = $definition->filter('.detailExample')->text('', false);
-    $values['example'] = trim(str_replace("\r\n", '', $values['example']));
-    $values['example'] = trim(str_replace('Exemple:', '', $values['example']));
+    $example = $definition->filter('.detailExample')->text('', false);
+    $example = explode("Exemple:\r\n", $example);
+    $example = $example[1] ?? '';
+    $values['example'] = trim($example);
+    if ($values['example']) {
+      $example = $values['example'];
+      if (str_contains("\r\n", $example)) {
+        $a = 1;
+      }
+    }
     $tags = $definition->filter('.detailTagsContainer a')->each(function (Crawler $tag, $i) {
       return $tag->text('');
     });

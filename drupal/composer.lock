@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "202258d340514e6e3bc167387ea90845",
+    "content-hash": "70c2a0553749573f9046bedb6e330eea",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -2203,65 +2203,6 @@
             }
         },
         {
-            "name": "drupal/amp_cts",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/amp_cts.git",
-                "reference": "8.x-3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/amp_cts-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "92da811ad767c0cbc56040794c87d3a01e920782"
-            },
-            "require": {
-                "drupal/amp": "^3.0",
-                "drupal/core": "^8 || ^9",
-                "drupaljedi/css-tree-shaking": "^1.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-3.2",
-                    "datestamp": "1596861185",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "kala4ek",
-                    "homepage": "https://www.drupal.org/user/1945174"
-                },
-                {
-                    "name": "mrsad",
-                    "homepage": "https://www.drupal.org/user/2661341"
-                },
-                {
-                    "name": "ozhegov.alexander",
-                    "homepage": "https://www.drupal.org/user/3564946"
-                }
-            ],
-            "description": "CSS Tree Shaking for Google AMP",
-            "homepage": "http://drupal.org/project/amp_cts",
-            "keywords": [
-                "AMP",
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/amp_cts",
-                "issues": "http://drupal.org/project/issues/amp_cts"
-            }
-        },
-        {
             "name": "drupal/checklistapi",
             "version": "2.0.0",
             "source": {
@@ -3779,53 +3720,6 @@
                 "source": "https://cgit.drupalcode.org/votingapi_reaction",
                 "issues": "https://www.drupal.org/project/issues/votingapi_reaction"
             }
-        },
-        {
-            "name": "drupaljedi/css-tree-shaking",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Drupal-Jedi/css-tree-shaking.git",
-                "reference": "11cd2243619bc2a4fc8714f4c31b95c01ce75cd9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Drupal-Jedi/css-tree-shaking/zipball/11cd2243619bc2a4fc8714f4c31b95c01ce75cd9",
-                "reference": "11cd2243619bc2a4fc8714f4c31b95c01ce75cd9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "php": ">=7.0",
-                "sabberworm/php-css-parser": "^8.2",
-                "symfony/css-selector": "^3",
-                "symfony/dom-crawler": "~3.0|~4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DrupalJedi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Kiselev",
-                    "email": "kiselev.d@i20.biz"
-                }
-            ],
-            "description": "Helps you to eliminate the portions of CSS you aren't using. Usually should be used to generate AMP pages, where is the fixed limit for maximum styles size.",
-            "support": {
-                "issues": "https://github.com/Drupal-Jedi/css-tree-shaking/issues",
-                "source": "https://github.com/Drupal-Jedi/css-tree-shaking/tree/master"
-            },
-            "time": "2019-07-25T04:23:29+00:00"
         },
         {
             "name": "drush/drush",
@@ -6101,20 +5995,20 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.4.47",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "da3d9da2ce0026771f5fe64cb332158f1bd2bc33"
+                "reference": "f65f217b3314504a1ec99c2d6ef69016bb13490f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/da3d9da2ce0026771f5fe64cb332158f1bd2bc33",
-                "reference": "da3d9da2ce0026771f5fe64cb332158f1bd2bc33",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/f65f217b3314504a1ec99c2d6ef69016bb13490f",
+                "reference": "f65f217b3314504a1ec99c2d6ef69016bb13490f",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9|>=7.0.8"
+                "php": ">=7.2.5"
             },
             "type": "library",
             "autoload": {
@@ -6143,10 +6037,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony CssSelector Component",
+            "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v3.4.47"
+                "source": "https://github.com/symfony/css-selector/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -6162,7 +6056,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T10:57:07+00:00"
+            "time": "2021-01-27T10:01:46+00:00"
         },
         {
             "name": "symfony/debug",
@@ -6320,25 +6214,30 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.4.47",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "ef97bcfbae5b384b4ca6c8d57b617722f15241a6"
+                "reference": "5d89ceb53ec65e1973a555072fac8ed5ecad3384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/ef97bcfbae5b384b4ca6c8d57b617722f15241a6",
-                "reference": "ef97bcfbae5b384b4ca6c8d57b617722f15241a6",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/5d89ceb53ec65e1973a555072fac8ed5ecad3384",
+                "reference": "5d89ceb53ec65e1973a555072fac8ed5ecad3384",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9|>=7.0.8",
+                "php": ">=7.2.5",
                 "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.0"
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "conflict": {
+                "masterminds/html5": "<2.6"
             },
             "require-dev": {
-                "symfony/css-selector": "~2.8|~3.0|~4.0"
+                "masterminds/html5": "^2.6",
+                "symfony/css-selector": "^4.4|^5.0"
             },
             "suggest": {
                 "symfony/css-selector": ""
@@ -6366,10 +6265,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony DomCrawler Component",
+            "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v3.4.47"
+                "source": "https://github.com/symfony/dom-crawler/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -6385,7 +6284,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T10:57:07+00:00"
+            "time": "2021-01-27T10:01:46+00:00"
         },
         {
             "name": "symfony/error-handler",

@@ -4,6 +4,7 @@ namespace Drupal\dicto_views\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\dicto_views\Constants;
 
 class DictoViewsSearchForm extends FormBase {
@@ -19,7 +20,7 @@ class DictoViewsSearchForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['term'] = [
+    $form['termen'] = [
       '#type' => 'search',
       '#title' => $this->t('Search'),
       '#title_display' => 'invisible',
@@ -29,6 +30,8 @@ class DictoViewsSearchForm extends FormBase {
         'placeholder' => 'Caută un cuvânt...',
       ],
     ];
+    $form['#action'] = Url::fromRoute('view.term.term_page_query')->toString();
+    $form['#method'] = 'get';
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',

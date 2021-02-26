@@ -32,7 +32,6 @@
         "composer/installers": "^1.9",
         "drupal/adsense": "^1.2",
         "drupal/amp": "^3.5",
-        "drupal/amp_cts": "^3.2",
         "drupal/coffee": "^1.0",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
@@ -51,8 +50,8 @@
         "drupal/votingapi_reaction": "^1.1",
         "drush/drush": "^10.3",
         "kint-php/kint": "^3.3",
-        "symfony/css-selector": "^3",
-        "symfony/dom-crawler": "^3",
+        "symfony/css-selector": "^5",
+        "symfony/dom-crawler": "^5",
         "twig/extensions": "^1.5",
         "twig/intl-extra": "^3.3"
     },
