@@ -40,8 +40,10 @@ function thex_amp_preprocess_html(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function thex_amp_preprocess_form(&$variables) {
-//  $variables['attributes']['action-xhr'] = $variables['attributes']['action'];
-//  unset($variables['attributes']['action']);
+  if ($variables['attributes']['method'] !== 'get' ?? false) {
+    $variables['attributes']['action-xhr'] = $variables['attributes']['action'];
+    unset($variables['attributes']['action']);
+  }
 }
 
 /**
@@ -68,26 +70,7 @@ function thex_amp_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     ];
     $jsonString = json_encode($json);
     $form['#amp'] = "<amp-state id='$formName'><script type='application/json'>$jsonString</script></amp-state>";
-    $onSuccessJson = [
-      $formName => [
-        'new' => 'event.response.new',
-        'up' => 'event.response.up',
-        'down' => 'event.response.down',
-      ],
-    ];
-    $onSuccessJson = json_encode($onSuccessJson);
-    $onSuccessJson = "{
-      $formName: {
-        'new': event.response.new,
-        'up': event.response.up,
-        'down': event.response.down
-      }
-    }";
-//    $form['#attributes']['on'] = "submit-success: AMP.setState({
-//      '$formName{$formName}_new': event.response.new,
-//      '{$formName}_up': event.response.up,
-//      '{$formName}_down': event.response.down
-//    })";
+    $onSuccessJson = "{ $formName:{'new': event.response.new,'up': event.response.up,'down': event.response.down}}";
     $form['#attributes']['on'] = "submit-success: AMP.setState($onSuccessJson)";
     $form['type']['score_up']['#attributes']['on'] = "change:{$form['#id']}.submit";
     $form['type']['score_down']['#attributes']['on'] = "change:{$form['#id']}.submit";

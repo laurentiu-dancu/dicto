@@ -1,8 +1,10 @@
 FROM php:8.0.2-apache
 
 RUN apt-get update && apt-get install -y curl git zip unzip openssh-client nano vim libssh-dev libpng-dev \
-zip unzip zlib1g-dev libpq-dev libmcrypt-dev libzip-dev libicu-dev libxml2-dev --no-install-recommends
+zip unzip zlib1g-dev libpq-dev libmcrypt-dev libzip-dev libicu-dev libxml2-dev \
+memcached libmemcached-tools libz-dev libmemcached-dev --no-install-recommends
 RUN docker-php-ext-configure intl
+RUN pecl install memcached && docker-php-ext-enable memcached
 RUN docker-php-ext-install gd pdo pdo_mysql zip gettext intl bcmath dom
 ADD ./php.ini /usr/local/etc/php/conf.d/php.ini
 

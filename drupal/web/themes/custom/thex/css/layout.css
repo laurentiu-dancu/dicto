@@ -5,7 +5,7 @@
  .main-wrapper {
   position: relative;
   display: block;
-   min-height: calc(100vh - 190px);
+   min-height: calc(100vh - 188px);
 }
 .header {
   background-color: var(--dark);

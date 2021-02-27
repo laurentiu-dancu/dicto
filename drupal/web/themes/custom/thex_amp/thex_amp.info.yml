@@ -22,6 +22,9 @@ libraries-override:
         /core/themes/stable/css/system/components/system-status-counter.css: false
         /core/themes/stable/css/system/components/system-status-report-counters.css: false
         /core/themes/stable/css/system/components/system-status-report-general-info.css: false
+        /core/themes/stable/css/system/components/autocomplete-loading.module.css: false
+        /core/themes/stable9/css/system/components/autocomplete-loading.module.css: false
+        /core/themes/stable/css/system/components/align.module.css: false
   core/backbone: false
   core/classList: false
   core/ckeditor: false
