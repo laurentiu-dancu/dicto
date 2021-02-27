@@ -43,6 +43,8 @@ function thex_amp_preprocess_form(&$variables) {
   if ($variables['attributes']['method'] !== 'get' ?? false) {
     $variables['attributes']['action-xhr'] = $variables['attributes']['action'];
     unset($variables['attributes']['action']);
+  } else {
+    $variables['attributes']['target'] = '_top';
   }
 }
 
@@ -80,11 +82,4 @@ function thex_amp_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['_drupal_ajax']['#type'] = 'hidden';
     $form['_drupal_ajax']['#value'] = '1';
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function thex_amp_preprocess_input__radio(&$variables) {
-  $variables = $variables;
 }
