@@ -63,4 +63,46 @@ class ReactionManager extends VotingApiReactionManager {
       return $this->renderer->render($reaction);
     }, $reactions);
   }
+
+  /**
+   * Load previous reaction of the user for certain field.
+   *
+   * @param \Drupal\votingapi\Entity\Vote $entity
+   *   Current vote entity.
+   * @param array $settings
+   *   Field settings.
+   *
+   * @return \Drupal\Core\Entity\EntityInterface
+   *   Last reaction for current user.
+   */
+  public function lastReaction(Vote $entity, array $settings) {
+    $query = $this->voteStorage->getQuery()
+      ->condition('entity_id', $entity->getVotedEntityId())
+      ->condition('entity_type', $entity->getVotedEntityType())
+      ->condition('field_name', $entity->get('field_name')->value)
+      ->condition('user_id', $this->currentUser->id());
+
+    if ($this->currentUser->isAnonymous()) {
+      // Filter by IP method.
+      if (in_array(VotingApiReactionItemInterface::BY_IP, $settings['anonymous_detection'])) {
+        $ip = Vote::getCurrentIp();
+        $query->condition('vote_source', Vote::getCurrentIp());
+      }
+
+      // Filter by rollover.
+      $rollover = $settings['anonymous_rollover'];
+      if ($rollover == VotingApiReactionItemInterface::VOTINGAPI_ROLLOVER) {
+        $rollover = $this->configFactory
+          ->get('votingapi.settings')
+          ->get('anonymous_window');
+      }
+      if ($rollover != VotingApiReactionItemInterface::NEVER_ROLLOVER) {
+        $query->condition('timestamp', time() - $rollover, '>=');
+      }
+    }
+
+    $ids = $query->execute();
+
+    return $this->voteStorage->load(intval(array_pop($ids)));
+  }
 }

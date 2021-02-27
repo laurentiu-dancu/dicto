@@ -5,6 +5,7 @@ namespace Drupal\dicto_views\Form;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\ContentEntityForm;
+use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -43,16 +44,18 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     $settings = $form_state->get('formatter_settings') + $field_items->getSettings();
 
     // Check form status and user access to the form.
-    $form = parent::buildForm($form, $form_state);
+    $form = EntityForm::buildForm($form, $form_state);
     $form['#id'] = Html::getUniqueId('votingapi_reaction_form');
     $form['#attached']['library'][] = 'votingapi_reaction/scripts';
     $form['#attributes']['class'][] = 'votingapi-reaction-form';
     $form['#attributes']['autocomplete'] = 'off';
-    $form['#cache']['max-age'] = 0;
 
-    // Try to get the last reaction.
-    if ($entity = $this->reactionManager->lastReaction($this->entity, $settings)) {
-      $this->entity = $entity;
+    if ($this->currentUser->isAuthenticated()) {
+      // Try to get the last reaction.
+      $form['#cache']['max-age'] = 0;
+      if ($entity = $this->reactionManager->lastReaction($this->entity, $settings)) {
+        $this->entity = $entity;
+      }
     }
 
     // Check user access and form status.
