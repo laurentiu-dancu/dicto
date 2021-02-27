@@ -49,10 +49,10 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     $form['#attached']['library'][] = 'votingapi_reaction/scripts';
     $form['#attributes']['class'][] = 'votingapi-reaction-form';
     $form['#attributes']['autocomplete'] = 'off';
+    $form['#cache']['max-age'] = 0;
 
     if ($this->currentUser->isAuthenticated()) {
       // Try to get the last reaction.
-      $form['#cache']['max-age'] = 0;
       if ($entity = $this->reactionManager->lastReaction($this->entity, $settings)) {
         $this->entity = $entity;
       }
