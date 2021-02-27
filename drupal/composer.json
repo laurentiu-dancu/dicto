@@ -121,6 +121,12 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/memcache": {
+                "1": "https://git.drupalcode.org/project/memcache/-/merge_requests/1.diff"
+            }
         }
     },
     "require-dev": {
