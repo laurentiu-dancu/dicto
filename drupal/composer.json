@@ -54,6 +54,8 @@
         "drupal/votingapi_reaction": "^1.1",
         "drush/drush": "^10.3",
         "kint-php/kint": "^3.3",
+        "symfony/css-selector": "^5",
+        "symfony/dom-crawler": "^5",
         "twig/extensions": "^1.5",
         "twig/intl-extra": "^3.3"
     },

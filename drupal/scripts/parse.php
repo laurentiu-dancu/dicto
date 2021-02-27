@@ -41,12 +41,12 @@ function parseFile(string $filename, $repository) {
   if ($termName === '') {
     $termName = $crawler->filter('#MiddleCol > a')->first()->text('');
     $relatedTerms = processUndefined($crawler->filter('#MiddleCol li'));
-//    $repository->addUndefined($termName, $relatedTerms);
+    $repository->addUndefined($termName, $relatedTerms);
     return;
   }
   $definitions = processDefined($term->filter('li.dictando'));
   foreach ($definitions as $definition) {
-//    $repository->addDefinition($termName, $definition);
+    $repository->addDefinition($termName, $definition);
   }
 }
 
@@ -71,12 +71,6 @@ function processDefined(Crawler $node): array {
     $example = explode("Exemple:\r\n", $example);
     $example = $example[1] ?? '';
     $values['example'] = trim($example);
-    if ($values['example']) {
-      $example = $values['example'];
-      if (str_contains("\r\n", $example)) {
-        $a = 1;
-      }
-    }
     $tags = $definition->filter('.detailTagsContainer a')->each(function (Crawler $tag, $i) {
       return $tag->text('');
     });

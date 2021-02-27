@@ -17,8 +17,8 @@ class Repository {
     protected array $authorMap = [],
     protected array $undefinedMap = []
   ) {
-    $conString = sprintf("mysql:host=%s;dbname=%s;charset=utf8mb4", self::SERVER_NAME, self::DATABASE);
-    $this->connection = new PDO($conString, self::USERNAME, self::PASSWORD);
+    $conString = sprintf("mysql:host=%s;dbname=%s;charset=utf8mb4", static::SERVER_NAME, static::DATABASE);
+    $this->connection = new PDO($conString, static::USERNAME, static::PASSWORD);
     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 
@@ -32,25 +32,25 @@ class Repository {
       return $id;
     } catch (PDOException $e) {
       $this->connection->rollBack();
-      $result = $this->connection->prepare("select id from a_tag where name = :tagName");
-      $result->bindParam(':tagName', $tagName);
+      $result = $this->connection->prepare("select id from a_tag where slug = :slug");
+      $result->bindParam(':slug', $slug);
       $result->execute();
       return $result?->fetchColumn() ?? null;
     }
   }
 
-  public function createAuthor(string $authorName): ?int {
+  public function createAuthor(string $authorName, string $slug): ?int {
     try {
-      $stmt = $this->connection->prepare('insert into a_author set name = ?');
+      $stmt = $this->connection->prepare('insert into a_author set name = ?, slug = ?');
       $this->connection->beginTransaction();
-      $stmt->execute([$authorName]);
+      $stmt->execute([$authorName, $slug]);
       $id = (int)$this->connection->lastInsertId();
       $this->connection->commit();
       return $id;
     } catch (PDOException $e) {
       $this->connection->rollBack();
-      $result = $this->connection->prepare("select id from a_author where name = :authorName");
-      $result->bindParam(':authorName', $authorName);
+      $result = $this->connection->prepare("select id from a_author where slug = :slug");
+      $result->bindParam(':slug', $slug);
       $result->execute();
       return $result?->fetchColumn() ?? null;
     }
@@ -96,7 +96,7 @@ class Repository {
     if (isset($this->authorMap[$authorSlug])) {
       $authorId = $this->authorMap[$authorSlug];
     } else {
-      $authorId = $this->createAuthor($definition['author']);
+      $authorId = $this->createAuthor($definition['author'], $authorSlug);
       $this->authorMap[$authorSlug] = $authorId;
     }
 

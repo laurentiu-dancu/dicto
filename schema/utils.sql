@@ -49,7 +49,7 @@ delete from unique_related_term where term = '';
 insert into unique_definition (original_id, term, slug, example, def, author_id, score_up, score_down, createdAt)
 select any_value(id), term, any_value(slug), example, def, any_value(author_id), max(score_up) as score_up, max(score_down) as score_down, any_value(createdAt)
 from a_definition
-group by def, term, example order by score_up
+group by def, term, example order by score_up;
 
 update unique_related_term, (
     select ud.term, urt.id
@@ -69,4 +69,28 @@ update unique_related_term, (
     group by urt.term, urt1.def
 ) as uui
 set unique_related_term.def = uui.def
-where unique_related_term.id = uui.id
+where unique_related_term.id = uui.id;
+
+update node__field_exemplu as nfu, (select entity_id, field_exemplu_value
+                                    from (select entity_id, field_exemplu_value
+                                          from node__field_exemplu
+                                          where field_exemplu_value like '%2.%') as x
+                                    where x.field_exemplu_value not like "%\r%") as mat
+set nfu.field_exemplu_value = replace(nfu.field_exemplu_value, '2.', "\r2.")
+where nfu.entity_id  = mat.entity_id;
+
+update node__field_exemplu as nfu, (select entity_id, field_exemplu_value
+                                    from (select entity_id, field_exemplu_value
+                                          from node__field_exemplu
+                                          where field_exemplu_value like '%3.%') as x
+                                    where x.field_exemplu_value not like "%\r3.%") as mat
+set nfu.field_exemplu_value = replace(nfu.field_exemplu_value, '3.', "\r3.")
+where nfu.entity_id  = mat.entity_id;
+
+update node__field_exemplu as nfu, (select entity_id, field_exemplu_value
+                                    from (select entity_id, field_exemplu_value
+                                          from node__field_exemplu
+                                          where field_exemplu_value like '%4.%') as x
+                                    where x.field_exemplu_value not like "%\r4.%") as mat
+set nfu.field_exemplu_value = replace(nfu.field_exemplu_value, '4.', "\r4.")
+where nfu.entity_id  = mat.entity_id;

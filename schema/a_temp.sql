@@ -3,7 +3,8 @@ create table a_author
 (
     id   INT(10) not null
         primary key auto_increment,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    slug VARCHAR(255) unique
 );
 
 -- auto-generated definition
