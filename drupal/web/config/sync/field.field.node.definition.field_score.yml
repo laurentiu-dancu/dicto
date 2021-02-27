@@ -21,9 +21,9 @@ default_value:
 default_value_callback: ''
 settings:
   anonymous_detection:
-    1: '1'
     2: '2'
-  anonymous_rollover: '-1'
+    1: 0
+  anonymous_rollover: '604800'
   reactions:
     score_down: score_down
     score_up: score_up

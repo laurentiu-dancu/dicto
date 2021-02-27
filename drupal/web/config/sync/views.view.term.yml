@@ -263,7 +263,6 @@ display:
         metatag_display_extender:
           metatags:
             description: 'Vezi definițiile termenului "[view:title]"'
-            robots: 'noindex, noarchive'
       path: termen/%
       defaults:
         arguments: true
@@ -282,7 +281,9 @@ display:
     position: 2
     display_options:
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags:
+            robots: 'noindex, noarchive'
       path: cautare
       arguments:
         title:
@@ -297,12 +298,12 @@ display:
             value: 'nfgfdnsgksnadfknaweksfnkwaejfnkawe fnkwe nfwenfnweafiknawe fnwe fnawkef nakwefjn'
             title_enable: false
             title: All
-          title_enable: false
-          title: ''
+          title_enable: true
+          title: '{{ arguments.title }}'
           default_argument_type: query_parameter
           default_argument_options:
             query_param: termen
-            fallback: ''
+            fallback: nada
             multiple: and
           default_argument_skip_url: false
           summary_options:

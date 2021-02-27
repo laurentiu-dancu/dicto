@@ -1,0 +1,29 @@
+uuid: 14632296-4a23-4bb5-9848-b7e4a3d8dcb0
+langcode: ro
+status: true
+dependencies:
+  module:
+    - system
+title: 'Cleanup (caches, batch, flood, temp-files, etc.)'
+id: system_cron
+weight: 0
+module: system
+callback: system_cron
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: cache
+  configuration:
+    method: '3'
+    expire: '1209600'
+    retain: '1000'
