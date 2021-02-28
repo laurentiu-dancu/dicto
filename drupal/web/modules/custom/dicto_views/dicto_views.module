@@ -162,7 +162,7 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
   /* @var \Drupal\Core\Database\Connection $connection */
   $connection = Drupal::getContainer()->get('database');
   $query = $connection->query("
-        select s.field_slug_value, max(n.created)
+        select s.field_slug_value as slug, max(n.created) as created
         from node__field_slug s
                  inner join node_field_data n on s.entity_id = n.nid
                  left join node__field_definitie nfd on s.entity_id = nfd.entity_id
@@ -173,6 +173,9 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
 
   foreach ($nodes as $node) {
     $slug = $node->value;
+    if ($slug === '') {
+      continue;
+    }
     $url = \Drupal\Core\Url::fromRoute('view.term.term_page', ['arg_0' => $slug], [
       'absolute' => TRUE,
       'https' => TRUE
