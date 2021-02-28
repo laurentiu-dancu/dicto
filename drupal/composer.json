@@ -47,6 +47,7 @@
         "drupal/rdfui": "^1.0@beta",
         "drupal/search_api": "^1.19",
         "drupal/seo_checklist": "^4.1",
+        "drupal/simple_sitemap": "^3.8",
         "drupal/twig_extensions": "^2.0",
         "drupal/twig_xdebug": "^1.2",
         "drupal/ultimate_cron": "^2.0@alpha",
@@ -130,6 +131,9 @@
         "patches": {
             "drupal/memcache": {
                 "1": "https://git.drupalcode.org/project/memcache/-/merge_requests/1.diff"
+            },
+            "drupal/simple_sitemap": {
+                "1": "https://www.drupal.org/files/issues/2020-12-07/simple_sitemap-php8-error-1.patch"
             }
         }
     },
