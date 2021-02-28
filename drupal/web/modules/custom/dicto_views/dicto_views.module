@@ -175,6 +175,7 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
       'absolute' => TRUE,
       'https' => TRUE
     ]);
+    $uri = $url->toString()->getGeneratedUrl();
     $arbitrary_links[] = [
       'lastmod' => date('c', $node->created),
       'priority' => '1.0',
@@ -184,9 +185,9 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
         'path' => $url->getInternalPath(),
       ],
       'langcode' => 'ro',
-      'url' => $url,
+      'url' => $uri,
       'alternate_urls' => [
-        'ro' => $url,
+        'ro' => $uri,
       ]
     ];
   }
