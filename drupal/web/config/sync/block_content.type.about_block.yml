@@ -1,0 +1,8 @@
+uuid: b327a9ed-f91c-46e9-8ed9-61ba7abc9e80
+langcode: ro
+status: true
+dependencies: {  }
+id: about_block
+label: 'About Block'
+revision: 0
+description: ''

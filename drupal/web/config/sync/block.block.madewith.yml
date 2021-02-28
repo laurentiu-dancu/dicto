@@ -1,0 +1,25 @@
+uuid: d8e8b793-96b6-4d00-9934-b35a003566cc
+langcode: ro
+status: true
+dependencies:
+  content:
+    - 'block_content:about_block:d7763ca9-8b01-4fdd-847a-1e2cba87ef38'
+  module:
+    - block_content
+  theme:
+    - thex_amp
+id: madewith
+theme: thex_amp
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:d7763ca9-8b01-4fdd-847a-1e2cba87ef38'
+settings:
+  id: 'block_content:d7763ca9-8b01-4fdd-847a-1e2cba87ef38'
+  label: 'Made With'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

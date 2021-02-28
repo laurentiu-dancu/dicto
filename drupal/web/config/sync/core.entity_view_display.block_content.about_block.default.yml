@@ -1,0 +1,30 @@
+uuid: b9fd8d26-e40b-460c-bb69-4301c62ec238
+langcode: ro
+status: true
+dependencies:
+  config:
+    - block_content.type.about_block
+    - field.field.block_content.about_block.field_body
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.about_block.default
+targetEntityType: block_content
+bundle: about_block
+mode: default
+content:
+  field_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

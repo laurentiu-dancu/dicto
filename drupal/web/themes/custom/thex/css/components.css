@@ -296,10 +296,21 @@ ol.ordered-list > li.ordered-row:first-child > article {
   margin: 0;
 }
 
-#block-thex-amp-powered {
+#block-about {
   border: 1px solid var(--border);
   background-color: white;
-  border-radius: 3px;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 0.9em;
+}
+
+#block-about p:last-of-type {
+  margin: 0;
+}
+
+#block-madewith {
+  text-align: center;
 }
 
 .dicto-views-search-form form {
