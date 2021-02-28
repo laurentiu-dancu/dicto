@@ -60,6 +60,16 @@ class DictoViewsSearchController extends ControllerBase {
         group by nfs.field_slug_value
         order by nid desc
         limit 10");
+//    $query = $this->connection->query("
+//        select any_value(nd.nid) as nid, any_value(nd.title) as name,
+//               any_value(nfd.field_definitie_value) as description, max(vr.value) as value from node_field_data nd
+//        inner join node__field_slug nfs on nd.nid = nfs.entity_id
+//        inner join node__field_definitie nfd on nd.nid = nfd.entity_id
+//        left join votingapi_result vr on nd.nid = vr.entity_id and vr.function = 'vote_count' and vr.type = 'score_up'
+//        where nd.title like '" .$input . "%'
+//        group by nfs.field_slug_value
+//        order by value desc
+//        limit 10");
 
     $nodes = $query->fetchAll();
 

@@ -360,3 +360,9 @@ li.taxonomy-term {
   width: 2.7em;
   padding: 0;
 }
+
+.autocomplete-row {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
