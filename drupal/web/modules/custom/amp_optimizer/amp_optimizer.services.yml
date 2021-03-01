@@ -1,0 +1,12 @@
+services:
+  amp_optimizer.amp_transformation_engine:
+    class: AmpProject\Optimizer\TransformationEngine
+  amp_optimizer.event_subscriber:
+    class: Drupal\amp_optimizer\EventSubscriber\OptimizerSubscriber
+    arguments:
+      - "@amp_optimizer.amp_transformation_engine"
+      - '@config.factory'
+      - '@logger.factory'
+      - '@current_user'
+    tags:
+      - { name: event_subscriber }

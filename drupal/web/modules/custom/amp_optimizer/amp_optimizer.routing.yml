@@ -1,0 +1,9 @@
+amp_optimizer.settings:
+  path: '/admin/config/services/amp/optimizer'
+  defaults:
+    _form: \Drupal\amp_optimizer\Form\Settings
+    _title: 'AMP Optimizer Settings'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'

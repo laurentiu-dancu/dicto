@@ -1,0 +1,6 @@
+amp_optimizer.settings:
+  type: config_object
+  mapping:
+    transform_enabled:
+      type: boolean
+      label: Is optimization transformation enabled

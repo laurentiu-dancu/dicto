@@ -1,0 +1,11 @@
+name: AMP Optimizer
+description: Uses AMP Toolbox Optimizer
+package: AMP
+core_version_requirement: ^8.9 || ^9
+type: module
+configure: amp_optimizer.settings
+
+# Information added by Drupal.org packaging script on 2021-02-25
+version: '1.0.0-beta1'
+project: 'amp_optimizer'
+datestamp: 1614238605
