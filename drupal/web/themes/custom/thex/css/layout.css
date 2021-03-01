@@ -5,13 +5,20 @@
  .main-wrapper {
    position: relative;
    display: block;
-   min-height: calc(100vh - 188px);
+   min-height: calc(100vh - 130px - 59px);
 }
 .header,
 .footer-bottom {
   background-color: var(--dark);
   background-clip: content-box;
   box-shadow: inset 0 0 0 100px var(--dark);
+}
+
+.header {
+  height: 130px;
+}
+.footer-bottom {
+  height: 59px;
 }
 
 @media (min-width: 1024px) {
