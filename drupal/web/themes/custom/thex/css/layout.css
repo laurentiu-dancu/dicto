@@ -3,12 +3,23 @@
  */
  /* Layout -> Main wrapper (Main + Sidebar) */
  .main-wrapper {
-  position: relative;
-  display: block;
+   position: relative;
+   display: block;
    min-height: calc(100vh - 188px);
 }
-.header {
+.header,
+.footer-bottom {
   background-color: var(--dark);
+  background-clip: content-box;
+  box-shadow: inset 0 0 0 100px var(--dark);
+}
+
+@media (min-width: 1024px) {
+  .header,
+  .footer-bottom,
+  .main-wrapper {
+    padding-left: calc(100vw - 100%);
+  }
 }
 
 .site-brand {

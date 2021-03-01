@@ -2,9 +2,6 @@
   position: relative;
   background: var(--dark);
   color: var(--light);
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
 .footer-bottom-container {
   position: relative;

@@ -326,6 +326,8 @@ ol.ordered-list > li.ordered-row:first-child > article {
 
 .dicto-views-search-form form > .js-form-type-search {
   width: 100%;
+  height: 2.7em;
+  background-color: white;
 }
 
 @media (min-width: 1024px) {
