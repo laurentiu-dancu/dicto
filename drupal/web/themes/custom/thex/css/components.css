@@ -350,15 +350,6 @@ input.form-search {
   color: var(--text);
 }
 
-.i-amphtml-autocomplete-results {
-  background-color: var(--white);
-}
-
-.i-amphtml-autocomplete-item-active:not([data-disabled]),
-.i-amphtml-autocomplete-item:hover:not([data-disabled]) {
-  background-color: var(--lightest);
-}
-
 .pager__item a {
   border: 1px solid var(--dark);
   color: var(--light);
@@ -398,8 +389,3 @@ li.taxonomy-term {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
-  background-color: var(--light);
-}
-
