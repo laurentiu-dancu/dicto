@@ -9,10 +9,10 @@
 .node-view-mode-teaser {
   position: relative;
   margin-bottom: 4rem;
-  border-bottom: 4px double var(--border);
+  border-bottom: 4px double var(--lightest);
 }
 .node-view-mode-teaser.node-sticky {
-  border: 2px solid var(--border);
+  border: 2px solid var(--lightest);
   padding: 1rem;
 }
 .node-view-mode-full .node-taxonomy-container {

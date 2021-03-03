@@ -23,15 +23,6 @@ h6 {
   }
   .dicto-views-search-form {
     width: 60rem;
-    margin-left: 5px;
-  }
-
-  /* Header */
-  .header-top-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
   }
 
   /* Main */
@@ -40,11 +31,11 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    justify-content: space-around;
     width: 60rem;
+    /*flex-direction: row;*/
   }
   #main {
-    width: 38.75em;
+    width: 39em;
   }
 
   /* Sidebar
@@ -53,10 +44,17 @@ h6 {
     min-height: 100%;
   }
   #sidebar-right {
-    width: 20em;
+    width: 20.2em;
+    padding-left: 0.8em;
   }
 
-  .copyright {
-    margin-bottom: 0;
+  #block-about {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
+
+  /*.copyright {*/
+  /*  margin-bottom: 0;*/
+  /*}*/
 }

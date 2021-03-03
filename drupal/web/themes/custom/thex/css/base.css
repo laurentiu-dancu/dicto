@@ -23,8 +23,34 @@
   --light:  #FDF5DA;
   --lightest:  #F3F2EC;
   --white:  #FFFFFF;
-  --border: #F3F2EC;
+  --yellow: #ffff00;
+  --text: #111111;
 }
+
+/*:root {*/
+/*  --theme-color: #265481;*/
+/*  --theme-color-two: #4759F3;*/
+/*  --dark:  #020a25;*/
+/*  --light:  #265481;*/
+/*  --lightest:  #000000;*/
+/*  --white:  #0c0d13;*/
+/*  --yellow: #0000ff;*/
+/*  --text: #eeeeee;*/
+/*}*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-color: #265481;
+    --theme-color-two: #4759F3;
+    --dark:  #020a25;
+    --light:  #0054a7;
+    --lightest:  #000000;
+    --white:  #0c0d13;
+    --yellow: #265481;
+    --text: #eeeeee;
+  }
+}
+
 /* HTML and Body
 ---------------------------------------- */
 html {
@@ -43,7 +69,7 @@ body {
   font-family: -system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  color: #111111;
+  color: var(--text);
   background-color: var(--lightest);
   line-height: 1.7;
   overflow-x: hidden;
@@ -411,17 +437,17 @@ progress {
   vertical-align: baseline;
 }
 ::-webkit-input-placeholder {
-  color: var(--border);
+  color: var(--lightest);
 }
 :-moz-placeholder {
-  color: var(--border);
+  color: var(--lightest);
 }
 ::-moz-placeholder {
-  color: var(--border);
+  color: var(--lightest);
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: var(--border);
+  color: var(--lightest);
 }
 .field--name-body input[type="text"],
 .field--name-body input[type="email"],
@@ -456,12 +482,12 @@ dt {
 dd {
   margin: 0 0 1.2rem 0;
 }
-blockquote {
-  position: relative;
-  background-color: #f1f2f6;
-  margin: 1rem 0;
-  padding: 1rem;
-}
+/*blockquote {*/
+/*  position: relative;*/
+/*  background-color: #f1f2f6;*/
+/*  margin: 1rem 0;*/
+/*  padding: 1rem;*/
+/*}*/
 blockquote > :last-child {
   margin-bottom: 0;
 }

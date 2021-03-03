@@ -170,13 +170,13 @@ li.taxonomy-term:first-of-type {
 }
 .pager__item a {
   padding: 8px 14px;
-  color: #fff;
+  color: var(--white);
   background: var(--dark);
 }
 .pager__item a:hover,
 .pager__item.is-active a {
   background: var(--theme-color);
-  color: #fff;
+  color: var(--white);
 }
 /* vertical Tabs */
 /*.vertical-tabs__panes {*/
@@ -221,7 +221,7 @@ ol.ordered-list > li:before {
   font-size: 1.2rem;
   margin-right: 0.5rem;
   line-height: 1;
-  background-color: yellow;
+  background-color: var(--yellow);
   position: absolute;
   left: 1.4em;
   top: 0.8em;
@@ -232,14 +232,14 @@ ol.ordered-list > li:before {
 .ordered-row > article {
   border: none;
   padding: 2em 1.6em 1.2em;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 3px;
 }
 
 .unformatted-row > article {
   border: none;
   padding: 0.8em 1.6em 1.2em;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 3px;
   margin-bottom: 0.8em;
 }
@@ -268,7 +268,7 @@ ol.ordered-list > li.ordered-row:first-child > article {
   font-size: 2.2rem;
 }
 
-@media (min-width: 360px) {
+@media (min-width: 350px) {
   .site-name > a:after {
     content: " - α";
   }
@@ -297,11 +297,8 @@ ol.ordered-list > li.ordered-row:first-child > article {
 }
 
 #block-about {
-  border: 1px solid var(--border);
-  background-color: white;
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border: 1px solid var(--lightest);
+  background-color: var(--white);
   padding-top: 0.9em;
 }
 
@@ -327,18 +324,39 @@ ol.ordered-list > li.ordered-row:first-child > article {
 .dicto-views-search-form form > .js-form-type-search {
   width: 100%;
   height: 2.7em;
-  background-color: white;
+  background-color: var(--white);
 }
 
 @media (min-width: 1024px) {
   .dicto-views-search-form form > .js-form-type-search {
-    width: 36em;
+    width: 36.3em;
   }
 }
 
+#edit-termen {
+  background-color: var(--lightest);
+}
+
 input.form-search::placeholder {
-  color: var(--dark);
+  color: var(--text);
   opacity: 0.5;
+}
+
+input.form-search:focus {
+  color: var(--text);
+}
+
+input.form-search {
+  color: var(--text);
+}
+
+.i-amphtml-autocomplete-results {
+  background-color: var(--white);
+}
+
+.i-amphtml-autocomplete-item-active:not([data-disabled]),
+.i-amphtml-autocomplete-item:hover:not([data-disabled]) {
+  background-color: var(--lightest);
 }
 
 .pager__item a {
@@ -372,6 +390,7 @@ li.taxonomy-term {
   height: 2.7em;
   width: 2.7em;
   padding: 0;
+  background-color: var(--lightest);
 }
 
 .autocomplete-row {
@@ -379,3 +398,8 @@ li.taxonomy-term {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
+  background-color: var(--light);
+}
+
