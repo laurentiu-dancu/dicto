@@ -38,18 +38,18 @@
 /*  --text: #eeeeee;*/
 /*}*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme-color: #265481;
-    --theme-color-two: #4759F3;
-    --dark:  #020a25;
-    --light:  #0054a7;
-    --lightest:  #000000;
-    --white:  #0c0d13;
-    --yellow: #265481;
-    --text: #eeeeee;
-  }
-}
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --theme-color: #265481;*/
+/*    --theme-color-two: #4759F3;*/
+/*    --dark:  #020a25;*/
+/*    --light:  #0054a7;*/
+/*    --lightest:  #000000;*/
+/*    --white:  #0c0d13;*/
+/*    --yellow: #265481;*/
+/*    --text: #eeeeee;*/
+/*  }*/
+/*}*/
 
 /* HTML and Body
 ---------------------------------------- */
