@@ -1,0 +1,59 @@
+.votingapi-reaction-form .form-radios {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+.votingapi-reaction-form .form-radios input[type="radio"] {
+  display: none;
+}
+.votingapi-reaction-form .form-radios label {
+  display: block;
+  margin: 0;
+  cursor: pointer;
+}
+.votingapi-reaction-form .form-radios label .votingapi-reaction-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid;
+  border-color: var(--light);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 5px;
+  user-select: none;
+}
+.votingapi-reaction-form .form-radios label .votingapi-reaction-item > * {
+  margin: 0 5px;
+}
+.votingapi-reaction-form .form-radios label .votingapi-reaction-image {
+  width: 25px;
+  height: 25px;
+}
+.votingapi-reaction-form .form-radios label .votingapi-reaction-count {
+  text-align: center;
+  padding-top: 5px;
+}
+
+/* selected reaction */
+.votingapi-reaction-form .form-radios input[type="radio"]:checked + label {
+  border-color: var(--theme-color);
+}
+.votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
+  border-color: var(--theme-color);
+  background-color: var(--lightest);
+}
+
+/* selected reaction */
+.votingapi-reaction-form .form-radios label:hover .votingapi-reaction-item {
+  border-color: rgba(0, 143, 219, 0.2);
+  background-color: rgba(0, 143, 219, 0.05);
+}
+
+/* hide buttons if js is active */
+.js .votingapi-reaction-form input[type="submit"] {
+  display: none;
+}
+
+.votingapi-reaction-form-vote {
+  display: flex;
+}

@@ -12,6 +12,7 @@ libraries-override:
   core/drupal.autocomplete:
     js:
       misc/autocomplete.js: js/autocomplete.js
+  votingapi_reaction/styles: false
 
 regions:
   header_top_left: 'Header Top Left'

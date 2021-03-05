@@ -170,13 +170,13 @@ li.taxonomy-term:first-of-type {
 }
 .pager__item a {
   padding: 8px 14px;
-  color: var(--white);
+  color: var(--light);
   background: var(--dark);
 }
 .pager__item a:hover,
 .pager__item.is-active a {
   background: var(--theme-color);
-  color: var(--white);
+  color: var(--light);
 }
 /* vertical Tabs */
 /*.vertical-tabs__panes {*/
@@ -221,7 +221,7 @@ ol.ordered-list > li:before {
   font-size: 1.2rem;
   margin-right: 0.5rem;
   line-height: 1;
-  background-color: var(--yellow);
+  background-color: var(--highlight);
   position: absolute;
   left: 1.4em;
   top: 0.8em;

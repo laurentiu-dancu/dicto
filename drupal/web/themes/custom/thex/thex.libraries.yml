@@ -20,3 +20,4 @@ global-styling:
       css/shortcodes.css: {}
       css/clear.css: {}
       css/responsive.css: {}
+      css/votingapi_reaction.css: { }
