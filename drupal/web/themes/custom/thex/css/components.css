@@ -389,3 +389,13 @@ li.taxonomy-term {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+#dicto-views-search-form .result-item {
+  background-color: var(--white);
+  color: var(--text);
+}
+
+#dicto-views-search-form .result-item:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}

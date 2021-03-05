@@ -27,17 +27,6 @@
   --text: #111111;
 }
 
-/*:root {*/
-/*  --theme-color: #265481;*/
-/*  --theme-color-two: #4759F3;*/
-/*  --dark:  #020a25;*/
-/*  --light:  #265481;*/
-/*  --lightest:  #000000;*/
-/*  --white:  #0c0d13;*/
-/*  --highlight: #0000ff;*/
-/*  --text: #eeeeee;*/
-/*}*/
-
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-color: #80B4E3;
