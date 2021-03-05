@@ -63,3 +63,4 @@ Disallow: /index.php/user/logout
 # Custom
 Disallow: /autor/
 Disallow: /eticheta/
+Disallow: /*?page=*
