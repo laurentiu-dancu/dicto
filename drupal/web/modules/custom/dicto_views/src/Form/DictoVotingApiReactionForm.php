@@ -152,17 +152,18 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     $trigger = $form_state->getTriggeringElement();
     if ($this->entity->bundle() != $form_state->getValue('type')
       && array_search('reset', $trigger['#parents']) === FALSE) {
-      parent::submitForm($form, $form_state);
+      ContentEntityForm::submitForm($form, $form_state);
       parent::save($form, $form_state);
 
       $reaction = $form_state->getValue('type');
 
-      $this->reactionManager->rememberReaction($this->entity);
+      if ($this->currentUser->isAuthenticated()) {
+        $this->reactionManager->rememberReaction($this->entity);
+      }
     }
     // If same reaction was selected.
     else {
-      $this->reactionManager->forgetReaction($this->entity);
-      $this->entity->delete();
+      // noop;
     }
 
     // Recalculate results for last reaction.

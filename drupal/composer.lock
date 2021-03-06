@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26d627ca67bd93a50b0137a7c2568c99",
+    "content-hash": "abf8255b461bed582bfaaf22e88b4103",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -3203,6 +3203,52 @@
             }
         },
         {
+            "name": "drupal/json_ld_schema",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/json_ld_schema.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/json_ld_schema-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "1c55c7c20c02edd56938e318a856bd350dd88d1f"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "php": ">=7.0",
+                "spatie/schema-org": "^1.4|^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1601965826",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "An opinionated developer-centric API focused module for defining JSON LD objects in the Schema.org vocabulary.",
+            "homepage": "https://www.drupal.org/project/json_ld_schema",
+            "support": {
+                "source": "https://git.drupalcode.org/project/json_ld_schema"
+            }
+        },
+        {
             "name": "drupal/memcache",
             "version": "2.2.0",
             "source": {
@@ -6272,6 +6318,78 @@
                 }
             ],
             "time": "2020-11-30T07:59:04+00:00"
+        },
+        {
+            "name": "spatie/schema-org",
+            "version": "2.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/schema-org.git",
+                "reference": "31f1fd54584d98b50026ecb17fe7067384ec209a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/schema-org/zipball/31f1fd54584d98b50026ecb17fe7067384ec209a",
+                "reference": "31f1fd54584d98b50026ecb17fe7067384ec209a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.3",
+                "league/flysystem": "^1.0",
+                "phpunit/phpunit": "^8.0",
+                "symfony/console": "^3.2",
+                "tightenco/collect": "^7.25",
+                "twig/twig": "^1.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\SchemaOrg\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fluent builder Schema.org types and ld+json generator",
+            "homepage": "https://github.com/spatie/schema-org",
+            "keywords": [
+                "schema-org",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/schema-org/issues",
+                "source": "https://github.com/spatie/schema-org/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-08-27T16:55:28+00:00"
         },
         {
             "name": "stack/builder",

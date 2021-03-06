@@ -36,11 +36,11 @@
 
 /* selected reaction */
 .votingapi-reaction-form .form-radios input[type="radio"]:checked + label {
-  border-color: var(--theme-color);
+  border-color: var(--link);
 }
 .votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
-  border-color: var(--theme-color);
-  background-color: var(--lightest);
+  border-color: var(--link);
+  background-color: var(--background);
 }
 
 /* selected reaction */

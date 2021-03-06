@@ -175,7 +175,7 @@ li.taxonomy-term:first-of-type {
 }
 .pager__item a:hover,
 .pager__item.is-active a {
-  background: var(--theme-color);
+  background: var(--link);
   color: var(--light);
 }
 /* vertical Tabs */
@@ -232,14 +232,14 @@ ol.ordered-list > li:before {
 .ordered-row > article {
   border: none;
   padding: 2em 1.6em 1.2em;
-  background-color: var(--white);
+  background-color: var(--container);
   border-radius: 3px;
 }
 
 .unformatted-row > article {
   border: none;
   padding: 0.8em 1.6em 1.2em;
-  background-color: var(--white);
+  background-color: var(--container);
   border-radius: 3px;
   margin-bottom: 0.8em;
 }
@@ -285,11 +285,11 @@ ol.ordered-list > li.ordered-row:first-child > article {
 }
 
 .votingapi-reaction-form .form-radios input[type="radio"]:checked + label {
-  color: var(--theme-color);
+  color: var(--link);
 }
 
 .votingapi-reaction-form .form-radios input[type="radio"]:checked + label .votingapi-reaction-item {
-  border-color: var(--theme-color);
+  border-color: var(--link);
 }
 
 .field--name-field-score .form-item {
@@ -297,8 +297,8 @@ ol.ordered-list > li.ordered-row:first-child > article {
 }
 
 #block-about {
-  border: 1px solid var(--lightest);
-  background-color: var(--white);
+  border: 1px solid var(--background);
+  background-color: var(--container);
   padding-top: 0.9em;
 }
 
@@ -324,7 +324,7 @@ ol.ordered-list > li.ordered-row:first-child > article {
 .dicto-views-search-form form > .js-form-type-search {
   width: 100%;
   height: 2.7em;
-  background-color: var(--white);
+  background-color: var(--container);
 }
 
 @media (min-width: 1024px) {
@@ -334,7 +334,7 @@ ol.ordered-list > li.ordered-row:first-child > article {
 }
 
 #edit-termen {
-  background-color: var(--lightest);
+  background-color: var(--background);
 }
 
 input.form-search::placeholder {
@@ -356,13 +356,13 @@ input.form-search {
 }
 
 .pager__item a:hover {
-  background-color: var(--theme-color-two);
-  border-color: var(--theme-color-two);
+  background-color: var(--hover);
+  border-color: var(--hover);
 }
 
 .pager__item.is-active a {
   color: var(--dark);
-  background-color: var(--lightest);
+  background-color: var(--background);
 }
 
 .pager__item.is-active a:hover {
@@ -381,7 +381,7 @@ li.taxonomy-term {
   height: 2.7em;
   width: 2.7em;
   padding: 0;
-  background-color: var(--lightest);
+  background-color: var(--background);
 }
 
 .autocomplete-row {
@@ -391,7 +391,7 @@ li.taxonomy-term {
 }
 
 #dicto-views-search-form .result-item {
-  background-color: var(--white);
+  background-color: var(--container);
   color: var(--text);
 }
 

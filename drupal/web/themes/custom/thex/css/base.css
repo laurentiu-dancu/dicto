@@ -1,40 +1,40 @@
 /* Variables
 ---------------------------------------- */
 /*:root {*/
-/*  --theme-color: #F5BC32;*/
-/*  --theme-color-two: #50C9C0;*/
+/*  --link: #F5BC32;*/
+/*  --hover: #50C9C0;*/
 /*  --dark: #4B0E3A;*/
 /*  --light: #FDF5DA;*/
 /*  --border:  #F58432;*/
 /*}*/
 
 /*:root {*/
-/*  --theme-color: #4759F3;*/
-/*  --theme-color-two: #0BB3A8;*/
+/*  --link: #4759F3;*/
+/*  --hover: #0BB3A8;*/
 /*  --dark: #EE635B;*/
 /*  --light: #F3F2EC;*/
 /*  --border: #FFC55F;*/
 /*}*/
 
 :root {
-  --theme-color: #4759F3;
-  --theme-color-two: #43BAAA;
+  --link: #4759F3;
+  --hover: #43BAAA;
   --dark:  #265481;
   --light:  #FDF5DA;
-  --lightest:  #F3F2EC;
-  --white:  #FFFFFF;
+  --background:  #F3F2EC;
+  --container:  #FFFFFF;
   --highlight: #ffff00;
   --text: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-color: #80B4E3;
-    --theme-color-two: #205b91;
+    --link: #80B4E3;
+    --hover: #205b91;
     --dark:  #083751;
-    --light:  #eeeeee;
-    --lightest:  #0F0F0F;
-    --white:  #17181C;
+    --light:  #FDF5DA;
+    --background:  #0F0F0F;
+    --container:  #17181C;
     --highlight: #000000;
     --text: #eeeeee;
   }
@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text);
-  background-color: var(--lightest);
+  background-color: var(--background);
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -148,7 +148,7 @@ big {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: var(--theme-color);
+  color: var(--link);
 }
 a:active,
 a:hover,
@@ -158,7 +158,7 @@ a:focus {
   outline: 0;
 }
 a:hover {
-  color: var(--theme-color-two);
+  color: var(--hover);
 }
 /* Typography-> code tags */
 /*code,*/
@@ -199,7 +199,7 @@ a:hover {
 /*  font-style: italic;*/
 /*}*/
 /*mark {*/
-/*  background: var(--theme-color);*/
+/*  background: var(--link);*/
 /*}*/
 /*acronym[title], abbr[title] {*/
 /*  border-bottom: none;*/
@@ -426,17 +426,17 @@ progress {
   vertical-align: baseline;
 }
 ::-webkit-input-placeholder {
-  color: var(--lightest);
+  color: var(--background);
 }
 :-moz-placeholder {
-  color: var(--lightest);
+  color: var(--background);
 }
 ::-moz-placeholder {
-  color: var(--lightest);
+  color: var(--background);
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: var(--lightest);
+  color: var(--background);
 }
 .field--name-body input[type="text"],
 .field--name-body input[type="email"],
