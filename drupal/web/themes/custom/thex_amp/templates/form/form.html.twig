@@ -13,4 +13,9 @@
 {{ element['#amp']|raw }}
   <form{{ attributes }}>
     {{ children }}
+    <div submit-success>
+      <template type="amp-mustache">
+        {% verbatim %}{{{message}}}{% endverbatim %}
+      </template>
+    </div>
   </form>

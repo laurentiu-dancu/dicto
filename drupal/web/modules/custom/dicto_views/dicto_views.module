@@ -107,21 +107,21 @@ function dicto_views_update_9101(&$sandbox) {
  * Implements hook_ajax_render_alter().
  */
 function dicto_views_ajax_render_alter(array &$data) {
-  if (\Drupal::request()->query->has('__amp_source_origin')) {
-    $values = array_pop($data);
-    $new = array_pop($data);
-    $data = [];
-    $string = $values['data']->__toString();
-    if (preg_match('/reaction-count\">(.*?)<\/div>/', $string, $match) == 1) {
-      $up = $match[1];
-    }
-    if (preg_match("/\['down'\]\" class=\"votingapi-reaction-count\">(.*?)<\/div>/", $string, $match) == 1) {
-      $down = $match[1];
-    }
-    $data['new'] = $new['new'];
-    $data['up'] = $up;
-    $data['down'] = $down;
-  }
+//  if (\Drupal::request()->query->has('__amp_source_origin')) {
+//    $values = array_pop($data);
+//    $new = array_pop($data);
+//    $data = [];
+//    $string = $values['data']->__toString();
+//    if (preg_match('/reaction-count\">(.*?)<\/div>/', $string, $match) == 1) {
+//      $up = $match[1];
+//    }
+//    if (preg_match("/\['down'\]\" class=\"votingapi-reaction-count\">(.*?)<\/div>/", $string, $match) == 1) {
+//      $down = $match[1];
+//    }
+//    $data['new'] = $new['new'];
+//    $data['up'] = $up;
+//    $data['down'] = $down;
+//  }
 }
 
 /**

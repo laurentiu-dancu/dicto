@@ -9,3 +9,8 @@ services:
     arguments: ['@current_user']
     tags:
       - { name: page_cache_request_policy }
+
+  dicto_views.main_content_renderer.json:
+    class: Drupal\dicto_views\Render\MainContent\JsonRenderer
+    tags:
+      - { name: render.main_content_renderer, format: json }

@@ -149,6 +149,7 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // If new reaction was selected.
     $reaction = NULL;
+    $newVote = true;
     $trigger = $form_state->getTriggeringElement();
     if ($this->entity->bundle() != $form_state->getValue('type')
       && array_search('reset', $trigger['#parents']) === FALSE) {
@@ -163,6 +164,7 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     }
     // If same reaction was selected.
     else {
+      $newVote = false;
       // noop;
     }
 
@@ -184,6 +186,14 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     $field_items = $form_state->get('field_items');
     $settings = $form_state->get('formatter_settings') + $field_items->getSettings();
     $results = $this->reactionManager->getResults($this->entity, $settings);
+    $form['results'] = $results;
+    if ($newVote) {
+      $form['results']['message'] = "<span><strong>Mulțumim pentru vot!</strong></span></br>".
+        "<span>Votul tău a fost înregistrat și o să apară public în max. 24 de ore.</span>";
+    } else {
+      $form['results']['message'] = "<span><strong>Ai votat deja!</strong></span></br>".
+        "<span>Votul tău nu a fost înregistrat pentru că ai mai votat definiția asta. Încearcă eventual celălalt buton.</span>";
+    }
 
     // Update summary.
     if (isset($form['summary'])) {
