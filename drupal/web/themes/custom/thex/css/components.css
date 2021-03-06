@@ -395,7 +395,8 @@ li.taxonomy-term {
   color: var(--text);
 }
 
-#dicto-views-search-form .result-item:hover {
+#dicto-views-search-form .result-item:hover,
+#dicto-views-search-form .result-item[aria-selected="true"]{
   background-color: var(--dark);
   color: var(--light);
 }
