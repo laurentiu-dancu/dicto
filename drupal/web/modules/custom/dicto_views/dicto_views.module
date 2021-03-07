@@ -217,7 +217,7 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
     $url = \Drupal\Core\Url::fromRoute('view.term.term_page', ['arg_0' => $slug], [
       'absolute' => TRUE,
       'https' => TRUE,
-      'base_url' => 'https://dictionar-urban.ro/',
+      'base_url' => 'https://dictionar-urban.ro',
     ]);
     $uri = $url->toString();
     $arbitrary_links[] = [
