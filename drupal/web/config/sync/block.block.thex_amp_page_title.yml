@@ -2,6 +2,8 @@ uuid: fa23b171-bbcb-4dd9-b3a4-7d612582ccc8
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - thex_amp
 _core:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/termen/*'
+    negate: true

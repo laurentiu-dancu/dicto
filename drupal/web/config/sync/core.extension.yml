@@ -7,6 +7,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  checklistapi: 0
   config_filter: 0
   config_ignore: 0
   ctools: 0
@@ -44,6 +45,7 @@ module:
   rdf: 0
   schema_metatag: 0
   schema_web_page: 0
+  seo_checklist: 0
   serialization: 0
   simple_sitemap: 0
   simple_sitemap_engines: 0

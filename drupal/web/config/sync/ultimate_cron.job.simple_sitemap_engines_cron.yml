@@ -1,6 +1,6 @@
 uuid: 426f08b5-14d9-4a59-a332-e5da7f974da7
 langcode: ro
-status: true
+status: false
 dependencies:
   module:
     - simple_sitemap_engines

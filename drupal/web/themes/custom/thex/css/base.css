@@ -101,7 +101,7 @@ h5,
 h6 {
   font-weight: 700;
   font-style: normal;
-  color: #000000;
+  color: var(--dark);
   line-height: 1.7;
   margin: 0;
 }

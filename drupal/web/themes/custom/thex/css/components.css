@@ -400,3 +400,26 @@ li.taxonomy-term {
   background-color: var(--dark);
   color: var(--light);
 }
+
+.view-glosar-stage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.view-glosar-stage > span {
+  padding: 0 0.25em;
+}
+
+.view-glosar .views-view-grid {
+  background-color: var(--container);
+  padding: 0.5em 1em 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.view-glosar-stage .is-active {
+  background-color: var(--highlight);
+  color: var(--text);
+}

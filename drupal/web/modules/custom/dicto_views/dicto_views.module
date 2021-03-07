@@ -21,6 +21,43 @@ function dicto_views_views_query_alter(ViewExecutable $view, QueryPluginBase $qu
         $field['field'] = '(COALESCE(votingapi_result_node_field_data_1.value, 0) - COALESCE(votingapi_result_node_field_data.value, 0))';
       }
     }
+
+    return;
+  }
+
+  if ($view->id() === 'glosar' && $view->current_display === 'page') {
+    $argLen = strlen(current($view->args));
+    if ($argLen > 0) {
+      $query->where[0]['conditions'][0]['field'] = "SUBSTRING(node__field_slug.field_slug_value, 1, $argLen) = :node__field_slug_field_slug_value";
+    }
+  }
+
+  if ($view->id() === 'glosar' && $view->current_display === 'block_second') {
+    $path = Drupal::request()->getPathInfo();
+    $parts = explode('glosar/', $path, 2);
+    $arg = $parts[1] ?? '';
+    if (strlen($arg > 0) || $arg === '0') {
+      $glossary = substr($arg, 0, 1);
+      $query->addWhere(0, 'SUBSTRING(node__field_slug.field_slug_value, 1, 1) = :node__field_slug_field_slug_value', [':node__field_slug_field_slug_value' => $glossary], 'formula');
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function dicto_views_views_pre_execute(ViewExecutable $view) {
+  if ($view->id() === 'glosar' && $view->current_display === 'page' || $view->current_display === 'page_global') {
+    /* @var $query \Drupal\Core\Database\Query\Select */
+    $query = $view->build_info['query'];
+    $query->groupBy('node__field_slug_field_slug_value');
+    $query->addExpression('any_value(node_field_data.nid)', 'nid');
+    unset($query->getFields()['nid']);
+
+    $query = $view->build_info['count_query'];
+    $query->groupBy('node__field_slug_field_slug_value');
+    $query->addExpression('any_value(node_field_data.nid)', 'nid');
+    unset($query->getFields()['nid']);
   }
 }
 

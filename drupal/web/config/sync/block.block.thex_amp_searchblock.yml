@@ -9,7 +9,7 @@ dependencies:
 id: thex_amp_searchblock
 theme: thex_amp
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: dicto_views_search_block
 settings:

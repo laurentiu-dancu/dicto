@@ -2,10 +2,6 @@ uuid: f3e24f27-3e9e-44c0-ac9c-a3c7efd71165
 langcode: ro
 status: true
 dependencies:
-  content:
-    - 'block_content:about_block:ece06f8a-7b23-461d-9a14-4fa630084873'
-  module:
-    - block_content
   theme:
     - thex_amp
 id: about
