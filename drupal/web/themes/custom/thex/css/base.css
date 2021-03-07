@@ -38,6 +38,9 @@
     --highlight: #000000;
     --text: #eeeeee;
   }
+  h1 {
+    filter: brightness(2);
+  }
 }
 
 /* HTML and Body
