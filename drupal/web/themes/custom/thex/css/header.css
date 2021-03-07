@@ -1,0 +1,9 @@
+.nav-menu > nav ol {
+  font-size: 2em;
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-menu > nav ol li {
+  padding: 0;
+}

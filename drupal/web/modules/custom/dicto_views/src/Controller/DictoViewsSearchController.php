@@ -6,9 +6,11 @@ use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Entity\Element\EntityAutocomplete;
@@ -47,7 +49,7 @@ class DictoViewsSearchController extends ControllerBase {
 
     // Get the typed string from the URL, if it exists.
     if (!$input) {
-      return new JsonResponse($results);
+      return new CacheableJsonResponse($results);
     }
 
     $input = Xss::filter($input);
@@ -97,5 +99,22 @@ class DictoViewsSearchController extends ControllerBase {
     $response->addCacheableDependency($cache);
 
     return $response;
+  }
+
+  public function randomPage(Request $request) {
+    $query = $this->connection->query("
+        select field_slug_value as slug
+        from node__field_slug
+                 inner join node_field_data on node_field_data.nid = node__field_slug.entity_id
+        where bundle = 'definition'
+        order by rand() desc
+        limit 1;
+        ");
+
+    $slug = $query->fetchAssoc();
+    $url = Url::fromRoute('view.term.term_page', ['arg_0' => $slug['slug']]);
+    $uri = $url->toString();
+
+    return new RedirectResponse((string)$uri);
   }
 }

@@ -5,3 +5,11 @@ dicto_views.autocomplete.definitions:
     _format: json
   requirements:
     _access: 'TRUE'
+
+dicto_views.autocomplete.random:
+  path: 'random'
+  defaults:
+    _controller: '\Drupal\dicto_views\Controller\DictoViewsSearchController::randomPage'
+    _format: html
+  requirements:
+    _access: 'TRUE'

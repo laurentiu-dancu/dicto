@@ -27,6 +27,15 @@
   .main-wrapper {
     padding-left: calc(100vw - 100%);
   }
+  .header-top {
+    max-width: 39em;
+  }
+}
+.header-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-brand {

@@ -64,3 +64,4 @@ Disallow: /index.php/user/logout
 Disallow: /autor/*
 Disallow: /eticheta/*
 Disallow: /*?page=*
+Disallow: /random

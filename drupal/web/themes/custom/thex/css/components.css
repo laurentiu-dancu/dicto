@@ -260,6 +260,17 @@ ol.ordered-list > li.ordered-row:first-child > article {
   color: var(--light);
   font-size: 2.2rem;
   line-height: 2;
+  display: inline-block;
+  text-overflow: clip;
+  width: 4em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (min-width: 380px) {
+  .site-name > a {
+    width: 100%;
+  }
 }
 
 .site-name > a:after {
@@ -268,13 +279,13 @@ ol.ordered-list > li.ordered-row:first-child > article {
   font-size: 2.2rem;
 }
 
-@media (min-width: 350px) {
+@media (min-width: 450px) {
   .site-name > a:after {
     content: " - α";
   }
 }
 
-@media (min-width: 460px) {
+@media (min-width: 510px) {
   .site-name > a:after {
     content: " - Alpha";
   }
@@ -412,14 +423,16 @@ li.taxonomy-term {
   padding: 0 0.25em;
 }
 
-.view-glosar .views-view-grid {
+.view-glosar-stage .is-active {
+  background-color: var(--highlight);
+  color: var(--text);
+}
+
+.view-glosar .unformatted-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.3em, 1fr));
   background-color: var(--container);
   padding: 0.5em 1em 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-}
-
-.view-glosar-stage .is-active {
-  background-color: var(--highlight);
-  color: var(--text);
 }

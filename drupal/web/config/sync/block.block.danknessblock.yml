@@ -1,4 +1,4 @@
-uuid: 22e6066f-04c5-473f-9c6b-fe77db1f0f27
+uuid: f6d2e444-c9a1-49e5-9c78-a2d76cb2ed90
 langcode: ro
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - dicto_views
   theme:
     - thex_amp
-id: thex_amp_searchblock
+id: danknessblock
 theme: thex_amp
-region: header
+region: header_top_right
 weight: -6
 provider: null
-plugin: dicto_views_search_block
+plugin: dicto_views_dankness_block
 settings:
-  id: dicto_views_search_block
-  label: 'Search Block'
+  id: dicto_views_dankness_block
+  label: 'Dankness Block'
   provider: dicto_views
   label_display: '0'
 visibility: {  }
