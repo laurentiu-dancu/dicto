@@ -1,0 +1,23 @@
+uuid: af5d4415-9eaa-4437-93b2-bb2d110fb7d0
+langcode: ro
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content: {  }
+hidden:
+  langcode: true
+  member_for: true
