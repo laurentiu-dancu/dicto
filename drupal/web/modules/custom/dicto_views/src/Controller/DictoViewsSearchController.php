@@ -50,7 +50,13 @@ class DictoViewsSearchController extends ControllerBase {
 
     // Get the typed string from the URL, if it exists.
     if (!$input) {
-      return new CacheableJsonResponse($results);
+      $cache = new CacheableMetadata();
+      $cache->addCacheContexts(['url.query_args:q']);
+      $cache->setCacheMaxAge(-1);
+      $response = new CacheableJsonResponse($results);
+      $response->addCacheableDependency($cache);
+
+      return $response;
     }
 
     $input = Xss::filter($input);
