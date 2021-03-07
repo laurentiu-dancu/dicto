@@ -114,11 +114,11 @@ class DictoViewsSearchController extends ControllerBase {
 
     $slug = $query->fetchAssoc();
     $url = Url::fromRoute('view.term.term_page', ['arg_0' => $slug['slug']]);
-    $uri = $url->toString();
+    $uri = $url->toString(TRUE);
 
     $cache = new CacheableMetadata();
     $cache->setCacheMaxAge(0);
-    $response = new CacheableRedirectResponse((string)$uri);
+    $response = new CacheableRedirectResponse($uri->getGeneratedUrl());
     $response->addCacheableDependency($cache);
 
     return $response;
