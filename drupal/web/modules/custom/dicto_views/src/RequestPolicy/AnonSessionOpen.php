@@ -34,6 +34,9 @@ class AnonSessionOpen implements RequestPolicyInterface {
    * {@inheritdoc}
    */
   public function check(Request $request) {
+    if (str_starts_with($request->getPathInfo(), '/random')) {
+      return null;
+    }
     if ($this->currentUser->isAnonymous() && !str_starts_with($request->getPathInfo(), '/admin')) {
       return static::ALLOW;
     }
