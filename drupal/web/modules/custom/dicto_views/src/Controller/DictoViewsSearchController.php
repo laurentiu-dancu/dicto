@@ -4,6 +4,7 @@ namespace Drupal\dicto_views\Controller;
 
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Cache\CacheableRedirectResponse;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Url;
@@ -115,6 +116,11 @@ class DictoViewsSearchController extends ControllerBase {
     $url = Url::fromRoute('view.term.term_page', ['arg_0' => $slug['slug']]);
     $uri = $url->toString();
 
-    return new RedirectResponse((string)$uri);
+    $cache = new CacheableMetadata();
+    $cache->setCacheMaxAge(0);
+    $response = new CacheableRedirectResponse((string)$uri);
+    $response->addCacheableDependency($cache);
+
+    return $response;
   }
 }
