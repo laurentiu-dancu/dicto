@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   align-items: center;
   border: 1px solid;
-  border-color: var(--light);
+  border-color: var(--dark);
   border-radius: 5px;
   padding: 5px;
   margin: 0 5px;

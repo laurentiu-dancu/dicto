@@ -236,6 +236,44 @@ ol.ordered-list > li:before {
   border-radius: 3px;
 }
 
+form.user-form,
+form.node-definition-form {
+  border: none;
+  padding: 1em;
+  background-color: var(--container);
+  border-radius: 3px;
+}
+
+form.user-form input,
+form.node-definition-form input,
+form.node-definition-form textarea {
+  background-color: var(--background);
+  color: var(--text);
+  border: 1px solid;
+  border-color: var(--dark);
+}
+
+form.node-definition-form .field-multiple-drag,
+form.node-definition-form .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+
+form.node-definition-form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form.node-definition-form table h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+  text-align: left
+}
+
+form.node-definition-form .form-autocomplete {
+  width: 100%;
+}
+
 .unformatted-row > article {
   border: none;
   padding: 0.8em 1.6em 1.2em;
@@ -256,36 +294,78 @@ ol.ordered-list > li.ordered-row:first-child > article {
   border-top-right-radius: 0;
 }
 
+.site-name {
+  display: inline-flex;
+}
+
+.site-name-mid,
+.site-name-full {
+  display: none;
+}
+
 .site-name > a {
   color: var(--light);
   font-size: 2.2rem;
   line-height: 2;
   display: inline-block;
-  text-overflow: clip;
-  width: 4em;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-@media (min-width: 380px) {
-  .site-name > a {
-    width: 100%;
-  }
 }
 
 .site-name > a:after {
   content: "";
   color: var(--light);
   font-size: 2.2rem;
+  line-height: 2;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 336px) {
+  .site-name > a:after {
+    content: "Urb";
+  }
+}
+
+@media (min-width: 395px) {
+  .site-name > a:after {
+    content: "Urb - α";
+  }
+}
+
+@media (min-width: 410px) {
+  .site-name > a:after {
+    content: "Urb";
+  }
+  .site-name-mini {
+    display: none;
+  }
+  .site-name-mid {
+    display: initial;
+  }
+}
+
+@media (min-width: 445px) {
+  .site-name > a:after {
+    content: "Urban";
+  }
+}
+
+@media (min-width: 460px) {
+  .site-name-mid {
+    display: none;
+  }
+  .site-name-full {
+    display: initial;
+  }
+  .site-name > a:after {
+    content: "";
+  }
+}
+
+@media (min-width: 520px) {
   .site-name > a:after {
     content: " - α";
   }
 }
 
-@media (min-width: 510px) {
+@media (min-width: 590px) {
   .site-name > a:after {
     content: " - Alpha";
   }
@@ -307,13 +387,15 @@ ol.ordered-list > li.ordered-row:first-child > article {
   margin: 0;
 }
 
-#block-about {
+#block-about,
+#block-thex-amp-about {
   border: 1px solid var(--background);
   background-color: var(--container);
   padding-top: 0.9em;
 }
 
-#block-about p:last-of-type {
+#block-about p:last-of-type,
+#block-thex-amp-about p:last-of-type  {
   margin: 0;
 }
 
@@ -345,7 +427,8 @@ ol.ordered-list > li.ordered-row:first-child > article {
 }
 
 #edit-termen {
-  background-color: var(--background);
+  background-color: var(--container);
+  font-family: -system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 input.form-search::placeholder {

@@ -1,0 +1,14 @@
+uuid: 62a588e8-5012-486e-860c-8a49ec5f9d64
+langcode: ro
+status: true
+dependencies:
+  config:
+    - user.role.trusted
+  module:
+    - user
+id: user_remove_role_action.trusted
+label: 'Remove the Trusted role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: trusted

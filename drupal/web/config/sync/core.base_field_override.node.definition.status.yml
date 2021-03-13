@@ -1,0 +1,22 @@
+uuid: ee925eb7-c291-473a-9898-4928696f79d8
+langcode: ro
+status: true
+dependencies:
+  config:
+    - node.type.definition
+id: node.definition.status
+field_name: status
+entity_type: node
+bundle: definition
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

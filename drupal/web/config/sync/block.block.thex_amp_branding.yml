@@ -1,4 +1,4 @@
-uuid: a735b7b3-850e-4b10-8c4d-8e6cc56d425f
+uuid: 3a19dfb4-74a7-4e47-b7b2-1c76170d4e32
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: thex_amp_branding
 theme: thex_amp
 region: header_top_left
-weight: -6
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:

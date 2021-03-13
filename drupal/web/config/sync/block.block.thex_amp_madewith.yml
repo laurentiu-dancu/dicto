@@ -1,4 +1,4 @@
-uuid: c5190408-caad-457d-ac44-ff77756cfe34
+uuid: e0d4a6c6-3330-47e7-8896-43e114f91144
 langcode: ro
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - thex
-id: madewith
-theme: thex
+    - thex_amp
+id: thex_amp_madewith
+theme: thex_amp
 region: sidebar_second
 weight: 0
 provider: null

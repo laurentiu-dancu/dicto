@@ -14,25 +14,17 @@
  */
 #}
 {% block content %}
-<div class="site-branding">
-  {% if site_logo %}
-    <div class="site-logo">
-      <a href="{{ path('<front>') }}" rel="home">
-        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
-      </a>
-    </div><!-- site-logo -->
-  {% endif %}
-  {% if site_name or site_slogan %}
+  <div class="site-branding">
     <div class="site-name-slogan">
-      {% if site_name %}
-        <div class="site-name">
-          <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-        </div>
-      {% endif %}
-      {% if site_slogan %}
-        <div class="site-slogan">{{ site_slogan }}</div>
-      {% endif %}
+      <div class="site-name site-name-mini">
+        <a href="{{ path('<front>') }}" title="{{ 'Acasă' }}" rel="home">{{ 'Dicți' }}</a>
+      </div>
+      <div class="site-name site-name-mid">
+        <a href="{{ path('<front>') }}" title="{{ 'Acasă' }}" rel="home">{{ 'Dicționar' }}</a>
+      </div>
+      <div class="site-name site-name-full">
+        <a href="{{ path('<front>') }}" title="{{ 'Acasă' }}" rel="home">{{ site_name }}</a>
+      </div>
     </div><!-- site-name-slogan -->
-  {% endif %}
-</div><!-- site-branding -->
+  </div><!-- site-branding -->
 {% endblock %}

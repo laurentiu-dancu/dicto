@@ -78,6 +78,11 @@ class DictoFormBuilder extends FormBuilder {
     if ($ajax_form_request = $request->query->has('__amp_source_origin') && isset($form_state->getUserInput()['_drupal_ajax'])) {
       $form_state->disableRedirect();
     }
+    if (!$ajax_form_request) {
+      if ($ajax_form_request = $request->query->has(static::AJAX_FORM_REQUEST)) {
+        $form_state->disableRedirect();
+      }
+    }
 
     $response = $this->processForm($form_id, $form, $form_state);
 

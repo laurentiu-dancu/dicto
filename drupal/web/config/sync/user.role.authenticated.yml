@@ -12,6 +12,7 @@ permissions:
   - 'access content'
   - 'access user profiles'
   - 'cancel account'
+  - 'change own username'
   - 'create definition content'
   - 'create reaction on node:definition:field_score'
   - 'modify reaction on node:definition:field_score'

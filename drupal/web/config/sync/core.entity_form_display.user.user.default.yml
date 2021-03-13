@@ -1,4 +1,4 @@
-uuid: 318a04d0-64f0-464f-8d2c-d2af9f6c228e
+uuid: 5d454543-4ad4-44d2-b927-27efce98c271
 langcode: ro
 status: true
 dependencies:
@@ -15,7 +15,13 @@ id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
-content: {  }
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
-  member_for: true
+  language: true
+  path: true

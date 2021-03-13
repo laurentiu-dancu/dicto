@@ -1,4 +1,4 @@
-uuid: fa23b171-bbcb-4dd9-b3a4-7d612582ccc8
+uuid: 707e53d1-d496-4344-8655-af5995cb1de8
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: thex_amp_page_title
 theme: thex_amp
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: page_title_block
 settings:
@@ -22,5 +22,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/termen/*'
+    pages: "/termen/*\r\n/cautare"
     negate: true

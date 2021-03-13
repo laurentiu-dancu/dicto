@@ -51,13 +51,6 @@ class DictoVotingApiReactionForm extends VotingApiReactionForm {
     $form['#attributes']['autocomplete'] = 'off';
     $form['#cache']['max-age'] = 0;
 
-    if ($this->currentUser->isAuthenticated()) {
-      // Try to get the last reaction.
-      if ($entity = $this->reactionManager->lastReaction($this->entity, $settings)) {
-        $this->entity = $entity;
-      }
-    }
-
     // Check user access and form status.
     $status = $this->checkStatus($form_state);
     $access = $this->checkAccess($form_state, $this->entity);

@@ -51,6 +51,8 @@
         "drupal/search_api": "^1.19",
         "drupal/seo_checklist": "^4.1",
         "drupal/simple_sitemap": "^3.8",
+        "drupal/social_auth_google": "^3",
+        "drupal/switch_page_theme": "^1.0",
         "drupal/twig_extensions": "^2.0",
         "drupal/twig_xdebug": "^1.2",
         "drupal/ultimate_cron": "^2.0@alpha",

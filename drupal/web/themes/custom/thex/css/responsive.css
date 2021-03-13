@@ -17,6 +17,13 @@ h6 {
   font-size: 1.1rem;
 }
 
+@media (max-width: 420px) {
+  .unformatted-row > article,
+  .ordered-row > article{
+    padding: 0.8em 0.8em 1.2em;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 60rem;

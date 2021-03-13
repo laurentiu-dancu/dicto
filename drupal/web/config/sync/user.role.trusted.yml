@@ -1,0 +1,9 @@
+uuid: abfb7dd3-e299-4224-a298-2e418e824d26
+langcode: ro
+status: true
+dependencies: {  }
+id: trusted
+label: Trusted
+weight: 3
+is_admin: null
+permissions: {  }

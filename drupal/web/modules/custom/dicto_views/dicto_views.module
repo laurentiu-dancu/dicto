@@ -123,6 +123,13 @@ function dicto_views_entity_presave(Drupal\Core\Entity\EntityInterface $entity) 
 
   $slugify = new \Cocur\Slugify\Slugify(['regexp' => Constants::SLUG_REGEX]);
   $entity->field_slug->value = $slugify->slugify($entity->label());
+
+  $roles = Drupal::currentUser()->getRoles();
+  if (!in_array('trusted', $roles)) {
+    $entity->setUnpublished();
+  } else {
+    $entity->setPublished();
+  }
 }
 
 /**
@@ -234,5 +241,16 @@ function dicto_views_simple_sitemap_arbitrary_links_alter(array &$arbitrary_link
         'ro' => $uri,
       ]
     ];
+  }
+}
+
+function dicto_views_form_user_form_alter(&$form, $form_state, $form_id) {
+  if (isset($form['account'])) {
+    unset($form['account']['mail']);
+    unset($form['account']['pass']);
+    unset($form['account']['current_pass']);
+  }
+  if (isset($form['actions']['delete'])) {
+    unset($form['actions']['delete']);
   }
 }

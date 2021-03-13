@@ -1,13 +1,13 @@
-uuid: 7f00c113-03c4-4f7e-8677-ef28e7ff1288
+uuid: 3640ffb7-148e-450c-8abd-69769c5e22d1
 langcode: ro
 status: true
 dependencies:
   module:
     - dicto_views
   theme:
-    - thex
-id: danknessblock
-theme: thex
+    - thex_amp
+id: thex_amp_danknessblock
+theme: thex_amp
 region: header_top_right
 weight: 0
 provider: null
