@@ -101,6 +101,10 @@ h3.term-title {
   font-size: 1.2em;
   line-height: 1;
 }
+.page-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 ul.taxonomy-terms {
   margin: 0 0 1em;
   padding: 0;
