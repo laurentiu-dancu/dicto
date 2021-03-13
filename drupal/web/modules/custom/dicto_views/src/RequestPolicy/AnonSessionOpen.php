@@ -43,6 +43,12 @@ class AnonSessionOpen implements RequestPolicyInterface {
     if (str_starts_with($request->getPathInfo(), '/admin')) {
       return static::DENY;
     }
+    if (str_starts_with($request->getPathInfo(), '/cont')) {
+      return static::DENY;
+    }
+    if (str_starts_with($request->getPathInfo(), '/adauga')) {
+      return static::DENY;
+    }
 
     if ($this->currentUser->isAnonymous()) {
       return static::ALLOW;

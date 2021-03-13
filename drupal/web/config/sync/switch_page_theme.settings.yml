@@ -1,13 +1,14 @@
 spt_table:
   -
     status: '1'
-    pages: "/user/*\r\n/node/add/definition"
+    pages: "/user/*/edit\r\n/node/add/definition"
     theme_key: ''
     theme: thex
     roles:
       authenticated: authenticated
       anonymous: 0
       orfan: 0
+      trusted: 0
     weight: '-10'
     language:
       ro: 0

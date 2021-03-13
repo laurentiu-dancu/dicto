@@ -3,16 +3,24 @@
     <nav>
       <ol>
         <li><a title="Glosar" href="{{ path('view.glosar.page_global') }}">
-            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/glosar.png" alt="Glosar">🔡</amp-img>
+            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/glosar.png" alt="Glosar" noloading>
+              <img src="/themes/custom/thex/images/icons/glosar.png" alt="Glosar">
+            </amp-img>
           </a></li>
         <li><a title="Aleator" href="{{ path('dicto_views.autocomplete.random') }}">
-            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/random.png" alt="Aleator">🔡</amp-img>
+            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/random.png" alt="Aleator" noloading>
+              <img src="/themes/custom/thex/images/icons/random.png" alt="Aleator">
+            </amp-img>
           </a></li>
-        <li><a title="Cont" href="{{ path('dicto_views.autocomplete.random') }}">
-            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/cont.png" alt="Cont">🔡</amp-img>
+        <li><a title="Cont" href="{{ path('dicto_views.account_redirect') }}">
+            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/cont.png" alt="Cont" noloading>
+              <img src="/themes/custom/thex/images/icons/cont.png" alt="Cont">
+            </amp-img>
           </a></li>
-        <li><a title="Adaugă" href="{{ path('node.add', { 'node_type': 'definition' }) }}">
-            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/add.png" alt="Adaugă">🔡</amp-img>
+        <li><a title="Adaugă" href="{{ path('dicto_views.add_redirect') }}">
+            <amp-img width="36" height="36" src="/themes/custom/thex/images/icons/add.png" alt="Adaugă" noloading>
+              <img src="/themes/custom/thex/images/icons/add.png" alt="Adaugă">
+            </amp-img>
           </a></li>
       </ol>
     </nav>

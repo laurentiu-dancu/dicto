@@ -129,4 +129,61 @@ class DictoViewsSearchController extends ControllerBase {
 
     return $response;
   }
+
+  public function accountRedirect(Request $request) {
+    $user = \Drupal::currentUser();
+    if ($user->isAnonymous()) {
+      $url = Url::fromRoute('dicto_views.login');
+      $uri = $url->toString(TRUE);
+
+      $cache = new CacheableMetadata();
+      $cache->setCacheMaxAge(0);
+      $response = new CacheableRedirectResponse($uri->getGeneratedUrl());
+      $response->addCacheableDependency($cache);
+
+      return $response;
+    }
+
+    $url = Url::fromRoute('entity.user.edit_form', ['user' => $user->id()]);
+    $uri = $url->toString(TRUE);
+
+    $cache = new CacheableMetadata();
+    $cache->setCacheMaxAge(0);
+    $response = new CacheableRedirectResponse($uri->getGeneratedUrl());
+    $response->addCacheableDependency($cache);
+
+    return $response;
+  }
+
+  public function addRedirect(Request $request) {
+    $user = \Drupal::currentUser();
+    if ($user->isAnonymous()) {
+      $url = Url::fromRoute('dicto_views.login');
+      $uri = $url->toString(TRUE);
+
+      $cache = new CacheableMetadata();
+      $cache->setCacheMaxAge(0);
+      $response = new CacheableRedirectResponse($uri->getGeneratedUrl());
+      $response->addCacheableDependency($cache);
+
+      return $response;
+    }
+
+    $url = Url::fromRoute('node.add', ['node_type' => 'definition']);
+    $uri = $url->toString(TRUE);
+
+    $cache = new CacheableMetadata();
+    $cache->setCacheMaxAge(0);
+    $response = new CacheableRedirectResponse($uri->getGeneratedUrl());
+    $response->addCacheableDependency($cache);
+
+    return $response;
+  }
+
+  public function authPage(Request $request) {
+    return [
+      '#theme' => 'dicto_views_auth_page',
+      '#title' => 'Login',
+    ];
+  }
 }

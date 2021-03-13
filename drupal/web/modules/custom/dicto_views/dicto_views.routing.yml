@@ -13,3 +13,27 @@ dicto_views.autocomplete.random:
     _format: html
   requirements:
     _access: 'TRUE'
+
+dicto_views.account_redirect:
+  path: 'cont'
+  defaults:
+    _controller: '\Drupal\dicto_views\Controller\DictoViewsSearchController::accountRedirect'
+    _format: html
+  requirements:
+    _access: 'TRUE'
+
+dicto_views.add_redirect:
+  path: 'adauga'
+  defaults:
+    _controller: '\Drupal\dicto_views\Controller\DictoViewsSearchController::addRedirect'
+    _format: html
+  requirements:
+    _access: 'TRUE'
+
+dicto_views.login:
+  path: 'login'
+  defaults:
+    _controller: '\Drupal\dicto_views\Controller\DictoViewsSearchController::authPage'
+    _format: html
+  requirements:
+    _access: 'TRUE'

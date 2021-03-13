@@ -18,9 +18,17 @@ h6 {
 }
 
 @media (max-width: 420px) {
-  .unformatted-row > article,
-  .ordered-row > article{
+  .unformatted-row > article {
     padding: 0.8em 0.8em 1.2em;
+  }
+  .ordered-row > article {
+    padding: 2em 0.8em 1.2em;
+  }
+  ol.ordered-list > li:before {
+    left: 0.7em;
+  }
+  .sidebar .block {
+    padding: 1.4em 0.8em;
   }
 }
 

@@ -274,6 +274,14 @@ form.node-definition-form .form-autocomplete {
   width: 100%;
 }
 
+.touchevents .draggable td {
+  padding: 0;
+}
+
+.page-container {
+  margin-bottom: 2em;
+}
+
 .unformatted-row > article {
   border: none;
   padding: 0.8em 1.6em 1.2em;
@@ -399,7 +407,8 @@ ol.ordered-list > li.ordered-row:first-child > article {
   margin: 0;
 }
 
-#block-madewith {
+#block-madewith,
+#block-thex-amp-madewith {
   text-align: center;
 }
 
