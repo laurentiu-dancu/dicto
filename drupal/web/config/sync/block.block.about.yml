@@ -1,21 +1,21 @@
-uuid: 80fec6e2-89dd-45c5-886e-407d53ea253c
+uuid: f3e24f27-3e9e-44c0-ac9c-a3c7efd71165
 langcode: ro
 status: true
 dependencies:
   content:
-    - 'block_content:about_block:c8b761e3-9963-4f67-b7e0-88b9b7277d88'
+    - 'block_content:about_block:ece06f8a-7b23-461d-9a14-4fa630084873'
   module:
     - block_content
   theme:
-    - thex
+    - thex_amp
 id: about
-theme: thex
+theme: thex_amp
 region: sidebar_second
 weight: 0
 provider: null
-plugin: 'block_content:c8b761e3-9963-4f67-b7e0-88b9b7277d88'
+plugin: 'block_content:ece06f8a-7b23-461d-9a14-4fa630084873'
 settings:
-  id: 'block_content:c8b761e3-9963-4f67-b7e0-88b9b7277d88'
+  id: 'block_content:ece06f8a-7b23-461d-9a14-4fa630084873'
   label: About
   provider: block_content
   label_display: '0'

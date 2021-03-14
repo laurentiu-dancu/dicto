@@ -1,4 +1,12 @@
 ignored_config_entities:
+  - block.block.madewith
+  - block.block.about
   - ultimate_cron.job.simple_sitemap_engines_cron
+  - config_ignore.settings
+  - minifyhtml.config
+  - block.block.thex_amp_madewith.yml
+  - block.block.thex_amp_about.yml
+  - block.block.thex_about.yml
+  - block.block.thex_madewith.yml
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
