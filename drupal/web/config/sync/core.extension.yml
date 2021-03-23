@@ -12,6 +12,7 @@ module:
   cloudflarepurger: 0
   config_filter: 0
   config_ignore: 0
+  contact: 0
   ctools: 0
   dblog: 0
   devel: 0
@@ -57,6 +58,7 @@ module:
   serialization: 0
   simple_sitemap: 0
   simple_sitemap_engines: 0
+  smtp: 0
   social_api: 0
   social_auth: 0
   social_auth_google: 0

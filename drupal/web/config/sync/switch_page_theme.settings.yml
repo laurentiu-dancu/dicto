@@ -13,3 +13,31 @@ spt_table:
     language:
       ro: 0
     remove: Remove
+  -
+    status: '1'
+    pages: /politica-de-confidentialitate
+    theme_key: ''
+    theme: thex_amp
+    weight: '-10'
+    roles:
+      anonymous: 0
+      authenticated: 0
+      orfan: 0
+      trusted: 0
+    language:
+      ro: 0
+    remove: Remove
+  -
+    status: '1'
+    pages: /contact
+    theme_key: ''
+    theme: thex
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      orfan: orfan
+      trusted: trusted
+    weight: '-10'
+    language:
+      ro: 0
+    remove: Remove

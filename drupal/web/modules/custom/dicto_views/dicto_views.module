@@ -253,6 +253,9 @@ function dicto_views_form_user_form_alter(&$form, $form_state, $form_id) {
   if (isset($form['actions']['delete'])) {
     unset($form['actions']['delete']);
   }
+  if (isset($form['contact'])) {
+    unset($form['contact']);
+  }
 }
 
 function dicto_views_theme($existing, $type, $theme, $path) {

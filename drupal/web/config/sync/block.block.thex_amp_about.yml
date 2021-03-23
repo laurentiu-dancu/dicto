@@ -1,0 +1,25 @@
+uuid: e212c8a7-b2de-49ee-8eb8-a088892c38b0
+langcode: ro
+status: true
+dependencies:
+  content:
+    - 'block_content:about_block:ece06f8a-7b23-461d-9a14-4fa630084873'
+  module:
+    - block_content
+  theme:
+    - thex
+id: thex_amp_about
+theme: thex
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:ece06f8a-7b23-461d-9a14-4fa630084873'
+settings:
+  id: 'block_content:ece06f8a-7b23-461d-9a14-4fa630084873'
+  label: About
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

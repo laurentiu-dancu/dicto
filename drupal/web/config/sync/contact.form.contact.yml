@@ -1,0 +1,12 @@
+uuid: 70e6751e-e802-4fa0-9356-e86386f3650c
+langcode: ro
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+recipients:
+  - urban.blacksmith.dev@google.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

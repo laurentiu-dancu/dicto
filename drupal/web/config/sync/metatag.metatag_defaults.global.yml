@@ -7,6 +7,5 @@ _core:
 id: global
 label: Global
 tags:
-  rating: '14 years'
   canonical_url: '[current-page:url]'
   content_language: ro

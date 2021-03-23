@@ -5,7 +5,7 @@
  .main-wrapper {
    position: relative;
    display: block;
-   min-height: calc(100vh - 130px - 59px);
+   min-height: calc(100vh - 130px - 86px);
 }
 .header,
 .footer-bottom {
@@ -18,7 +18,16 @@
   height: 130px;
 }
 .footer-bottom {
-  height: 59px;
+  min-height: 86px;
+}
+
+@media (min-width: 470px) {
+  .footer-bottom {
+    min-height: 59px;
+  }
+  .main-wrapper {
+    min-height: calc(100vh - 130px - 59px);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -27,7 +36,8 @@
   .main-wrapper {
     padding-left: calc(100vw - 100%);
   }
-  .header-top {
+  .header-top,
+  .footer-bottom-container {
     max-width: 39em;
   }
 }

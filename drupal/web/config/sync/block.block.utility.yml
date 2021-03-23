@@ -1,0 +1,25 @@
+uuid: b4be6c39-c8bf-4995-8bc2-64914690e2f7
+langcode: ro
+status: true
+dependencies:
+  config:
+    - system.menu.utility
+  module:
+    - system
+  theme:
+    - thex_amp
+id: utility
+theme: thex_amp
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:utility'
+settings:
+  id: 'system_menu_block:utility'
+  label: Utility
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

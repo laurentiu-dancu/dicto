@@ -2,13 +2,10 @@
   <div class="container">
     <div class="footer-bottom-container">
       <div class="website-copyright">
-        &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+        &copy; {{ "now"|date("Y") }} {{ site_name }}, făcut cu
+        <a href="https://dictionar-urban.ro/termen/lovele" title="Love">❤️</a> și
+        <a href="https://www.drupal.org" title="Drupal" target="_blank">💧</a> undeva prin Ardeal.
       </div>
-      {% if page.footer_bottom_last %}
-        <div class="footer-bottom-last">
-          {{ page.footer_bottom_last }}
-        </div><!-- /footer-bottom-last -->
-      {% endif %}
     </div><!-- /footer-bottom-container -->
   </div><!-- /container -->
 </footer><!-- /footer-bottom -->

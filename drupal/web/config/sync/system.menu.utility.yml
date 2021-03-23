@@ -1,0 +1,8 @@
+uuid: 1a15a677-2178-440a-adde-c32204329240
+langcode: ro
+status: true
+dependencies: {  }
+id: utility
+label: Utile
+description: ''
+locked: false

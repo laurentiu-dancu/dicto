@@ -233,14 +233,24 @@ ol.ordered-list > li:before {
   pointer-events: none
 }
 
-.ordered-row > article {
+article.node {
   border: none;
-  padding: 2em 1.6em 1.2em;
+  padding: 1em;
   background-color: var(--container);
   border-radius: 3px;
 }
 
+article.node-view-mode-full {
+  margin-bottom: 1em;
+}
+
+.ordered-row > article {
+  padding: 2em 1.6em 1.2em;
+  background-color: var(--container);
+}
+
 form.user-form,
+form.contact-message-contact-form,
 form.node-definition-form {
   border: none;
   padding: 1em;
@@ -249,8 +259,9 @@ form.node-definition-form {
 }
 
 form.user-form input,
-form.node-definition-form input,
-form.node-definition-form textarea {
+form input,
+form input.button,
+form textarea {
   background-color: var(--background);
   color: var(--text);
   border: 1px solid;
@@ -287,17 +298,8 @@ form.node-definition-form .form-autocomplete {
 }
 
 .unformatted-row > article {
-  border: none;
   padding: 0.8em 1.6em 1.2em;
-  background-color: var(--container);
-  border-radius: 3px;
   margin-bottom: 0.8em;
-}
-
-.views-element-container .unformatted-row:first-of-type > article {
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 ol.ordered-list > li.ordered-row:first-child > article {
@@ -373,13 +375,13 @@ ol.ordered-list > li.ordered-row:first-child > article {
 
 @media (min-width: 520px) {
   .site-name > a:after {
-    content: " - α";
+    content: " - β";
   }
 }
 
 @media (min-width: 590px) {
   .site-name > a:after {
-    content: " - Alpha";
+    content: " - Beta";
   }
 }
 
@@ -488,6 +490,7 @@ li.taxonomy-term {
   height: 2.7em;
   width: 2.7em;
   padding: 0;
+  border: 0;
   background-color: var(--background);
 }
 
@@ -531,4 +534,36 @@ li.taxonomy-term {
   padding: 0.5em 1em 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.website-copyright {
+  text-align: center;
+}
+
+nav.block-menu ul {
+  padding: 0;
+  text-align: center;
+}
+
+nav.block-menu li.menu-item {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+nav.block-menu li.menu-item:after {
+  content: "·";
+}
+
+nav.block-menu li.menu-item:last-of-type:after {
+  content: "";
+}
+
+nav.block-menu#block-useraccountmenu ul {
+  text-align: left;
+}
+
+nav.block-menu#block-useraccountmenu li.menu-item {
+  font-size: 1rem
 }
