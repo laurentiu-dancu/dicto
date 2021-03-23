@@ -170,20 +170,7 @@ display:
             label: ''
           granularity: second
       title: Definiții
-      header:
-        entity_user:
-          id: entity_user
-          table: views
-          field: entity_user
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: true
-          target: '{{ raw_arguments.uid }}'
-          view_mode: compact
-          bypass_access: false
-          plugin_id: entity
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }

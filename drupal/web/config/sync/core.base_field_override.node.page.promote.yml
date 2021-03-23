@@ -1,14 +1,14 @@
-uuid: ee925eb7-c291-473a-9898-4928696f79d8
+uuid: 50afaf5f-8347-4a94-a402-204a62ba85be
 langcode: ro
 status: true
 dependencies:
   config:
-    - node.type.definition
-id: node.definition.status
-field_name: status
+    - node.type.page
+id: node.page.promote
+field_name: promote
 entity_type: node
-bundle: definition
-label: Published
+bundle: page
+label: 'Promoted to front page'
 description: ''
 required: false
 translatable: true

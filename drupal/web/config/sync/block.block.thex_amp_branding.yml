@@ -1,4 +1,4 @@
-uuid: 3a19dfb4-74a7-4e47-b7b2-1c76170d4e32
+uuid: a735b7b3-850e-4b10-8c4d-8e6cc56d425f
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ _core:
   default_config_hash: qRH1I1NOl311X8NaINJGmkZ36Iu2zax0r6HHN2civ0g
 id: thex_amp_branding
 theme: thex_amp
-region: header_top_left
-weight: -5
+region: header
+weight: -6
 provider: null
 plugin: system_branding_block
 settings:

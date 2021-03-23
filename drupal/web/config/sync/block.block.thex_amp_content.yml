@@ -1,4 +1,4 @@
-uuid: 8fcb0a8c-da12-4296-b472-167cab58420f
+uuid: 4bd77044-87e9-4c09-82eb-690c7502f8df
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: thex_amp_content
 theme: thex_amp
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: system_main_block
 settings:
