@@ -554,10 +554,13 @@ nav.block-menu li.menu-item {
 
 nav.block-menu li.menu-item:after {
   content: "·";
+  padding-left: 0.6em;
+  padding-right: 0.6em;
 }
 
 nav.block-menu li.menu-item:last-of-type:after {
   content: "";
+  padding: 0;
 }
 
 nav.block-menu#block-useraccountmenu ul {
