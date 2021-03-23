@@ -1,4 +1,4 @@
-uuid: 62d0aece-4838-453d-b667-7a242974a414
+uuid: cd529567-ed11-4faf-a262-5cbb7d2bbc40
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: thex_amp_local_actions
 theme: thex_amp
 region: content
-weight: -4
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

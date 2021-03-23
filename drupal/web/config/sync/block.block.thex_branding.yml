@@ -10,8 +10,8 @@ _core:
   default_config_hash: qRH1I1NOl311X8NaINJGmkZ36Iu2zax0r6HHN2civ0g
 id: thex_branding
 theme: thex
-region: header
-weight: -6
+region: header_top_left
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:
