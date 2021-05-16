@@ -67,6 +67,7 @@
         "drupal/votingapi": "^3.0@beta",
         "drupal/votingapi_reaction": "^1.1",
         "drush/drush": "^10.3",
+        "ip2location/ip2location-php": "^9.1",
         "kint-php/kint": "^3.3",
         "symfony/css-selector": "^5",
         "symfony/dom-crawler": "^5",

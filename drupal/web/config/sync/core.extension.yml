@@ -18,6 +18,7 @@ module:
   devel: 0
   devel_kint_extras: 0
   dicto_migrate: 0
+  dicto_pixie: 0
   dicto_views: 0
   dynamic_page_cache: 0
   field: 0

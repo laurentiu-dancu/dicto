@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "487bf149096b6030d5c2a6e80da26f76",
+    "content-hash": "94351973273072c33b13396a7d46522e",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -5606,6 +5606,68 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.7.0"
             },
             "time": "2020-09-30T07:37:11+00:00"
+        },
+        {
+            "name": "ip2location/ip2location-php",
+            "version": "9.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrislim2888/IP2Location-PHP-Module.git",
+                "reference": "57a80b79500a70ea341ad758f42c3e3191800dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrislim2888/IP2Location-PHP-Module/zipball/57a80b79500a70ea341ad758f42c3e3191800dcc",
+                "reference": "57a80b79500a70ea341ad758f42c3e3191800dcc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-curl": "*",
+                "ext-gmp": "*",
+                "ext-json": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IP2Location\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "IP2Location",
+                    "email": "support@ip2location.com",
+                    "homepage": "https://www.ip2location.com"
+                }
+            ],
+            "description": "[Official Release] IP2Location PHP API to get location info from IPv4 and IPv6 address.",
+            "homepage": "https://www.ip2location.com",
+            "keywords": [
+                "area code",
+                "geolocation",
+                "ip geolocation",
+                "ip2location",
+                "ip2locationlite",
+                "isp",
+                "mcc",
+                "mnc",
+                "time zone",
+                "usage type",
+                "zip code"
+            ],
+            "support": {
+                "issues": "https://github.com/chrislim2888/IP2Location-PHP-Module/issues",
+                "source": "https://github.com/chrislim2888/IP2Location-PHP-Module/tree/9.1.0"
+            },
+            "time": "2021-03-24T02:10:43+00:00"
         },
         {
             "name": "kint-php/kint",

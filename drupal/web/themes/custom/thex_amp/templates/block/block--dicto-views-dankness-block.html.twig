@@ -1,5 +1,12 @@
 <div{{ attributes.addClass('block') }}>
   <div class="block-content nav-menu">
+    <div class="pixie-container">
+      <amp-img width="1" height="1" noloading src="/pixie.php" alt="pixie">
+        <noscript>
+          <img src="/pixie.php" alt="pixie">
+        </noscript>
+      </amp-img>
+    </div>
     <nav>
       <ol>
         <li><a title="Glosar" href="{{ path('view.glosar.page_global') }}">

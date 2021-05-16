@@ -570,3 +570,7 @@ nav.block-menu#block-useraccountmenu ul {
 nav.block-menu#block-useraccountmenu li.menu-item {
   font-size: 1rem
 }
+
+.pixie-container {
+  position: absolute;
+}
