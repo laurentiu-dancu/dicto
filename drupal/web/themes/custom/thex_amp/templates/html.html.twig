@@ -43,13 +43,19 @@
     {% if amp_skip_link %}
       {{ amp_skip_link }}
     {% endif %}
-    <amp-analytics type="gtag" data-credentials="include">
+    <amp-analytics type="googleanalytics">
       <script type="application/json">
         {
-          "vars" : {
-            "gtag_id": "G-C6HG45ZST8",
-            "config" : {
-              "G-C6HG45ZST8": { "groups": "default" }
+          "vars": {
+            "account": "G-C6HG45ZST8"
+          },
+          "triggers": {
+            "default pageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "title": "Name of the Article"
+              }
             }
           }
         }
