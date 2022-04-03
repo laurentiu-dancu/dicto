@@ -37,11 +37,24 @@
       <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
       <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
       <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       </head>
   <body{{ attributes.addClass('layout-container') }}>
     {% if amp_skip_link %}
       {{ amp_skip_link }}
     {% endif %}
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+        {
+          "vars" : {
+            "gtag_id": "G-C6HG45ZST8",
+            "config" : {
+              "G-C6HG45ZST8": { "groups": "default" }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
