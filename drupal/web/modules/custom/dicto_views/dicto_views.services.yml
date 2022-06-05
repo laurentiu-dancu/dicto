@@ -4,11 +4,11 @@ services:
     tags:
       - { name: event_subscriber }
 
-  dicto_views.page_cache_request_policy.allow_some_anon_sessions:
-    class: Drupal\dicto_views\RequestPolicy\AnonSessionOpen
-    arguments: ['@current_user']
-    tags:
-      - { name: page_cache_request_policy }
+#  dicto_views.page_cache_request_policy.allow_some_anon_sessions:
+#    class: Drupal\dicto_views\RequestPolicy\AnonSessionOpen
+#    arguments: ['@current_user']
+#    tags:
+#      - { name: page_cache_request_policy }
 
   dicto_views.main_content_renderer.json:
     class: Drupal\dicto_views\Render\MainContent\JsonRenderer
