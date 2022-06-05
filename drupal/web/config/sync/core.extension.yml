@@ -46,6 +46,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  preloader: 0
   rdf: 0
   schema_metatag: 0
   schema_web_page: 0

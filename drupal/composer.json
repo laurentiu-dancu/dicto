@@ -48,6 +48,7 @@
         "drupal/migrate_tools": "^5.0",
         "drupal/minifyhtml": "^1.10",
         "drupal/pathauto": "^1.8",
+        "drupal/preloader": "^1.0@beta",
         "drupal/purge": "^3.0",
         "drupal/purge_drush": "^3.0",
         "drupal/purge_processor_cron": "^3.0",
@@ -72,6 +73,7 @@
         "kint-php/kint": "^3.3",
         "symfony/css-selector": "^5",
         "symfony/dom-crawler": "^5",
+        "symfony/intl": "5.4",
         "twig/extensions": "^1.5",
         "twig/intl-extra": "^3.3"
     },
