@@ -42,6 +42,9 @@
       <script async custom-element="amp-auto-ads"
               src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
       </script>
+      <meta name="amp-consent-blocking" content="amp-ad">
+      <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+      <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
       </head>
   <body{{ attributes.addClass('layout-container') }}>
     {% if amp_skip_link %}
@@ -61,6 +64,7 @@
     </amp-analytics>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6034020476793937"
             crossorigin="anonymous"></script>
+    <amp-consent id="googlefc" layout="nodisplay" type="googlefc"><script type="application/json">{"clientConfig":{"publisherIdentifier":"pub-6034020476793937"}}</script></amp-consent>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
