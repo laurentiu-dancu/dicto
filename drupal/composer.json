@@ -156,9 +156,6 @@
             },
             "drupal/simple_sitemap": {
                 "1": "https://www.drupal.org/files/issues/2020-12-07/simple_sitemap-php8-error-1.patch"
-            },
-            "drupal/core": {
-                "1": "https://www.drupal.org/files/issues/2021-02-08/3128548-55-StatementInterface.patch"
             }
         }
     },
