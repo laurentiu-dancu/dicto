@@ -27,11 +27,11 @@ bundle: definition
 mode: undefined_term
 content:
   field_definitie:
-    weight: 0
+    type: basic_string
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 0
     region: content
 hidden:
   field_eticheta: true

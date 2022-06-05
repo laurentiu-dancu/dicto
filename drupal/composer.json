@@ -150,14 +150,7 @@
             ]
         },
         "enable-patching": true,
-        "patches": {
-            "drupal/memcache": {
-                "1": "https://git.drupalcode.org/project/memcache/-/merge_requests/1.diff"
-            },
-            "drupal/simple_sitemap": {
-                "1": "https://www.drupal.org/files/issues/2020-12-07/simple_sitemap-php8-error-1.patch"
-            }
-        }
+        "patches": {}
     },
     "require-dev": {
         "ext-dom": "*"

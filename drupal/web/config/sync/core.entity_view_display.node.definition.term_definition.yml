@@ -29,37 +29,37 @@ mode: term_definition
 content:
   field_definitie:
     type: basic_string
-    weight: 0
-    region: content
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_eticheta:
     type: entity_reference_label
-    weight: 3
-    region: content
     label: visually_hidden
     settings:
       link: true
     third_party_settings: {  }
+    weight: 3
+    region: content
   field_exemplu:
     type: basic_string
-    weight: 1
-    region: content
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_score:
-    weight: 2
+    type: votingapi_reaction_default
     label: visually_hidden
     settings:
+      show_summary: false
+      show_icon: false
       show_label: true
       show_count: true
       sort_reactions: none
-      show_summary: false
-      show_icon: false
     third_party_settings: {  }
-    type: votingapi_reaction_default
+    weight: 2
     region: content
 hidden:
   field_slug: true

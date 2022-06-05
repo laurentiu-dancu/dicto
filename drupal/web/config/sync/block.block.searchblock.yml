@@ -15,6 +15,6 @@ plugin: dicto_views_search_block
 settings:
   id: dicto_views_search_block
   label: 'Search Block'
-  provider: dicto_views
   label_display: '0'
+  provider: dicto_views
 visibility: {  }

@@ -1,7 +1,7 @@
+_core:
+  default_config_hash: BYvJsG1SSiV-EJ126-uVg6xyftCQBTEemr027l-GpjE
+langcode: ro
 anonymous_window: 604800
 user_window: 604800
 calculation_schedule: cron
 delete_everywhere: false
-_core:
-  default_config_hash: BYvJsG1SSiV-EJ126-uVg6xyftCQBTEemr027l-GpjE
-langcode: ro

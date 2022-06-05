@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
   - block.block.madewith
   - block.block.about
@@ -8,5 +10,3 @@ ignored_config_entities:
   - block.block.thex_amp_about.yml
   - block.block.thex_about.yml
   - block.block.thex_madewith.yml
-_core:
-  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

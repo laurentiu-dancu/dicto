@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: ro
 uuid: b3a11eb2-98aa-4550-8f4b-cef43568a46d
 name: 'Dicționar Urban'
 mail: admin@admin.com
@@ -8,8 +11,5 @@ page:
   front: /ultimele-definitii
 admin_compact_mode: false
 weight_select_max: 100
-langcode: ro
 default_langcode: ro
-_core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
 mail_notification: ''

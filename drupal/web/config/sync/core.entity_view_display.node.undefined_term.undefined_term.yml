@@ -22,13 +22,13 @@ bundle: undefined_term
 mode: undefined_term
 content:
   field_related_definitions:
-    weight: 0
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: undefined_term
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 0
     region: content
 hidden:
   field_slug: true

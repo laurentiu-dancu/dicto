@@ -15,6 +15,6 @@ plugin: dicto_views_dankness_block
 settings:
   id: dicto_views_dankness_block
   label: 'Dankness Block'
-  provider: dicto_views
   label_display: '0'
+  provider: dicto_views
 visibility: {  }

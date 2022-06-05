@@ -2,11 +2,11 @@ uuid: beff39b3-d951-432b-923d-f1035fff8024
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
   enforced:
     module:
       - amp
-  module:
-    - node
 _core:
   default_config_hash: jwz6mIS1UN65x5-pQ4hpLguWSwuhZq62hXOoW_W5ysA
 id: node.amp

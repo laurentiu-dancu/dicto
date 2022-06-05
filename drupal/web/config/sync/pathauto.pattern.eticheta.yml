@@ -12,12 +12,12 @@ pattern: '/eticheta/[term:name]'
 selection_criteria:
   bc82e134-7fc9-4694-adef-36e5ced9c55a:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      eticheta: eticheta
     negate: false
+    uuid: bc82e134-7fc9-4694-adef-36e5ced9c55a
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: bc82e134-7fc9-4694-adef-36e5ced9c55a
+    bundles:
+      eticheta: eticheta
 selection_logic: and
 weight: -5
 relationships: {  }
