@@ -17,7 +17,7 @@ spt_table:
     status: '1'
     pages: /politica-de-confidentialitate
     theme_key: ''
-    theme: thex_amp
+    theme: thex
     weight: '-10'
     roles:
       anonymous: 0

@@ -9,7 +9,6 @@ module:
   breakpoint: 0
   checklistapi: 0
   cloudflare: 0
-  cloudflarepurger: 0
   config_filter: 0
   config_ignore: 0
   contact: 0
@@ -31,8 +30,6 @@ module:
   language: 0
   layout_discovery: 0
   link: 0
-  memcache: 0
-  memcache_admin: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
@@ -46,12 +43,6 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  purge: 0
-  purge_drush: 0
-  purge_processor_cron: 0
-  purge_queuer_coretags: 0
-  purge_queuer_url: 0
-  purge_ui: 0
   rdf: 0
   schema_metatag: 0
   schema_web_page: 0
