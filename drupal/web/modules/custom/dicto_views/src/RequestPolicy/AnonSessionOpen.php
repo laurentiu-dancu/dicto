@@ -50,10 +50,6 @@ class AnonSessionOpen implements RequestPolicyInterface {
       return static::DENY;
     }
 
-    if ($this->currentUser->isAnonymous()) {
-      return static::ALLOW;
-    }
-
     return NULL;
   }
 
