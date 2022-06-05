@@ -19,12 +19,22 @@
   <h3>{{ title }}</h3>
 {% endif %}
 <div class="unformatted-container">
-  {% for row in rows %}
+  {% for key,row in rows %}
     {% set row_classes = [
       default_row_class ? 'views-row',
     ] %}
     <div{{ row.attributes.addClass(row_classes) }}>
       {{- row.content -}}
     </div>
+    {% if key % 3 == 1 %}
+      <amp-ad width="100vw" height="320"
+              type="adsense"
+              data-ad-client="ca-pub-6034020476793937"
+              data-ad-slot="4161600461"
+              data-auto-format="rspv"
+              data-full-width="">
+        <div overflow=""></div>
+      </amp-ad>
+    {% endif %}
   {% endfor %}
 </div>
