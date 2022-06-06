@@ -47,13 +47,6 @@
       <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
       </head>
   <body{{ attributes.addClass('layout-container') }}>
-    {% if amp_skip_link %}
-      {{ amp_skip_link }}
-    {% endif %}
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-  </body>
   <amp-auto-ads type="adsense"
                 data-ad-client="ca-pub-6034020476793937">
   </amp-auto-ads>
@@ -72,4 +65,12 @@
       }
     </script>
   </amp-analytics>
+    {% if amp_skip_link %}
+      {{ amp_skip_link }}
+    {% endif %}
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+  </body>
+
 </html>
