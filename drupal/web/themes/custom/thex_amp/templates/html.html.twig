@@ -43,7 +43,6 @@
       <script async custom-element="amp-auto-ads"
               src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
       </script>
-
       <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
       <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
       </head>
@@ -51,23 +50,6 @@
     {% if amp_skip_link %}
       {{ amp_skip_link }}
     {% endif %}
-    <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-        {
-          "vars" : {
-            "gtag_id": "UA-191512948-1",
-            "config" : {
-              "UA-191512948-1": { "groups": "default" }
-            }
-          }
-        }
-      </script>
-    </amp-analytics>
-{#    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6034020476793937"#}
-{#            crossorigin="anonymous"></script>#}
-    <amp-consent id="googlefc" layout="nodisplay" type="googlefc">
-      <script type="application/json">{"clientConfig":{"publisherIdentifier":"pub-6034020476793937"}}</script>
-    </amp-consent>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
@@ -75,4 +57,19 @@
   <amp-auto-ads type="adsense"
                 data-ad-client="ca-pub-6034020476793937">
   </amp-auto-ads>
+  <amp-consent id="googlefc" layout="nodisplay" type="googlefc">
+    <script type="application/json">{"clientConfig":{"publisherIdentifier":"pub-6034020476793937"}}</script>
+  </amp-consent>
+  <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+      {
+        "vars" : {
+          "gtag_id": "UA-191512948-1",
+          "config" : {
+            "UA-191512948-1": { "groups": "default" }
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
 </html>

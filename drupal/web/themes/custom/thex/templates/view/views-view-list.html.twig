@@ -31,16 +31,16 @@
     <li{{ row.attributes }}>
       {{- row.content -}}
     </li>
-{#    {% if key % 3 == 0 %}#}
-{#      <amp-ad width="100vw" height="0"#}
-{#              type="adsense"#}
-{#              data-ad-client="ca-pub-6034020476793937"#}
-{#              data-ad-slot="4161600461"#}
-{#              data-auto-format="rspv"#}
-{#              data-full-width="">#}
-{#        <div overflow=""></div>#}
-{#      </amp-ad>#}
-{#    {% endif %}#}
+    {% if key % 3 == 0 %}
+      <amp-ad width="100vw" height="0"
+              type="adsense"
+              data-ad-client="ca-pub-6034020476793937"
+              data-ad-slot="4161600461"
+              data-auto-format="rspv"
+              data-full-width="">
+        <div overflow=""></div>
+      </amp-ad>
+    {% endif %}
   {% endfor %}
 
 </{{ list.type }}>
