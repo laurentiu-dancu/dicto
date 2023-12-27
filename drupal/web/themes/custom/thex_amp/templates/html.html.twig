@@ -38,7 +38,6 @@
       <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
       <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
       <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
       <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
       <script async custom-element="amp-auto-ads"
               src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
@@ -53,18 +52,6 @@
   <amp-consent id="googlefc" layout="nodisplay" type="googlefc">
     <script type="application/json">{"clientConfig":{"publisherIdentifier":"pub-6034020476793937"}}</script>
   </amp-consent>
-  <amp-analytics type="gtag" data-credentials="include">
-    <script type="application/json">
-      {
-        "vars" : {
-          "gtag_id": "UA-191512948-1",
-          "config" : {
-            "UA-191512948-1": { "groups": "default" }
-          }
-        }
-      }
-    </script>
-  </amp-analytics>
     {% if amp_skip_link %}
       {{ amp_skip_link }}
     {% endif %}
