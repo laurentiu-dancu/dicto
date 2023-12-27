@@ -1,0 +1,6 @@
+name: Dicto Profit Module
+description: Step 4 in a plan with a missing step 3
+package: Custom
+
+type: module
+core_version_requirement: ^8.8 || ^9
