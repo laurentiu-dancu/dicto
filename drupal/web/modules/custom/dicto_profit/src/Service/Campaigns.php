@@ -17,11 +17,12 @@ class Campaigns {
     $campaigns = $this->queryCampaigns();
     $campaigns = $this->filterNotCreated($campaigns);
     $campaigns = $this->mapImageBuckets($campaigns);
+    $campaigns = $this->filterNoBuckets($campaigns);
     $campaigns = $this->mapReferralLinks($campaigns);
 
     $this->persistCampaigns($campaigns);
-//    $this->cleanupExpired();
-//    $this->updateWeights();
+    $this->cleanupExpired();
+    $this->updateWeights();
   }
 
   private function queryCampaigns(): array {
@@ -64,6 +65,18 @@ class Campaigns {
     return $campaigns;
   }
 
+  private function filterNoBuckets(array $campaigns): array {
+    $filteredCampaigns = [];
+
+    foreach ($campaigns as $key => $campaign) {
+      if (count($campaign['buckets']) > 0) {
+        $filteredCampaigns[] = $campaign;
+      }
+    }
+
+    return $filteredCampaigns;
+  }
+
   private function mapReferralLinks(array $campaigns): array {
     $links = [];
 
@@ -84,16 +97,57 @@ class Campaigns {
     return $campaigns;
   }
 
+  private function cleanupExpired(): void {
+    $query = $this->connection
+      ->query('delete from profit_campaign where end_at < UNIX_TIMESTAMP()');
+    $query->execute();
+
+        $query = $this->connection
+      ->query('
+           delete pci from profit_campaign_image pci
+           left join profit_campaign pc on pci.campaign = pc.id
+           where pc.id is null');
+    $query->execute();
+  }
+
+  private function updateWeights(): void {
+    /**
+     * select
+     * pc.advertiser_id as advertiser_id,
+     * count(advertiser_id) as campaign_count,
+     * avg(round((pc.end_at - pc.start_at) / 3600 / 24)) as average_days,
+     * log(avg(round((pc.end_at - pc.start_at) / 3600 / 24))) as average_days_log,
+     * 1 / log(avg(round((pc.end_at - pc.start_at) / 3600 / 24))) as average_days_inverse_log,
+     * (1 / log(avg(round((pc.end_at - pc.start_at) / 3600 / 24)))) / count(advertiser_id) as raw_weight,
+     * round(100 * (1 / log(avg(round((pc.end_at - pc.start_at) / 3600 / 24)))) / count(advertiser_id)) as weight,
+     * round(100 * (1 / log(avg(round((pc.end_at - pc.start_at) / 3600 / 24))))) as effective_weight
+     * from profit_campaign pc group by advertiser_id order by effective_weight asc;
+     */
+
+    $query = $this->connection->query('
+      UPDATE profit_campaign pc
+          JOIN (
+              select
+                  pc.advertiser_id as advertiser_id,
+                  count(advertiser_id) as campaign_count,
+                  round(
+                          100
+                              * (1 / log(avg(round((pc.end_at - pc.start_at))) / (3600 * 24)) + 1)
+                              * (1 / (log(count(advertiser_id) + 3)))
+                  ) as weight
+              from profit_campaign pc group by advertiser_id
+          ) subquery ON pc.advertiser_id = subquery.advertiser_id
+      SET pc.weight = subquery.weight;
+    ');
+    $query->execute();
+  }
+
   private function persistCampaigns(array $campaigns): void {
     $em = \Drupal::entityTypeManager();
     $campaignStorage = $em->getStorage('dicto_profit_campaign');
     $imageStorage = $em->getStorage('dicto_profit_campaign_image');
 
     foreach ($campaigns as $campaign) {
-      if (empty($campaign['buckets'])) {
-        continue;
-      }
-
       if (empty($campaign['referral_link'])) {
         continue;
       }
