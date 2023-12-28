@@ -39,9 +39,22 @@ class TwigProfitCampaign extends AbstractExtension {
     $markup = "
     <div class='money-please'>
     <a title='{$campaign['name']}' href='{$campaign['referral_link']}' rel='nofollow'>
-      <amp-img layout='responsive' width='{$campaign['width']}' height='{$campaign['height']}' src='{$campaign['src']}' alt='{$campaign['name']}'>
-        <amp-img fallback layout='responsive' width='{$campaign['width']}' height='{$campaign['height']}' src='/bani-te-rog/{$campaign['id']}' alt='{$campaign['name']}'>
-        </amp-img>' alt='{$campaign['name']}'>
+      <amp-img
+        layout='responsive'
+        width='{$campaign['width']}'
+        height='{$campaign['height']}'
+        src='{$campaign['src']}'
+        alt='{$campaign['name']}'
+      >
+        <amp-img
+          fallback
+          layout='responsive'
+          width='{$campaign['width']}'
+          height='{$campaign['height']}'
+          src='/bani-te-rog/{$campaign['id']}'
+          alt='{$campaign['name']}'
+        >
+        </amp-img>
         <noscript>
           <img width='{$campaign['width']}' height='{$campaign['height']}' src='{$campaign['src']}' alt='{$campaign['name']}'>
         </noscript>
