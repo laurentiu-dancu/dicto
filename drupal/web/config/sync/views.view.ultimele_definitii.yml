@@ -197,6 +197,7 @@ display:
           metatags:
             description: 'Ultimele definiții adăugate la dicționar'
             audience: test
+          tokenize: false
       path: ultimele-definitii
     cache_metadata:
       max-age: -1

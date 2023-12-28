@@ -28,16 +28,16 @@ class TwigGenius extends AbstractExtension {
       if ($campaign['bucket'] === $bucket) {
         unset($this->campaignPool[$key]);
 
-        return $this->renderCampaign($campaign);
+        return $this->renderCampaign($campaign, $bucket);
       }
     }
 
     return new Markup('', 'UTF-8');
   }
 
-  private function renderCampaign(array $campaign): Markup {
+  private function renderCampaign(array $campaign, string $bucket): Markup {
     $markup = "
-    <div class='genius'>
+    <div class='genius genius-$bucket'>
     <a title='{$campaign['name']}' href='{$campaign['referral_link']}' rel='nofollow'>
       <amp-img
         layout='responsive'
