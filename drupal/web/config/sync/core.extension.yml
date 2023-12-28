@@ -44,7 +44,6 @@ module:
   migrate_tools: 0
   minifyhtml: 0
   node: 0
-  page_cache: 0
   path: 0
   path_alias: 0
   preloader: 0
