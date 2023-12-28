@@ -1,0 +1,23 @@
+dicto_profit.demo:
+  path: 'demo'
+  defaults:
+    _controller: '\Drupal\dicto_profit\Controller\ProfitController::demo'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+dicto_profit.cron:
+  path: 'cron'
+  defaults:
+    _controller: '\Drupal\dicto_profit\Controller\ProfitController::cron'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
+dicto_profit.money:
+  path: 'bani-te-rog/{image}'
+  defaults:
+    _controller: '\Drupal\dicto_profit\Controller\MoneyController::moneyPlease'
+    _format: html
+  requirements:
+    _access: 'TRUE'

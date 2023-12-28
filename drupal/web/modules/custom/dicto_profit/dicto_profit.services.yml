@@ -1,0 +1,21 @@
+services:
+  dicto_profit.client:
+    class: 'Drupal\dicto_profit\ProfitClient'
+    arguments: ['@http_client']
+
+  dicto_profit.buckets:
+    class: 'Drupal\dicto_profit\Service\Buckets'
+
+  dicto_profit.campaigns:
+    class: 'Drupal\dicto_profit\Service\Campaigns'
+    arguments: [
+      '@dicto_profit.client',
+      '@dicto_profit.buckets',
+      '@database'
+    ]
+
+  dicto_profit.twig.profit_campaign:
+    class: 'Drupal\dicto_profit\Twig\TwigProfitCampaign'
+    arguments: ['@database']
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,20 @@
+uuid: 45afd211-fea4-42ae-92a6-8ff1ab42fd95
+langcode: ro
+status: true
+dependencies:
+  module:
+    - dicto_profit
+  theme:
+    - thex_amp
+id: geniusblock
+theme: thex_amp
+region: sidebar_second
+weight: 0
+provider: null
+plugin: dicto_profit_genius_block
+settings:
+  id: dicto_profit_genius_block
+  label: 'Genius Block'
+  label_display: '0'
+  provider: dicto_profit
+visibility: {  }

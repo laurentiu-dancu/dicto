@@ -302,6 +302,10 @@ form.node-definition-form .form-autocomplete {
   margin-bottom: 0.8em;
 }
 
+.money-please {
+  margin-bottom: 0.8em;
+}
+
 ol.ordered-list > li.ordered-row:first-child > article {
   border-top: 0;
   border-top-left-radius: 0;
@@ -370,18 +374,6 @@ ol.ordered-list > li.ordered-row:first-child > article {
   }
   .site-name > a:after {
     content: "";
-  }
-}
-
-@media (min-width: 520px) {
-  .site-name > a:after {
-    content: " - β";
-  }
-}
-
-@media (min-width: 590px) {
-  .site-name > a:after {
-    content: " - Beta";
   }
 }
 

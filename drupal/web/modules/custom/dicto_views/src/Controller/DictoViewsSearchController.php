@@ -2,6 +2,7 @@
 
 namespace Drupal\dicto_views\Controller;
 
+use Drupal\Component\Utility\Xss;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\CacheableRedirectResponse;
@@ -9,12 +10,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Drupal\Component\Utility\Xss;
-use Drupal\Core\Entity\Element\EntityAutocomplete;
 
 class DictoViewsSearchController extends ControllerBase {
 
