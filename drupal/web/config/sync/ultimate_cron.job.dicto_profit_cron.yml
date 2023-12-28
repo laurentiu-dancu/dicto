@@ -1,0 +1,29 @@
+uuid: 6a12ab58-e762-4a09-9be2-b147884e5d26
+langcode: ro
+status: true
+dependencies:
+  module:
+    - dicto_profit
+title: 'Default cron handler'
+id: dicto_profit_cron
+weight: 0
+module: dicto_profit
+callback: dicto_profit_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ */6 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

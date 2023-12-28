@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function dicto_profit_cron(): void {
+  /** @var \Drupal\dicto_profit\Service\Campaigns $campaigns */
+  $campaigns = Drupal::service('dicto_profit.campaigns');
+
+  $campaigns->import();
+}
