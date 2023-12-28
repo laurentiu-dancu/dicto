@@ -316,7 +316,6 @@ ol.ordered-list > li.ordered-row:first-child > article {
   display: inline-flex;
 }
 
-.site-name-mid,
 .site-name-full {
   display: none;
 }
@@ -335,45 +334,13 @@ ol.ordered-list > li.ordered-row:first-child > article {
   line-height: 2;
 }
 
-@media (min-width: 336px) {
-  .site-name > a:after {
-    content: "Urb";
-  }
-}
-
-@media (min-width: 395px) {
-  .site-name > a:after {
-    content: "Urb - α";
-  }
-}
-
-@media (min-width: 410px) {
-  .site-name > a:after {
-    content: "Urb";
-  }
+@media (min-width: 420px) {
   .site-name-mini {
     display: none;
   }
-  .site-name-mid {
-    display: initial;
-  }
-}
 
-@media (min-width: 445px) {
-  .site-name > a:after {
-    content: "Urban";
-  }
-}
-
-@media (min-width: 460px) {
-  .site-name-mid {
-    display: none;
-  }
   .site-name-full {
     display: initial;
-  }
-  .site-name > a:after {
-    content: "";
   }
 }
 
