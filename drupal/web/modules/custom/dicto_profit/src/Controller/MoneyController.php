@@ -30,7 +30,7 @@ class MoneyController extends ControllerBase{
 
     $cache = new CacheableMetadata();
     $cache
-      ->setCacheMaxAge(24 * 3600 * 7)
+      ->setCacheMaxAge(15552000)
       ->setCacheTags(["campaignImageProxy:$image"]);
 
     $file = file_get_contents($result);
@@ -38,6 +38,7 @@ class MoneyController extends ControllerBase{
     $response = new CacheableResponse($file, 200, [
       'content-type' => 'image/jpeg',
       'content-length' => strlen($file),
+      'cache-control' => 'public, max-age=15552000',
     ]);
     $response->addCacheableDependency($cache);
 
