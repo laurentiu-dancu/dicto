@@ -7,7 +7,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\Markup;
 use Twig\TwigFunction;
 
-class TwigProfitCampaign extends AbstractExtension {
+class TwigGenius extends AbstractExtension {
   private array $campaignPool = [];
 
   public function __construct(private Connection $connection) {
@@ -15,7 +15,7 @@ class TwigProfitCampaign extends AbstractExtension {
 
   public function getFunctions():array {
     return [
-      new TwigFunction('profit_campaign', [$this, 'profitCampaign']),
+      new TwigFunction('render_genius', [$this, 'profitCampaign']),
     ];
   }
 
@@ -37,7 +37,7 @@ class TwigProfitCampaign extends AbstractExtension {
 
   private function renderCampaign(array $campaign): Markup {
     $markup = "
-    <div class='money-please'>
+    <div class='genius'>
     <a title='{$campaign['name']}' href='{$campaign['referral_link']}' rel='nofollow'>
       <amp-img
         layout='responsive'

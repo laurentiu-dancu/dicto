@@ -14,8 +14,8 @@ services:
       '@database'
     ]
 
-  dicto_profit.twig.profit_campaign:
-    class: 'Drupal\dicto_profit\Twig\TwigProfitCampaign'
+  dicto_profit.twig.genius:
+    class: 'Drupal\dicto_profit\Twig\TwigGenius'
     arguments: ['@database']
     tags:
       - { name: twig.extension }
