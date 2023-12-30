@@ -131,9 +131,9 @@ class Campaigns {
                   pc.advertiser_id as advertiser_id,
                   count(advertiser_id) as campaign_count,
                   round(
-                          100
-                              * (1 / log(avg(round((pc.end_at - pc.start_at))) / (3600 * 24)) + 1)
-                              * (1 / (log(count(advertiser_id) + 3)))
+                          10000
+                              * (1 / (log(avg(round((pc.end_at - pc.start_at))) / (3600 * 24)) + 15))
+                              * (1 / (log(count(advertiser_id) + 15)))
                   ) as weight
               from profit_campaign pc group by advertiser_id
           ) subquery ON pc.advertiser_id = subquery.advertiser_id
